@@ -2,8 +2,10 @@
 
 Frameworks: ???
 
-Database: ???
+Database: MongoDB, ???
 
 Languages: JavaScript
 
 Design: HTML, CSS
+
+Hosting: Docker
