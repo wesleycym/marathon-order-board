@@ -2,6 +2,8 @@
 
 Frameworks: ???
 
+Database: ???
+
 Languages: JavaScript
 
 Design: HTML, CSS
