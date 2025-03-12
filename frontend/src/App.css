@@ -1,5 +1,6 @@
 /* Contains all specific styles for the App.jsx -> Component specific */
 
+/* Header styling */
 header {
   background-color: #5f5e5d; /* Background color */
   padding: 5px; /* Padding ^&v */
@@ -43,7 +44,7 @@ header {
   border-bottom: 2px solid black; /* Border */
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
-  color: #000; /* Ensure text color is black */
+  color: #000; /* Black text color */
 }
 
 /* Column heading styling */
@@ -52,7 +53,7 @@ header {
   border-bottom: 2px solid black; /* Border */
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
-  color: #000; /* Ensure text color is black */
+  color: #000; /* Text color is black */
 }
 
 /* Column border styling*/
@@ -78,4 +79,13 @@ header {
   background: linear-gradient(#ffffff, #ffffff) padding-box, /* Background color */
               linear-gradient(to right, #09ff00, #66ff66) border-box; /* Gradient border */
   box-shadow: 0 0 10px #09ff00; /* Outer glow */
+}
+
+/* Column hover effects */
+.columnBacklog:hover,
+.columnInProgress:hover,
+.columnCompleted:hover {
+  transform: scale(1.02); /* Slightly enlarge the column */
+  transition: transform 0.2s ease; /* Smooth transition */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Add a stronger shadow */
 }
