@@ -8,13 +8,13 @@ function App() {
         <img src="/logo.png" alt="Marathon Logo" className="logo" />
       </header>
       <div className="board">
-        <div className="column backlog">
+        <div className="columnBacklog">
           <h2>Backlog</h2>
         </div>
-        <div className="column in-progress">
+        <div className="columnInProgress">
           <h2>In Progress</h2>
         </div>
-        <div className="column completed">
+        <div className="columnCompleted">
           <h2>Completed</h2>
         </div>
       </div>
