@@ -89,3 +89,24 @@ header {
   background-color: #f5f5f5; /* Lighten background slightly */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* More visible glow */
 }
+
+/* Button styling */
+.add-order-button {
+  background-color: #4CAF50; /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  font-weight: bold; /* Bold text */
+  -webkit-text-stroke: .1px black /* Text stroke */
+}
+
+.add-order-button:hover {
+  background-color: #45a049; /* Change background color on hover */
+  transform: scale(1.05); /* Slightly larger hover effect */
+}
+
+.add-order-button:active {
+  transform: scale(.98); /* Slightly smaller click effect */
+}

@@ -3,9 +3,10 @@ import './App.css'
 
 function App() {
   return (
-    <> {/* Ensure the parent container stretches */}
+    <>
       <header>
         <img src="/logo.png" alt="Marathon Logo" className="logo" />
+        <button type = "button" className = "add-order-button">Add New Order</button>
       </header>
       <div className="board">
         <div className="columnBacklog">
