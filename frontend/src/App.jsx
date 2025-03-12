@@ -6,7 +6,9 @@ function App() {
     <>
       <header>
         <img src="/logo.png" alt="Marathon Logo" className="logo" />
-        <button type = "button" className = "add-order-button">Add New Order</button>
+        <button className="add-order-button">
+          <span className="add-order-text">Add New Order</span>
+        </button>
       </header>
       <div className="board">
         <div className="columnBacklog">
