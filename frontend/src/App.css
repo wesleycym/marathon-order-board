@@ -29,8 +29,6 @@ header {
 .columnInProgress,
 .columnCompleted {
   background-color: #ffffff; /* Background color */
-  border: 2px solid black; /* Border styling */
-  border-radius: 8px; /* Rounded corners */
   flex-grow: 0; /* Prevent columns from growing */
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
   min-height: 600px; /* Minimum height of the box */
@@ -55,4 +53,29 @@ header {
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
   color: #000; /* Ensure text color is black */
+}
+
+/* Column border styling*/
+.columnBacklog {
+  border: 3px solid transparent; /* Transparent border */
+  border-radius: 15px; /* Rounded corners */
+  background: linear-gradient(#ffffff, #ffffff) padding-box, /* Background color */
+              linear-gradient(to right, #ff0000, #ff6666) border-box; /* Gradient border */
+  box-shadow: 0 0 10px #ff0000; /* Outer glow */
+}
+
+.columnInProgress {
+  border: 3px solid transparent; /* Transparent border */
+  border-radius: 15px; /* Rounded corners */
+  background: linear-gradient(#ffffff, #ffffff) padding-box, /* Background color */
+              linear-gradient(to right, #eeff00, #ffff66) border-box; /* Gradient border */
+  box-shadow: 0 0 10px #eeff00; /* Outer glow */
+}
+
+.columnCompleted {
+  border: 3px solid transparent; /* Transparent border */
+  border-radius: 15px; /* Rounded corners */
+  background: linear-gradient(#ffffff, #ffffff) padding-box, /* Background color */
+              linear-gradient(to right, #09ff00, #66ff66) border-box; /* Gradient border */
+  box-shadow: 0 0 10px #09ff00; /* Outer glow */
 }
