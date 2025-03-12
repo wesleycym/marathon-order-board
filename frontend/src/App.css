@@ -1,42 +1,132 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Contains all specific styles for the App.jsx -> Component specific */
+
+/* Header styling */
+header {
+  background-color: #5f5e5d; /* Background color */
+  padding: 5px; /* Padding ^&v */
+  border-bottom: 2px solid rgb(255, 255, 255); /* Border */
+
 }
 
+/* Logo styling */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  display: block; /* Use flexbox */
+  margin-right: auto; /* Margin -> center */
+  margin-left: auto; /* Margin -> center */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.board {
+  display: flex; /* Create columns */
+  flex-wrap: wrap; /* Wrap columns on smaller screens */
+  gap: 20px; /* Gap between columns */
+  padding: 20px; /* Padding */
+  align-items: flex-start; /* Keep content aligned to top */
+  justify-content: center; /* Distribute space evenly */
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Column styling */
+.columnBacklog,
+.columnInProgress,
+.columnCompleted {
+  background-color: #ffffff; /* Background color */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
+  min-height: 600px; /* Minimum height of the box */
+  min-width: 350px; /* Minimum width for the column */
+
+  /* Additions for backlog + completed if there are too many orders */
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
-.card {
-  padding: 2em;
+/* Column heading styling */
+.columnBacklog h2,
+.columnInProgress h2,
+.columnCompleted h2 {
+  text-align: center; /* Center text */
+  border-bottom: 2px solid black; /* Border */
+  padding: 10px; /* Padding for centering */
+  margin-top: 0; /* Remove extra white space */
+  color: #000; /* Black text color */
 }
 
-.read-the-docs {
-  color: #888;
+/* Column heading styling */
+.column h2 {
+  text-align: center; /* Center text */
+  border-bottom: 2px solid black; /* Border */
+  padding: 10px; /* Padding for centering */
+  margin-top: 0; /* Remove extra white space */
+  color: #000; /* Text color is black */
+}
+
+/* Column border styling*/
+.columnBacklog {
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #ff4d4d, #ff9999) border-box;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Softer glow */
+}
+
+.columnInProgress {
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #ffeb3b, #fff176) border-box;
+  box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
+}
+
+.columnCompleted {
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #4caf50, #81c784) border-box;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+/* Column hover effects */
+.columnBacklog:hover,
+.columnInProgress:hover,
+.columnCompleted:hover {
+  transform: scale(1.03); /* Slightly larger hover effect */
+  background-color: #f5f5f5; /* Lighten background slightly */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* More visible glow */
+}
+
+/* Button styling */
+.add-order-button {
+  /* Setting the position */
+  position: fixed;
+  top: 40px;
+  right: 20px;
+
+  background-color: #4CAF50; /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Adding shadow */
+
+  transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  transform-origin: center;
+}
+
+/* Keeping the text seperate */
+.add-order-text {
+  display: inline-block;
+  transform: none; /* No scaling effect on text itself */
+  font-weight: bold;
+  -webkit-text-stroke: 0.1px black;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.add-order-button:hover {
+  background-color: #45a049; /* Change background color on hover */
+  transform: scale(1.05); /* Smooth scaling */
+}
+
+.add-order-button:active {
+  transform: scale(0.98); /* Press effect */
 }
