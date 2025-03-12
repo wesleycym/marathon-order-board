@@ -58,34 +58,34 @@ header {
 
 /* Column border styling*/
 .columnBacklog {
-  border: 3px solid transparent; /* Transparent border */
-  border-radius: 15px; /* Rounded corners */
-  background: linear-gradient(#ffffff, #ffffff) padding-box, /* Background color */
-              linear-gradient(to right, #ff0000, #ff6666) border-box; /* Gradient border */
-  box-shadow: 0 0 10px #ff0000; /* Outer glow */
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #ff4d4d, #ff9999) border-box;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Softer glow */
 }
 
 .columnInProgress {
-  border: 3px solid transparent; /* Transparent border */
-  border-radius: 15px; /* Rounded corners */
-  background: linear-gradient(#ffffff, #ffffff) padding-box, /* Background color */
-              linear-gradient(to right, #eeff00, #ffff66) border-box; /* Gradient border */
-  box-shadow: 0 0 10px #eeff00; /* Outer glow */
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #ffeb3b, #fff176) border-box;
+  box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
 }
 
 .columnCompleted {
-  border: 3px solid transparent; /* Transparent border */
-  border-radius: 15px; /* Rounded corners */
-  background: linear-gradient(#ffffff, #ffffff) padding-box, /* Background color */
-              linear-gradient(to right, #09ff00, #66ff66) border-box; /* Gradient border */
-  box-shadow: 0 0 10px #09ff00; /* Outer glow */
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #4caf50, #81c784) border-box;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
 }
 
 /* Column hover effects */
 .columnBacklog:hover,
 .columnInProgress:hover,
 .columnCompleted:hover {
-  transform: scale(1.02); /* Slightly enlarge the column */
-  transition: transform 0.2s ease; /* Smooth transition */
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Add a stronger shadow */
+  transform: scale(1.03); /* Slightly larger hover effect */
+  background-color: #f5f5f5; /* Lighten background slightly */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* More visible glow */
 }
