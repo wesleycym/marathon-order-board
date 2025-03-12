@@ -17,12 +17,11 @@ header {
 
 .board {
   display: flex; /* Create columns */
+  flex-wrap: wrap; /* Wrap columns on smaller screens */
   gap: 20px; /* Gap between columns */
   padding: 20px; /* Padding */
-  flex-grow: 1; /* Ability to grow */
   align-items: flex-start; /* Keep content aligned to top */
-
-  justify-content: space-evenly; /* Distribute space evenly */
+  justify-content: center; /* Distribute space evenly */
 
 }
 
@@ -31,10 +30,13 @@ header {
 .columnInProgress,
 .columnCompleted {
   background-color: #ffffff; /* Background color */
-  flex-grow: 0; /* Prevent columns from growing */
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
   min-height: 600px; /* Minimum height of the box */
-  min-width: 300px; /* Minimum width for the column */
+  min-width: 350px; /* Minimum width for the column */
+
+  /* Additions for backlog + completed if there are too many orders */
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 /* Column heading styling */
@@ -95,7 +97,7 @@ header {
 .add-order-button {
   /* Setting the position */
   position: fixed;
-  top: 15px;
+  top: 40px;
   right: 20px;
 
   background-color: #4CAF50; /* Background color */
