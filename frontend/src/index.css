@@ -1,5 +1,8 @@
 /* ### Global Styles ### */
 
+/* Tailwind directives */
+@import "tailwindcss";
+
 /* Reset margin and padding for html and body */
 html, body {
   margin: 0;
