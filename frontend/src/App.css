@@ -130,10 +130,3 @@ header {
 .add-order-button:active {
   transform: scale(0.98); /* Press effect */
 }
-
-/* Floating dock styling */
-.floating-dock {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
