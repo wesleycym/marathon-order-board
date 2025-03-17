@@ -3,19 +3,22 @@ import './App.css'
 import './styles/addOrder.css'
 import './styles/columnStyling.css'
 
+/*
+        <button className="add-order-button">
+          <span className="add-order-text">Add New Order</span>
+        </button>
+*/
+
 function App() {
 
   return (
     <>
       <header>
         <img src="/logo.png" alt="Marathon Logo" className="logo" />
-        <button className="add-order-button">
-          <span className="add-order-text">Add New Order</span>
-        </button>
       </header>
 
-      <div className = "font-bold">
-        <div className="board">
+        {/* Board -> All columns here  */}
+        <div className="board font-bold">
           <div className="columnBacklog">
             <h2>Backlog</h2>
           </div>
@@ -26,7 +29,8 @@ function App() {
             <h2>Completed</h2>
           </div>
         </div>
-      </div>
+
+
     </>
   );
 }
