@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import './styles/addOrder.css'
+import './styles/columnStyling.css'
 
 function App() {
 
