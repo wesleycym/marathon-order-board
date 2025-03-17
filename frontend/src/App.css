@@ -4,7 +4,7 @@
 
 /* Header styling */
 header {
-  background-color: #5f5e5d; /* Background color */
+  background-image: radial-gradient(circle, #706f6f, #5f5e5d,#353534); /* Background color */
   padding: 1vh 5vw; /* Padding ^&v  -> Dynamic to the screen size */
   border-bottom: 2px solid rgb(255, 255, 255); /* Border */
 
