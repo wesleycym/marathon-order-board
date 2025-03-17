@@ -11,12 +11,7 @@ header {
 }
 
 /* Logo styling */
-.logo {
-  display: flex; /* Use flexbox */
-  margin: 0 auto; /* Center horizontally */
-  max-width: 100%; /* Maximum width */
-  height: auto; /* Automatic height */
-}
+
 
 .board {
   display: flex; /* Create columns */

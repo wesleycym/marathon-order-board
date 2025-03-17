@@ -13,8 +13,9 @@ function App() {
 
   return (
     <>
+      {/* Header -> Logo  */}
       <header>
-        <img src="/logo.png" alt="Marathon Logo" className="logo" />
+        <img src="/logo.png" alt="Marathon Logo" className="flex mx-auto max-w-full h-auto" />
       </header>
 
         {/* Board -> All columns here  */}
