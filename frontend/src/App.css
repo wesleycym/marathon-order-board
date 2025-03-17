@@ -12,7 +12,7 @@ header {
 
 /* Logo styling */
 .logo {
-  display: block; /* Use flexbox */
+  display: flex; /* Use flexbox */
   margin: 0 auto; /* Center horizontally */
   max-width: 100%; /* Maximum width */
   height: auto; /* Automatic height */
@@ -20,64 +20,14 @@ header {
 
 .board {
   display: flex; /* Create columns */
-  flex-wrap: wrap; /* Wrap columns on smaller screens */
   gap: 2vw; /* Dynamic gap */
   padding: 2vw; /* Padding */
-  align-items: flex-start; /* Keep content aligned to top */
   justify-content: center; /* Distribute space evenly */
-
 }
 
 /* Column styling */
 .columnBacklog,
 .columnInProgress,
 .columnCompleted {
-  background-color: #ffffff; /* Background color */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
-  min-height: 60vh; /* Dynamic height */
-  
-  min-width: 300px;
-  max-width: 350px;
-
-  /* Additions for backlog + completed if there are too many orders */
-  max-height: 80vh;
-  overflow-y: auto;
-
-  flex: 1; /* Allows columns to grow */
-}
-
-
-/* Trying to make the page responsive to all resolutions */
-@media (max-width: 1024px) {
-  .columnBacklog,
-  .columnInProgress,
-  .columnCompleted {
-    min-width: 300px; /* Ensure columns don't shrink too much */
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    padding: 1vh 2vw;
-  }
-
-  .board {
-    flex-direction: column; /* Stack columns vertically */
-  }
-
-  .columnBacklog,
-  .columnInProgress,
-  .columnCompleted {
-    min-width: 100%; /* Full width on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .board {
-    padding: 1vw;
-  }
-
-  header {
-    text-align: center;
-  }
+  overflow-y: scroll hidden; /* Incase there is overflow when too many orders arrive */
 }

@@ -1,6 +1,13 @@
 /* Styling for the columns [design only] */
 
 
+.columnBacklog,
+.columnInProgress,
+.columnCompleted {
+  background-color: #ffffff; /* Background color */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
+}
+
 /* Column heading styling */
 .columnBacklog h2,
 .columnInProgress h2,
