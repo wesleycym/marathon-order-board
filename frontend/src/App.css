@@ -10,9 +10,6 @@ header {
 
 }
 
-/* Logo styling */
-
-
 .board {
   display: flex; /* Create columns */
   gap: 2vw; /* Dynamic gap */
@@ -24,5 +21,9 @@ header {
 .columnBacklog,
 .columnInProgress,
 .columnCompleted {
+
+  min-width: 20vw; /* Dynamic width -> percentage of screen */
+  min-height: 75vh; /* Dynamic height -> percentage of screen*/
+
   overflow-y: scroll hidden; /* Incase there is overflow when too many orders arrive */
 }

@@ -13,7 +13,6 @@ html, body {
 /* Root styling */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; /* Font */
-  color: rgba(255, 255, 255, 0.87); /* Text color */
   background-color: #242424; /* Background color */
   display: flex;
   flex-direction: column; /* board stretches to fill the remaining height */
