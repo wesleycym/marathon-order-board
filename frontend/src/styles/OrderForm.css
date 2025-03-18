@@ -1,28 +1,25 @@
 /* Order Entry Form */
 .order-entry-form {
     position: absolute;
-    top: 160px;
-    left: 5vw;
+    top: 27.5vh;
+    left: 1.7vw;
     background-color: #f4f4f4;
-    padding: 20px;
-    border: 2px solid #ff9102;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: 3px dashed #ff9102;
+    border-radius: 10px;
 
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 250px;
+    width: 225px;
 }
 
-/* Form Inputs */
-.order-entry-form input,
-.order-entry-form textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.order-entry-form:hover{
+    transform: scale(1.03); /* Slightly larger hover effect */
+    background-color: #f5f5f5; /* Lighten background slightly */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* More visible glow */
 }
+
 
 /* Submit Button */
 .submit-order-button {
@@ -34,11 +31,6 @@
     cursor: pointer;
     transition: background 0.3s ease;
 }
-
-.submit-order-button:hover {
-    background-color: #e07b00;
-}
-
 /* Close Button */
 .close-order-button {
     background-color: #ccc;
@@ -50,6 +42,11 @@
     margin-top: 10px;
     transition: background 0.3s ease;
 }
+
+.submit-order-button:hover {
+    background-color: #e07b00;
+}
+
 
 .close-order-button:hover {
     background-color: #aaa;
