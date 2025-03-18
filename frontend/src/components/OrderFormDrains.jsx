@@ -56,16 +56,18 @@ function OrderFormDrains({}) {
                 onChange = {(e) => setDrainSize(e.target.value)} // Tracking the drain size
             />
 
-            <div className = "Options"> 
-            {/* Checklist of all options will go here*/}
-
-            </div>
-
             {/* Amount */}
             <input 
                 type = "text" 
                 placeholder = "Amount" 
+                value = {amount} // Set to default value ("")
+                onChange = {(e) => setAmount(e.target.value)} // Tracking the amount
             />
+
+            <div className = "Options"> 
+            {/* Checklist of all options will go here*/}
+
+            </div>
         </div>
     );
 }
