@@ -1,0 +1,65 @@
+/* Styling for the columns [design only] */
+
+
+.columnBacklog,
+.columnInProgress,
+.columnCompleted {
+  background-color: #ffffff; /* Background color */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
+}
+
+/* Column heading styling */
+.columnBacklog h2,
+.columnInProgress h2,
+.columnCompleted h2 {
+  text-align: center; /* Center text */
+  border-bottom: 2px solid black; /* Border */
+  padding: 10px; /* Padding for centering */
+  margin-top: 0; /* Remove extra white space */
+  color: #000; /* Black text color */
+
+  user-select: none; /* Prevent text selection */
+}
+
+/* Column heading styling */
+.column h2 {
+  text-align: center; /* Center text */
+  border-bottom: 2px solid black; /* Border */
+  padding: 10px; /* Padding for centering */
+  margin-top: 0; /* Remove extra white space */
+  color: #000; /* Text color is black */
+}
+
+/* Column border styling*/
+.columnBacklog {
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #ff4d4d, #ff9999) border-box;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Softer glow */
+}
+
+.columnInProgress {
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #ffeb3b, #fff176) border-box;
+  box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
+}
+
+.columnCompleted {
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #4caf50, #81c784) border-box;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+/* Column hover effects */
+.columnBacklog:hover,
+.columnInProgress:hover,
+.columnCompleted:hover {
+  transform: scale(1.03); /* Slightly larger hover effect */
+  background-color: #f5f5f5; /* Lighten background slightly */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* More visible glow */
+}
