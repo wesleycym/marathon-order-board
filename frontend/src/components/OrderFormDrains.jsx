@@ -43,14 +43,17 @@ function OrderFormDrains({}) {
 
 {/*###################################################################*/}
 
+{/*###################################################################*/}
 
     return (
         <div className = "drainType">
 
-            {/* Specific drain size */}
+            {/* Drain Size Input */}
             <input 
                 type = "text" 
-                placeholder = "Drain Type" 
+                placeholder = "Drain Type"
+                value = {drainSize} // Set to default value ("")
+                onChange = {(e) => setDrainSize(e.target.value)} // Tracking the drain size
             />
 
             <div className = "Options"> 
