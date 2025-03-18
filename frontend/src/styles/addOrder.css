@@ -1,12 +1,11 @@
 /* Styling for the add order button */
 
-
 .add-order-button {
     /* Setting the position */
     position: fixed;
     top: 40px;
     right: 20px;
-  
+
     background-color: #4CAF50; /* Background color */
     color: #fff; /* Text color */
     border: none; /* Remove border */
@@ -28,12 +27,13 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   }
   
-  
+  /* Hover effect */
   .add-order-button:hover {
     background-color: #45a049; /* Change background color on hover */
     transform: scale(1.05); /* Smooth scaling */
   }
   
+  /* Press effect */
   .add-order-button:active {
     transform: scale(0.98); /* Press effect */
   }
