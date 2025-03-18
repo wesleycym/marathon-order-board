@@ -41,6 +41,10 @@ header {
   min-height: 2.5vh; /* Dynamic height */
   min-width: 5vw; /* Dynamic width */
 
+  position: absolute; /* Positioning */
+  top: 19.5vh; /* Positioning */
+  left: 4vw; /* Positioning */
+
 }
 
 .add-order-text {
