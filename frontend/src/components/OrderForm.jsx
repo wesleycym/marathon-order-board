@@ -96,6 +96,31 @@ function OrderForm({ onSubmit, onClose }) {
                         />
                     )}
                 </div>
+                
+                {/* Drains Section */}
+/*
+------------------------------------------------------
+|                 ADD NEW ORDER                      |
+------------------------------------------------------
+| Company: [ Marathon ▼]                             |
+| Drain Type: [ 3.75 ▼]                              |
+| -------------------------------------------------- |
+| Options:                                           |
+|  [ ] Tape     [X] AL Dome    [X] AL Ring           |
+|  [X] TPO      [ ] PVC                              |
+| -------------------------------------------------- |
+| Quantity: [ 36 ]                                   |
+| [ Add to Order ]                                   |
+------------------------------------------------------
+|                   ORDER SUMMARY                    |
+| -------------------------------------------------- |
+| 3.75 AL Dome AL Ring TPO - 36  | [Remove]          |
+| 3.625 Tape Blue Dome Black Ring PVC - 25 | [Remove]|
+| -------------------------------------------------- |
+|                     [Submit Order]                 |
+------------------------------------------------------
+*/
+                <h4> Drains </h4>
 
                 {/* Submit Button */}
                 <button type="submit" className="submit-order-button">
