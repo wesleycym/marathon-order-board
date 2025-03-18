@@ -98,12 +98,12 @@ function OrderForm({ onSubmit, onClose }) {
                 </div>
                 
                 {/* Drains Section */}
-/*
+{/*
 ------------------------------------------------------
 |                 ADD NEW ORDER                      |
 ------------------------------------------------------
 | Company: [ Marathon ▼]                             |
-| Drain Type: [ 3.75 ▼]                              |
+| Drain Type: [ 3.75 ▼]  // Make it an input field   |
 | -------------------------------------------------- |
 | Options:                                           |
 |  [ ] Tape     [X] AL Dome    [X] AL Ring           |
@@ -119,8 +119,10 @@ function OrderForm({ onSubmit, onClose }) {
 | -------------------------------------------------- |
 |                     [Submit Order]                 |
 ------------------------------------------------------
-*/
+*/}
                 <h4> Drains </h4>
+
+                <h4> Order Summary </h4>
 
                 {/* Submit Button */}
                 <button type="submit" className="submit-order-button">
