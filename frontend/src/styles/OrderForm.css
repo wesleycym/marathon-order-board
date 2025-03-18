@@ -1,53 +1,8 @@
-/* Order Entry Form */
+/* Order Form Container */
 .order-entry-form {
     position: absolute;
-    top: 27.5vh;
-    left: 1.7vw;
-    background-color: #f4f4f4;
-    padding: 10px;
-    border: 3px dashed #ff9102;
-    border-radius: 10px;
+    top: 160px;
+    left: 5vw;
+    background-color: white;
 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 225px;
-}
-
-.order-entry-form:hover{
-    transform: scale(1.03); /* Slightly larger hover effect */
-    background-color: #f5f5f5; /* Lighten background slightly */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* More visible glow */
-}
-
-
-/* Submit Button */
-.submit-order-button {
-    background-color: #ff9102;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-/* Close Button */
-.close-order-button {
-    background-color: #ccc;
-    color: #000;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.3s ease;
-}
-
-.submit-order-button:hover {
-    background-color: #e07b00;
-}
-
-
-.close-order-button:hover {
-    background-color: #aaa;
 }
