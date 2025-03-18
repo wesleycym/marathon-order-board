@@ -1,5 +1,3 @@
-/* Contains all specific styles for the App.jsx -> Component specific */
-
 /* Contains very broad styling -> page formatting*/
 
 /* Header styling */
@@ -12,6 +10,8 @@ header {
 
 }
 
+
+/* Board viewport styling */
 .board {
   display: flex; /* Create columns */
   gap: 2vw; /* Dynamic gap */
@@ -19,12 +19,34 @@ header {
   justify-content: center; /* Distribute space evenly */
 }
 
-/* Column styling */
+
+/* Column viewport styling */
 .columnBacklog,
 .columnInProgress,
 .columnCompleted {
-
   min-width: 20vw; /* Dynamic width -> percentage of screen */
   min-height: 75vh; /* Dynamic height -> percentage of screen*/
   overflow-y: auto; /* Incase there is overflow when too many orders arrive */
+}
+
+
+/* Add order button formatting */
+.add-order-button {
+  display: flex; /* Create a flex container */
+  padding: 1vh 1vw; /* Padding -> Dynamic*/
+
+  max-height: 5vh; /* Dynamic height */
+  max-width: 10vw; /* Dynamic width */
+
+  min-height: 2.5vh; /* Dynamic height */
+  min-width: 5vw; /* Dynamic width */
+
+  position: absolute; /* Positioning */
+  top: 19.5vh; /* Positioning */
+  left: 4vw; /* Positioning */
+
+}
+
+.add-order-text {
+  font-size: clamp(0.5rem, 1vw, 1rem); /* Dynamic scaling */
 }
