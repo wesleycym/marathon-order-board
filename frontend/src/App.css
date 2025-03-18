@@ -26,5 +26,5 @@ header {
 
   min-width: 20vw; /* Dynamic width -> percentage of screen */
   min-height: 75vh; /* Dynamic height -> percentage of screen*/
-  overflow-y: scroll hidden; /* Incase there is overflow when too many orders arrive */
+  overflow-y: auto; /* Incase there is overflow when too many orders arrive */
 }

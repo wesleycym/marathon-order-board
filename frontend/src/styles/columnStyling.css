@@ -17,6 +17,8 @@
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
   color: #000; /* Black text color */
+
+  user-select: none; /* Prevent text selection */
 }
 
 /* Column heading styling */

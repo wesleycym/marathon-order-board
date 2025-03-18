@@ -15,7 +15,7 @@ function App() {
     <>
       {/* Header -> Logo  */}
       <header>
-        <img src="/logo.png" alt="Marathon Logo" className="flex mx-auto max-w-full h-auto" /> {/* Added tailwind styling */}
+        <img src="/logo.png" alt="Marathon Logo" className="flex mx-auto max-w-full h-auto select-none" /> {/* Added tailwind styling */}
       </header>
 
         {/* Board -> All columns here  */}
