@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 function OrderFormDrains({}) {
-    
+
 {/*###################################################################*/}
     // Tracking Drain Size 
     const [drainSize, setDrainSize] = useState('');
@@ -18,6 +18,7 @@ function OrderFormDrains({}) {
         'Other...'  
     ];
     const [selectedDome, setSelectedDome] = useState(''); // Tracking the selected dome
+    const [customDome, setCustomDome] = useState(''); // Incase there is a custom dome
 
     // Ring type selection
     const ringTypes = [
@@ -26,6 +27,7 @@ function OrderFormDrains({}) {
         'Other...'
     ];
     const [selectedRing, setSelectedRing] = useState(''); // Tracking the selected ring
+    const [customRing, setCustomRing] = useState(''); // Incase there is a custom ring
 
     // Optional Coating type selection
     const [selectedCoatings, setSelectedCoatings] = useState({
