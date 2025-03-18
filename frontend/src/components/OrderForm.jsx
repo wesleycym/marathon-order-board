@@ -105,7 +105,7 @@ function OrderForm({ onSubmit, onClose }) {
 | Company: [ Marathon ▼]                             |
 | Drain Type: [ 3.75 ▼]  // Make it an input field   |
 | -------------------------------------------------- |
-| Options:                                           |
+| Options:                                           |      <- Should refresh when [Add to Order is clicked]
 |  [ ] Tape     [X] AL Dome    [X] AL Ring           |
 |  [X] TPO      [ ] PVC                              |
 | -------------------------------------------------- |
@@ -114,10 +114,11 @@ function OrderForm({ onSubmit, onClose }) {
 ------------------------------------------------------
 |                   ORDER SUMMARY                    |
 | -------------------------------------------------- |
+| Marathon, Aluminator                               |
 | 3.75 AL Dome AL Ring TPO - 36  | [Remove]          |
 | 3.625 Tape Blue Dome Black Ring PVC - 25 | [Remove]|
 | -------------------------------------------------- |
-|                     [Submit Order]                 |
+|                   [Submit Order]                   |
 ------------------------------------------------------
 */}
                 <h4> Drains </h4>
