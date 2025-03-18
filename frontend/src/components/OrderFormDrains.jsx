@@ -2,37 +2,44 @@ import React, { useState } from 'react';
 
 
 function OrderFormDrains({}) {
-
+    
+{/*###################################################################*/}
     // Tracking Drain Size 
     const [drainSize, setDrainSize] = useState('');
 
     // Tracking the amount
     const [amount, setAmount] = useState('');
 
-    // Tracking Dome type
+    // Dome type selection
     const domeTypes = [
         'Aluminum Dome',
         'Black Plastic Dome',
         'Blue Plastic Dome',
         'Other...'  
     ];
+    const [selectedDome, setSelectedDome] = useState(''); // Tracking the selected dome
 
-    // Tracking Ring type
+    // Ring type selection
     const ringTypes = [
         'Aluminum Ring',
         'Black Plastic Ring',
         'Other...'
     ];
+    const [selectedRing, setSelectedRing] = useState(''); // Tracking the selected ring
 
-    const coatingOptions = [
-        'TPO',
-        'PVC',
-        'Asphalt'
-    ];
+    // Optional Coating type selection
+    const [selectedCoatings, setSelectedCoatings] = useState({
+        TPO: false,
+        PVC: false,
+        Aslphalt: false
+    });
 
+    // Optional Tape selection
     const [tapeOptions, setTapeOptions] = useState({
         tape: false
     });
+
+{/*###################################################################*/}
 
 
     return (
