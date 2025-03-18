@@ -3,13 +3,15 @@ import './App.css'
 import './styles/addOrder.css'
 import './styles/columnStyling.css'
 
-/*
-        <button className="add-order-button">
-          <span className="add-order-text">Add New Order</span>
-        </button>
-*/
+import OrderForm from './components/OrderForm.jsx'
+
 
 function App() {
+
+  const [showOrderForm, setShowOrderForm] = useState(false);
+
+  const handleAddOrderClick = () => setShowOrderForm(true);
+  const handleCloseOrderForm = () => setShowOrderForm(false);
 
   return (
     <>
@@ -19,9 +21,12 @@ function App() {
       </header>
 
         {/* Add order button */}
-        <button className="add-order-button">
+        <button className="add-order-button " onClick = {handleAddOrderClick}>
           <span className="add-order-text">Add New Order</span>
         </button>
+
+        {/* Proof of Concept Order Entry Form */}
+        {showOrderForm && <OrderForm onClose={handleCloseOrderForm} />}
 
         {/* Board -> All columns here  */}
         <div className="board font-bold">
