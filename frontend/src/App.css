@@ -6,7 +6,9 @@
 header {
   background-image: radial-gradient(circle, #706f6f, #5f5e5d,#353534); /* Background color */
   padding: 1vh 5vw; /* Padding ^&v  -> Dynamic to the screen size */
-  border-bottom: 2px solid rgb(255, 255, 255); /* Border */
+
+  border-bottom: 2px solid rgb(255, 145, 2); /* Border */
+  box-shadow: 0px -2px 20px 5px rgb(0, 0, 0); /* Adding shadow to box */
 
 }
 
@@ -24,6 +26,5 @@ header {
 
   min-width: 20vw; /* Dynamic width -> percentage of screen */
   min-height: 75vh; /* Dynamic height -> percentage of screen*/
-
   overflow-y: scroll hidden; /* Incase there is overflow when too many orders arrive */
 }
