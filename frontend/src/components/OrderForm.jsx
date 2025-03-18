@@ -15,14 +15,14 @@ import OrderTypeChecklist from './OrderTypeChecklist'; // Checklist component fo
  */
 
 function OrderForm({ onSubmit, onClose }) {
-    // Tracks whether the order type checklist is expanded or collapsed
-    const [isCollapsed, setIsCollapsed] = useState(true);
 
-    // Tracks selected order types
-    const [orderTypes, setOrderTypes] = useState([]);
+    const [isCollapsed, setIsCollapsed] = useState(true); // Tracks whether the order type checklist is expanded or collapsed
 
-    // Reference for click-outside detection
-    const formRef = useRef(null);
+    const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
+
+    const [orderTypes, setOrderTypes] = useState([]); // Tracks selected order types
+
+    const formRef = useRef(null); // Reference for click-outside detection
 
     /**
      * Click-Outside Logic:
@@ -51,10 +51,12 @@ function OrderForm({ onSubmit, onClose }) {
         e.preventDefault();
 
         const newOrder = {
+            orderNumber, // Include the order number
             orderTypes, // Include selected order types
         };
         
         onSubmit(newOrder);
+        setOrderNumber(''); // Clear order number upon submission
         setOrderTypes([]); // Clear order types after submission
     };
 
@@ -62,14 +64,16 @@ function OrderForm({ onSubmit, onClose }) {
         <div ref={formRef} className="order-entry-form">
             <h3>New Order</h3>
 
-            {/* Order Number Input */}
-            <input
-                type="text"
-                placeholder="Order Number"
-                className="order-number-input"
-            />
-
             <form onSubmit={handleSubmit}>
+
+                {/* Order Number Input */}
+                <input 
+                type = "text" 
+                placeholder = "Order Number" 
+                className = "order-number-input" 
+                value = {orderNumber}
+                onChange={(e) => setOrderNumber(e.target.value)}  // Updates state as user types
+                />
 
                 {/* Order Type Section - Collapsible */}
                 <div className="order-type">

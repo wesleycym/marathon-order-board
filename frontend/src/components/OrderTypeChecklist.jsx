@@ -30,7 +30,7 @@ function OrderTypeChecklist({ orderTypes, setOrderTypes }) {
     };
 
 
-    // List of available order types
+    // List of available order types -> Add more when needed (possibly add an other category that requires an input field -> could then log into the database)
     const orderOptions = [
         'Aluminator', 'Marathon', 'TruFast',
         'MuleHide', 'ABC Catalog', 'TopShield', 'Hytech',

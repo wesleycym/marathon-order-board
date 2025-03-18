@@ -18,5 +18,5 @@ html, body {
   flex-direction: column; /* board stretches to fill the remaining height */
   overflow: hidden;
 
-  user-select: none;
+  user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
 }
