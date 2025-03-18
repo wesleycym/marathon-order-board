@@ -18,6 +18,11 @@ function App() {
         <img src="/logo.png" alt="Marathon Logo" className="flex mx-auto max-w-full h-auto select-none" /> {/* Added tailwind styling */}
       </header>
 
+        {/* Add order button */}
+        <button className="add-order-button">
+          <span className="add-order-text">Add New Order</span>
+        </button>
+
         {/* Board -> All columns here  */}
         <div className="board font-bold">
           <div className="columnBacklog">

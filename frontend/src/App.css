@@ -10,6 +10,7 @@ header {
 
 }
 
+
 /* Board viewport styling */
 .board {
   display: flex; /* Create columns */
@@ -18,6 +19,7 @@ header {
   justify-content: center; /* Distribute space evenly */
 }
 
+
 /* Column viewport styling */
 .columnBacklog,
 .columnInProgress,
@@ -25,4 +27,22 @@ header {
   min-width: 20vw; /* Dynamic width -> percentage of screen */
   min-height: 75vh; /* Dynamic height -> percentage of screen*/
   overflow-y: auto; /* Incase there is overflow when too many orders arrive */
+}
+
+
+/* Add order button formatting */
+.add-order-button {
+  display: flex; /* Create a flex container */
+  padding: 1vh 1vw; /* Padding -> Dynamic*/
+
+  max-height: 5vh; /* Dynamic height */
+  max-width: 10vw; /* Dynamic width */
+
+  min-height: 2.5vh; /* Dynamic height */
+  min-width: 5vw; /* Dynamic width */
+
+}
+
+.add-order-text {
+  font-size: clamp(0.5rem, 1vw, 1rem); /* Dynamic scaling */
 }
