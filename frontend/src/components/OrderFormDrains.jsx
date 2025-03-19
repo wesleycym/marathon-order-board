@@ -10,6 +10,12 @@ function OrderFormDrains({}) {
     // Tracking the amount
     const [amount, setAmount] = useState('');
 
+    // Seal type selection
+    const [selectedSeal, setSelectedSeal] = useState({
+        ProSeal: false,
+        MaxxFlo: false
+    });
+
     // Dome type selection
     const domeTypes = [
         'Aluminum Dome',
