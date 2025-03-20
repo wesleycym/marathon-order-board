@@ -73,6 +73,24 @@ function OrderFormDrains({}) {
             <div className = "Options"> 
             {/* Checklist of all options will go here*/}
 
+            {/* Seal Options*/}
+            <h4>Seal Options</h4>
+            {Object.keys(selectedSeal).map((seal) => (
+                <label key = {seal}>
+                    <input
+                        type = "radio"
+                        name = "sealOptions"
+                        checked = {selectedSeal[seal]}
+                        onChange = {() => setSelectedSeal({
+                            ProSeal: false, 
+                            MaxxFlo: false,
+                            [seal]: true // Set the selected seal to be true
+                        })}
+                    />
+                    {seal}
+                </label>
+            ))}
+
             </div>
         </div>
     );
