@@ -32,7 +32,6 @@ function OrderFormDrains({}) {
         'Other...'
     ];
     const [selectedRing, setSelectedRing] = useState(''); // Tracking the selected ring
-    const [customRing, setCustomRing] = useState(''); // Incase there is a custom ring
 
     // Optional Coating type selection
     const [selectedCoatings, setSelectedCoatings] = useState({
@@ -108,11 +107,71 @@ function OrderFormDrains({}) {
             {selectedDome === 'Other...' && (
                 <input
                     type = 'text'
-                    placeholder = 'Enter custom dome type'
+                    placeholder = 'Enter dome type'
                     value = {selectedDome === 'Other...' ? selectedDome : ''}
                     onChange = {(e) => setSelectedDome(e.target.value)}
                 />
             )}
+
+            {/* Ring Types */}
+            <h4> Ring Types </h4>
+            {ringTypes.map((ring) => (
+                <label key = {ring}>
+                    <input
+                        type = "radio"
+                        name = "ringType"
+                        value = {ring}
+                        checked = {selectedRing === ring}
+                        onChange = {(e) => setSelectedRing(e.target.value)}
+                    />
+                    {ring}
+                </label>
+            ))}
+            {/* If 'Other' ring type is selected */ }
+            {selectedRing === 'Other...' && (
+                <input
+                    type = 'text'
+                    placeholder = 'Enter ring type'
+                    value = {selectedRing === 'Other...' ? selectedRing : ''}
+                    onChange = {(e) => setSelectedRing(e.target.value)}
+                />    
+            )}
+
+            {/* Coating Types */}
+            <h4> Coating Types </h4>
+            {Object.keys(selectedCoatings).map((coating) => (
+                <label key = {coating}>
+                    <input
+                        type = "radio"
+                        name = "coatingOptions"
+                        checked = {selectedCoatings[coating]}
+                        onChange = {() => setSelectedCoatings({
+                            TPO: false, 
+                            PVC: false,
+                            Asphalt: false,
+                            [coating]: true // Set the selected coating to be true
+                        })}
+                    />
+                    {coating}
+                </label>
+            ))}
+
+            {/* Tape Options */}
+            <h4> Tape Options </h4>
+            {Object.keys(tapeOptions).map((tape) => (
+                <label key = {tape}>
+                    <input
+                        type = "radio"
+                        name = "tapeOptions"
+                        checked = {tapeOptions[tape]}
+                        onChange = {() => setTapeOptions({
+                            tape: false,
+                            [tape]: true
+                        })}
+                    />
+                    {tape}
+                </label>
+            ))}
 
 
             </div>
