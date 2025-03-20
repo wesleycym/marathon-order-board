@@ -24,7 +24,6 @@ function OrderFormDrains({}) {
         'Other...'  
     ];
     const [selectedDome, setSelectedDome] = useState(''); // Tracking the selected dome
-    const [customDome, setCustomDome] = useState(''); // Incase there is a custom dome
 
     // Ring type selection
     const ringTypes = [
@@ -106,6 +105,14 @@ function OrderFormDrains({}) {
                 </label>
             ))}
             {/* If 'Other' dome type is selected */ }
+            {selectedDome === 'Other...' && (
+                <input
+                    type = 'text'
+                    placeholder = 'Enter custom dome type'
+                    value = {selectedDome === 'Other...' ? selectedDome : ''}
+                    onChange = {(e) => setSelectedDome(e.target.value)}
+                />
+            )}
 
 
             </div>
