@@ -91,6 +91,23 @@ function OrderFormDrains({}) {
                 </label>
             ))}
 
+            {/* Dome Types */}
+            <h4> Dome Types </h4>
+            {domeTypes.map((dome) => (
+                <label key = {dome}>
+                    <input
+                        type = "radio"
+                        name = "domeType"
+                        value = {dome}
+                        checked = {selectedDome === dome}
+                        onChange = {(e) => setSelectedDome(e.target.value)}
+                    />
+                    {dome}
+                </label>
+            ))}
+            {/* If 'Other' dome type is selected */ }
+
+
             </div>
         </div>
     );
