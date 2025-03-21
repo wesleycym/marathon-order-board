@@ -88,19 +88,6 @@ function OrderForm({ onSubmit, onClose }) {
 ------------------------------------------------------
 */}
 
-
-{/*
-#######################################################################
-
-
-                Move the boxes selection to be inside the drain selection
-                -> MH/TF stocking orders
-                    -> There can be 2 36 4" skids set for each company
-                        -> The current implementation will not allow for us to distinguish between the 2
-
-#######################################################################
-*/}
-
                 <h4> Drains </h4>
 
                 <h4> Order Summary </h4>
