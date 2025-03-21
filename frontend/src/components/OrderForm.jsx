@@ -7,8 +7,19 @@ function OrderForm({ onSubmit, onClose }) {
 
     // State to track selected order types
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
+    const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
 
     // Need to create a const for the drains -> Map maybe?
+    const createNewDrain = () => ({ // Hash map layout for the drain entries
+        box: '',
+        drainSize: '',
+        amount: '',
+        seal: { ProSeal: false, MaxxFlo: false },
+        dome: '',
+        ring: '',
+        coatings: { TPO: false, PVC: false, Asphalt: false },
+        tape: { tape: false }
+    });
 
     // Handle form submission
     const handleSubmit = (e) => {
@@ -41,7 +52,7 @@ function OrderForm({ onSubmit, onClose }) {
                 <button className="close-order-button" onClick={onClose}>
                     Cancel
                 </button>
-                
+
             </div>
         </ClickOutsideWrapper>
     );
