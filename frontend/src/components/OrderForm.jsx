@@ -53,14 +53,17 @@ function OrderForm({ onSubmit, onClose }) {
 
     // Handle form submission
     const handleSubmit = (e) => {
+        
         e.preventDefault();
 
-        const newOrder = {
+        const newOrder = { // Create the new order [orderNumber -> drainEntries]
             orderNumber, // Include the order number
+            drains: drainEntries // Include all drains in the order
         };
         
-        onSubmit(newOrder);
+        onSubmit(newOrder); // Submit the new order
         setOrderNumber(''); // Clear order number upon submission
+        setDrainEntries({}); // Clear drains upon submission
     };
 
     return (
