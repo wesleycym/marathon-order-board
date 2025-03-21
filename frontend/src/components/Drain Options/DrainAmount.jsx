@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 
-function DrainAmount({}) {
+function DrainAmount({amount, setAmount}) {
 
     return (
+        
         <div>
-            {/* Add your logic here */}
+            <input 
+                type = "text" 
+                placeholder = "Amount" 
+                value = {amount} // Set to default value ("")
+                onChange = {(e) => setAmount(e.target.value)} // Tracking the amount
+            />
         </div>
     );
 }

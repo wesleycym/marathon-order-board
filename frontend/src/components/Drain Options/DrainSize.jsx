@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 
-function DrainSize({}) {
+function DrainSize({drainSize, setDrainSize}) {
 
     return (
+        
         <div>
-            {/* Add your logic here */}
+            <input 
+                type = "text" 
+                placeholder = "Drain Type"
+                value = {drainSize} // Set to default value ("")
+                onChange = {(e) => setDrainSize(e.target.value)} // Tracking the drain size
+            />
         </div>
     );
 }

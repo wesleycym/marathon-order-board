@@ -1,10 +1,26 @@
 import React, { useState } from 'react';
 
-function TapeOption({}) {
+function TapeOption({tapeOptions, setTapeOptions}) {
 
     return (
+        
         <div>
-            {/* Add your logic here */}
+
+            {Object.keys(tapeOptions).map((tape) => (
+                <label key = {tape}>
+                    <input
+                        type = "radio"
+                        name = "tapeOptions"
+                        checked = {tapeOptions[tape]}
+                        onChange = {() => setTapeOptions({
+                            tape: false,
+                            [tape]: true
+                        })}
+                    />
+                    {tape}
+                </label>
+            ))}
+
         </div>
     );
 }
