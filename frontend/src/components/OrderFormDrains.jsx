@@ -5,19 +5,7 @@ function OrderFormDrains({}) {
 
 {/*###################################################################*/}
 
-    // Tracking Box type
-    const boxTypes = ['Aluminator', 
-        'Marathon', 
-        'TruFast',
-        'MuleHide', 
-        'ABC Catalog', 
-        'TopShield', 
-        'Hytech',
-        'IB', 
-        'Garlock', 
-        'Plain',
-        'Other...'
-    ];
+
     const [selectedBox, setSelectedBox] = useState('');
 
 
@@ -90,27 +78,7 @@ function OrderFormDrains({}) {
 
             {/* Box Types */}
             <h4>Box Types</h4>
-            {boxTypes.map((box) => (
-                <label key = {box}>
-                    <input
-                        type = "radio"
-                        name = "boxType"
-                        value = {box}
-                        checked = {selectedBox === box}
-                        onChange = {(e) => setSelectedBox(e.target.value)}
-                    />
-                    {box}
-                </label>
-            ))}
-            {/* If 'Other' box type is selected */ }
-            {selectedBox === 'Other...' && (
-                <input
-                    type = "text"
-                    placeholder = "Other..."
-                    value = {selectedBox}
-                    onChange = {(e) => setSelectedBox(e.target.value)}
-                />
-            )}
+
 
             {/* Seal Options*/}
             <h4>Seal Options</h4>
