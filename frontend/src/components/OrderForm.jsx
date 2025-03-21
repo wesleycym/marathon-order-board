@@ -4,10 +4,12 @@ import '../styles/orderForm.css';
 
 function OrderForm({ onSubmit, onClose }) {
 
+    // State to track selected order types
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
-    const formRef = useRef(null); // Reference for click-outside detection
+
 
     // Click outside to close the form
+    const formRef = useRef(null); // Reference for click-outside detection
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (formRef.current && !formRef.current.contains(e.target)) {
@@ -39,24 +41,10 @@ function OrderForm({ onSubmit, onClose }) {
             <form onSubmit={handleSubmit}>
 
                 {/* Order Number Input */}
-                <input 
-                type = "text" 
-                placeholder = "Order Number" 
-                className = "order-number-input" 
-                value = {orderNumber}
-                onChange={(e) => setOrderNumber(e.target.value)}  // Updates state as user types
-                />
-
-
-                
+                <h4 > Order Number </h4>
                 {/* Drains Section */}
-
                 <h4> Drains </h4>
-
-
-
                 <h4> Order Summary </h4>
-
                 {/* Submit Button */}
                 <button type="submit" className="submit-order-button">
                     Submit Order
@@ -68,6 +56,7 @@ function OrderForm({ onSubmit, onClose }) {
             <button className="close-order-button" onClick={onClose}>
                 Cancel
             </button>
+
         </div>
     );
 }
