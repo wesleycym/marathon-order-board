@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 
-function OrderFormDrains({}) {
+function OrderFormDrains({drainId, drainData, onChange, onRemove}) {
 
-    // Drain Options -> Keeping track of inputs
-    const [selectedBox, setSelectedBox] = useState(''); // Tracking the selected box
-    const [drainSize, setDrainSize] = useState(''); // Tracking Drain Size 
-    const [amount, setAmount] = useState(''); // Tracking the amount
-    const [selectedSeal, setSelectedSeal] = useState({ProSeal: false, MaxxFlo: false}); // Seal type selection
-    const [selectedDome, setSelectedDome] = useState(''); // Tracking the selected dome
-    const [selectedRing, setSelectedRing] = useState(''); // Tracking the selected ring
-    const [selectedCoatings, setSelectedCoatings] = useState({TPO: false, PVC: false, Aslphalt: false}); // Optional Coating type selection
-    const [tapeOptions, setTapeOptions] = useState({tape: false}); // Optional Tape selection
+    // Handle changes for each drain option
+    const handleChange = (key, value) => {
+        onChange(drainId, key, value);
+    };
 
     return (
         <div className = "drainType">
