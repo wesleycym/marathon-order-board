@@ -15,31 +15,32 @@ function OrderForm({ onSubmit, onClose }) {
 
     // Need to create a const for the drains -> Map maybe?
     const createNewDrain = () => ({ // Hash map layout for the drain entries
-        box: '',
-        drainSize: '',
-        amount: '',
-        seal: { ProSeal: false, MaxxFlo: false },
-        dome: '',
-        ring: '',
-        coatings: { TPO: false, PVC: false, Asphalt: false },
-        tape: { tape: false }
+        box: '', // Box type
+        drainSize: '', // Drain size
+        amount: '', // Amount
+        seal: { ProSeal: false, MaxxFlo: false }, // Seal type
+        dome: '', // Dome type
+        ring: '', // Ring type
+        coatings: { TPO: false, PVC: false, Asphalt: false }, // Coating type
+        tape: { tape: false } // Tape type
     });
 
     // Add a new drain entry
     const handleAddDrain = () => {
-        const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
-        setDrainEntries((prev) => ({
-            ...prev,
-            [newDrainId]: createNewDrain()
+        const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`; // Generate new ID for drain entry 
+        setDrainEntries((prev) => ({ // Update the drain entries
+            ...prev, 
+            [newDrainId]: createNewDrain() // Add the new drain entry
         }));
     };
 
+    // Allow drain entries to be edited
     const handleDrainChange = (drainId, key, value) => {
-        setDrainEntries((prev) => ({
+        setDrainEntries((prev) => ({ // Access the drain entries
             ...prev,
             [drainId]: {
                 ...prev[drainId],
-                [key]: value
+                [key]: value // Update the value
             }
         }));
     };
@@ -47,13 +48,13 @@ function OrderForm({ onSubmit, onClose }) {
     // Remove a drain entry
     const handleRemoveDrain = (drainId) => {
         const updatedDrains = { ...drainEntries };
-        delete updatedDrains[drainId];
-        setDrainEntries(updatedDrains);
+        delete updatedDrains[drainId]; // Remove the drain entry
+        setDrainEntries(updatedDrains); // Update the drain entries
     };
 
     // Handle form submission
     const handleSubmit = (e) => {
-        
+
         e.preventDefault();
 
         const newOrder = { // Create the new order [orderNumber -> drainEntries]
