@@ -1,22 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/orderForm.css';
-import OrderTypeChecklist from './OrderTypeChecklist'; // Checklist component for order types
 
-/**
- * OrderForm Component
- * This component manages the "Add New Order" form, which includes:
- * - An order number input
- * - A collapsible checklist for selecting order types
- * - Click-outside detection to automatically close the form
- *
- * Props:
- * - `onSubmit`: Function called when the form is submitted
- * - `onClose`: Function called to close the form (click-outside or cancel button)
- */
 
 function OrderForm({ onSubmit, onClose }) {
-
-    const [isCollapsed, setIsCollapsed] = useState(true); // Tracks whether the order type checklist is expanded or collapsed
 
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
 
@@ -75,27 +61,7 @@ function OrderForm({ onSubmit, onClose }) {
                 onChange={(e) => setOrderNumber(e.target.value)}  // Updates state as user types
                 />
 
-                {/* Order Type Section - Collapsible */}
-                <div className="order-type">
-                    {/* Collapsible Header */}
-                    <div
-                        className="order-type-header"
-                        onClick={() => setIsCollapsed(!isCollapsed)}
-                    >
-                        <h4>Order Type</h4>
-                        <span className="toggle-button">
-                            {isCollapsed ? '▼ Show' : '▲ Hide'}
-                        </span>
-                    </div>
 
-                    {/* Checklist Component - Visible when expanded */}
-                    {!isCollapsed && (
-                        <OrderTypeChecklist
-                            orderTypes={orderTypes}
-                            setOrderTypes={setOrderTypes}
-                        />
-                    )}
-                </div>
                 
                 {/* Drains Section */}
 {/*
