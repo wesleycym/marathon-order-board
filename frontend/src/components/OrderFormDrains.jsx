@@ -8,8 +8,9 @@ function OrderFormDrains({drainId, drainData, onChange, onRemove}) {
     };
 
     return (
-        <div className = "drainType">
-
+        <div className = "drainEntry">
+            <h4>`Drain #${drainId.split('-')[1]}`</h4>
+            
             {/* Drain Size Input */}
             <h3>Drain Size</h3>
             {/* Amount */}
