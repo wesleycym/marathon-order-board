@@ -5,6 +5,10 @@ import ClickOutsideWrapper from './ClickOutsideWrapper'; // Import ClickOutsideW
 
 function OrderForm({ onSubmit, onClose }) {
 
+    /*
+        Database will contain OrderID -> {drainEntries}
+    */
+
     // State to track selected order types
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
     const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
@@ -20,6 +24,32 @@ function OrderForm({ onSubmit, onClose }) {
         coatings: { TPO: false, PVC: false, Asphalt: false },
         tape: { tape: false }
     });
+
+    // Add a new drain entry
+    const handleAddDrain = () => {
+        const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
+        setDrainEntries((prev) => ({
+            ...prev,
+            [newDrainId]: createNewDrain()
+        }));
+    };
+
+    const handleDrainChange = (drainId, key, value) => {
+        setDrainEntries((prev) => ({
+            ...prev,
+            [drainId]: {
+                ...prev[drainId],
+                [key]: value
+            }
+        }));
+    };
+
+    // Remove a drain entry
+    const handleRemoveDrain = (drainId) => {
+        const updatedDrains = { ...drainEntries };
+        delete updatedDrains[drainId];
+        setDrainEntries(updatedDrains);
+    };
 
     // Handle form submission
     const handleSubmit = (e) => {
