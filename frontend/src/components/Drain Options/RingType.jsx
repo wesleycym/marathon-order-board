@@ -20,10 +20,6 @@ function RingTypes({selectedRing, setSelectedRing, customRing, setCustomRing}) {
         }
     };
 
-    const handleCustomInputChange = (e) => {
-        setCustomRing(e.target.value);
-    };
-
     return (
         <div>
 
@@ -45,7 +41,7 @@ function RingTypes({selectedRing, setSelectedRing, customRing, setCustomRing}) {
                     type = 'text'
                     placeholder = 'Enter ring type'
                     value = {customRing}
-                    onChange = {handleCustomInputChange}
+                    onChange = {(e) => setCustomRing(e.target.value)}
                 />    
             )}
             

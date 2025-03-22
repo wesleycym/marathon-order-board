@@ -21,10 +21,6 @@ function DomeType({selectedDome, setSelectedDome, customDome, setCustomDome}) {
         }
     };
 
-    const handleCustomInputChange = (e) => {
-        setCustomDome(e.target.value);
-    };
-
     return (
         <div>
             
@@ -46,7 +42,7 @@ function DomeType({selectedDome, setSelectedDome, customDome, setCustomDome}) {
                     type = 'text'
                     placeholder = 'Enter dome type'
                     value = {customDome}
-                    onChange = {handleCustomInputChange}
+                    onChange = {(e) => setCustomDome(e.target.value)}
                 />
             )}
 

@@ -9,52 +9,38 @@ import TapeOption from './Drain Options/TapeOption.jsx';
 import SealOption from './Drain Options/SealOption.jsx';
 import DrainSize from './Drain Options/DrainSize.jsx';
 
-function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, onAddToOrder }) {
+function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries, setDrainEntries, createNewDrain }) {
 
-        // Custom entries
-        const [customBox, setCustomBox] = useState('');
-        const [customDome, setCustomDome] = useState('');
-        const [customRing, setCustomRing] = useState('');
-    
-        // Handle custom box logic
-        const handleBoxChange = (value) => {
-            if (value === 'Other...') {
-                setCurrentDrain((prev) => ({ ...prev, box: customBox }));
-            } else {
-                setCurrentDrain((prev) => ({ ...prev, box: value }));
-            }
-        };
+    // Custom entries
+    const [customBox, setCustomBox] = useState('');
+    const [customDome, setCustomDome] = useState('');
+    const [customRing, setCustomRing] = useState('');
 
     // Handle changes for each drain option
     const handleAddToOrder = () => {
-
-        const finalBoxType = currentDrain.box === 'Other...' ? customBox : currentDrain.box; // Check if there is a custom box
-        const finalDomeType = currentDrain.dome === 'Other...' ? customDome : currentDrain.dome // Check if there is a custom dome
-        const finalRingType = currentDrain.ring === 'Other...' ? customRing : currentDrain.ring; // Check if there is a custom ring
-
+        const finalBoxType = customBox || currentDrain.box;  // Prioritize customBox if present
+        const finalDomeType = customDome || currentDrain.dome;  // Prioritize customDome if present
+        const finalRingType = customRing || currentDrain.ring;  // Prioritize customRing if present
+    
         const drainData = {
             ...currentDrain,
-            box: finalBoxType, // Box type
-            dome: finalDomeType, // Dome type
-            ring: finalRingType, // Ring type
+            box: finalBoxType, // Final box type
+            dome: finalDomeType, // Final dome type
+            ring: finalRingType // Final ring type
         };
+    
+        const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
+        setDrainEntries((prev) => ({
+            ...prev,
+            [newDrainId]: drainData
+        }));
 
-        onAddToOrder(drainData); // Add the new drain entry
-
-        // Clear the form
-        setCurrentDrain({
-            box: '',
-            size: '',
-            total: '',
-            dome: '',
-            ring: '',
-            coatings: '',
-            tape: '',
-            seal: ''
-        });
-        setCustomBox(''); // Clear custom box
-        setCustomDome(''); // Clear custom dome
-        setCustomRing(''); // Clear custom ring
+        setCustomBox(''); // Reset customBox
+        setCustomDome(''); // Reset customDome
+        setCustomRing(''); // Reset customRing
+    
+        setCurrentDrain(createNewDrain); // Reset for a new blank entry
+        console.log("Reset drain entries...");
     };
 
     return (
@@ -74,7 +60,7 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, onAddToOrder 
 
             {/* Box Types */}
             <h4>Box Types</h4>
-            <BoxType selectedBox={currentDrain.box} setSelectedBox={handleBoxChange} customBox={customBox} setCustomBox={setCustomBox}/>
+            <BoxType selectedBox={currentDrain.box} setSelectedBox={(value) => setCurrentDrain((prev) => ({ ...prev, box: value })) } customBox={customBox} setCustomBox={setCustomBox}/>
 
             {/* Seal Options*/}
             <h4>Seal Options</h4>

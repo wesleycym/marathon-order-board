@@ -29,10 +29,6 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
         }
     };
 
-    const handleCustomInputChange = (e) => {
-        setCustomBox(e.target.value);
-    };
-
     return (
         <div>
 
@@ -56,7 +52,7 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
                     type = "text"
                     placeholder = "Enter box type"
                     value = {customBox}
-                    onChange = {handleCustomInputChange}
+                    onChange = {(e) => setCustomBox(e.target.value)}
                 />
             )}
 

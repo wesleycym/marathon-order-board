@@ -71,7 +71,9 @@ function OrderForm({ onSubmit, onClose }) {
                         drainId = 'Current-Drain'
                         currentDrain = {currentDrain}
                         setCurrentDrain = {setCurrentDrain}
-                        onAddToOrder = {handleAddToOrder}
+                        drainEntries = {drainEntries}
+                        setDrainEntries = {setDrainEntries}
+                        createNewDrain={createNewDrain}
                     />
 
                     <h4>Order Summary</h4>
