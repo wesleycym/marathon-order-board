@@ -9,18 +9,6 @@ function DomeType({selectedDome, setSelectedDome, customDome, setCustomDome}) {
         'Other...'  
     ];
 
-    const handleDomeChange = (e) => {
-        const value = e.target.value;
-
-        if (value === 'Other...') {
-            setSelectedDome('Other...');
-            setCustomDome(''); // Clear previous custom text
-        } else {
-            setSelectedDome(value);  // Regular box selection
-            setCustomDome('');      // Clear customBox when switching back to standard options
-        }
-    };
-
     return (
         <div>
             
@@ -31,7 +19,7 @@ function DomeType({selectedDome, setSelectedDome, customDome, setCustomDome}) {
                         name = "domeType"
                         value = {dome}
                         checked = {selectedDome === dome}
-                        onChange = {handleDomeChange}
+                        onChange = {(e) => setSelectedDome(e.target.value)}
                     />
                     {dome}
                 </label>

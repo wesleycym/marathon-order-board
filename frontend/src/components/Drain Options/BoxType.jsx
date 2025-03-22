@@ -16,19 +16,6 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
         'Other...'
     ];
 
-
-    const handleBoxChange = (e) => {
-        const value = e.target.value;
-
-        if (value === 'Other...') {
-            setSelectedBox('Other...');
-            setCustomBox(''); // Clear previous custom text
-        } else {
-            setSelectedBox(value);  // Regular box selection
-            setCustomBox('');      // Clear customBox when switching back to standard options
-        }
-    };
-
     return (
         <div>
 
@@ -40,7 +27,7 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
                         name = "boxType"
                         value = {box}
                         checked = {selectedBox === box}
-                        onChange = {handleBoxChange}
+                        onChange = {(e) => setSelectedBox(e.target.value)}
                     />
                     {box}
                 </label>

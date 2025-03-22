@@ -8,18 +8,6 @@ function RingTypes({selectedRing, setSelectedRing, customRing, setCustomRing}) {
         'Other...'
     ];
 
-    const handleRingChange = (e) => {
-        const value = e.target.value;
-
-        if (value === 'Other...') {
-            setSelectedRing('Other...');
-            setCustomRing(''); // Clear previous custom text
-        } else {
-            setSelectedRing(value);  // Regular box selection
-            setCustomRing('');      // Clear customBox when switching back to standard options
-        }
-    };
-
     return (
         <div>
 
@@ -30,7 +18,7 @@ function RingTypes({selectedRing, setSelectedRing, customRing, setCustomRing}) {
                         name = "ringType"
                         value = {ring}
                         checked = {selectedRing === ring}
-                        onChange = {handleRingChange}
+                        onChange = {(e) => setSelectedRing(e.target.value)}
                     />
                     {ring}
                 </label>
