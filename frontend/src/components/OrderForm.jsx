@@ -26,37 +26,22 @@ function OrderForm({ onSubmit, onClose }) {
     // State to track selected order types
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
     const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
+    const [currentDrain, setCurrentDrain] = useState(createNewDrain()); // New drain entry
 
     // Add a new drain entry
-    const handleAddDrain = () => {
+    const handleAddToOrder = () => {
         const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
 
-        const newDrain = createNewDrain();
-
         setDrainEntries((prev) => ({
             ...prev,
-            [newDrainId]: newDrain  // Empty drain entry
+            [newDrainId]: currentDrain  // Empty drain entry
         }));
-    };
 
-    // Add the drain data to the hash map
-    const handleAddToOrder = (drainId, drainData) => {
-        setDrainEntries((prev) => ({
-            ...prev,
-            [drainId]: drainData
-        }));
-    };
-
-    // Remove a drain entry
-    const handleRemoveDrain = (drainId) => {
-        const updatedDrains = { ...drainEntries };
-        delete updatedDrains[drainId]; // Remove the drain entry
-        setDrainEntries(updatedDrains); // Update the drain entries
+        setCurrentDrain(createNewDrain());
     };
 
     // Handle form submission
     const handleSubmit = (e) => {
-
         e.preventDefault();
 
         const newOrder = { // Create the new order [orderNumber -> drainEntries]
@@ -67,6 +52,7 @@ function OrderForm({ onSubmit, onClose }) {
         onSubmit(newOrder); // Submit the new order
         setOrderNumber(''); // Clear order number upon submission
         setDrainEntries({}); // Clear drains upon submission
+        setCurrentDrain(createNewDrain()); // Clear current drain upon submission
     };
 
     return (
@@ -81,16 +67,12 @@ function OrderForm({ onSubmit, onClose }) {
 
                     <h4>Drains</h4>
                     {/* Render each drain entry */}
-                    {Object.keys(drainEntries).map((drainId) => (
-                        <OrderFormDrains
-                            key = {drainId}
-                            drainId = {drainId}
-                            onAddToOrder = {handleAddToOrder}
-                            onRemove = {handleRemoveDrain}
-                        />
-                    ))}
-
-                    <button type = "button" onClick = {handleAddDrain}> Add Drain </button>
+                    <OrderFormDrains
+                        drainId = 'Current-Drain'
+                        currentDrain = {currentDrain}
+                        setCurrentDrain = {setCurrentDrain}
+                        onAddToOrder = {handleAddToOrder}
+                    />
 
                     <h4>Order Summary</h4>
                     <pre>{JSON.stringify(drainEntries, null, 2)}</pre>
