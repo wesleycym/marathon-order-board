@@ -45,6 +45,7 @@ function OrderFormDrains({drainId, onAddToOrder}) {
 
         // Send data back to OrderForm
         onAddToOrder(drainId, drainData); // Add the new drain entry
+        onRemove(drainId);
 
         // Clear the form
         /*
