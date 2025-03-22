@@ -20,14 +20,24 @@ function OrderFormDrains({drainId, onAddToOrder}) {
     const [drainSize, setDrainSize] = useState(''); // Drain Size
     const [amount, setAmount] = useState(''); // Amount
 
+    // Custom entries
+    const [customBox, setCustomBox] = useState(''); // If there is a custom box
+    const [customDome, setCustomDome] = useState(''); // If there is a custom dome
+    const [customRing, setCustomRing] = useState(''); // If there is a custom ring
+
     // Handle changes for each drain option
     const handleAddToOrder = () => {
+
+        const finalBoxType = selectedBox === 'Other...' ? customBox : selectedBox;
+        const finalDomeType = selectedDome === 'Other...' ? customDome : selectedDome;
+        const finalRingType = selectedRing === 'Other...' ? customRing : selectedRing;
+
         const drainData = {
-            box: selectedBox, // Box type
+            box: finalBoxType, // Box type
             size: drainSize, // Drain size
             total: amount, // Amount
-            dome: selectedDome, // Dome type
-            ring: selectedRing, // Ring type
+            dome: finalDomeType, // Dome type
+            ring: finalRingType, // Ring type
             coatings: selectedCoatings, // Coating type
             tape: selectedTape, // Tape type
             seal: selectedSeal // Seal type
@@ -64,7 +74,7 @@ function OrderFormDrains({drainId, onAddToOrder}) {
 
             {/* Box Types */}
             <h4>Box Types</h4>
-            <BoxType selectedBox = {selectedBox} setSelectedBox = {setSelectedBox} />
+            <BoxType selectedBox = {selectedBox} setSelectedBox = {setSelectedBox} customBox = {customBox} setCustomBox = {setCustomBox}/>
 
             {/* Seal Options*/}
             <h4>Seal Options</h4>
@@ -72,11 +82,11 @@ function OrderFormDrains({drainId, onAddToOrder}) {
 
             {/* Dome Types */}
             <h4> Dome Types </h4>
-            <DomeType selectedDome = {selectedDome} setSelectedDome = {setSelectedDome} />
+            <DomeType selectedDome = {selectedDome} setSelectedDome = {setSelectedDome} customDome = {customDome} setCustomDome = {setCustomDome}/>
 
             {/* Ring Types */}
             <h4> Ring Types </h4>
-            <RingType selectedRing = {selectedRing} setSelectedRing = {setSelectedRing} />
+            <RingType selectedRing = {selectedRing} setSelectedRing = {setSelectedRing} customRing = {customRing} setCustomRing = {setCustomRing}/>
 
             {/* Coating Types */}
             <h4> Coating Types </h4>

@@ -1,12 +1,28 @@
 import React, { useState } from 'react';
 
-function RingTypes({selectedRing, setSelectedRing}) {
+function RingTypes({selectedRing, setSelectedRing, customRing, setCustomRing}) {
 
     const ringTypes = [
         'Aluminum Ring',
         'Black Plastic Ring',
         'Other...'
     ];
+
+    const handleRingChange = (e) => {
+        const value = e.target.value;
+
+        if (value === 'Other...') {
+            setSelectedRing('Other...');
+            setCustomRing(''); // Clear previous custom text
+        } else {
+            setSelectedRing(value);  // Regular box selection
+            setCustomRing('');      // Clear customBox when switching back to standard options
+        }
+    };
+
+    const handleCustomInputChange = (e) => {
+        setCustomRing(e.target.value);
+    };
 
     return (
         <div>
@@ -18,7 +34,7 @@ function RingTypes({selectedRing, setSelectedRing}) {
                         name = "ringType"
                         value = {ring}
                         checked = {selectedRing === ring}
-                        onChange = {(e) => setSelectedRing(e.target.value)}
+                        onChange = {handleRingChange}
                     />
                     {ring}
                 </label>
@@ -28,8 +44,8 @@ function RingTypes({selectedRing, setSelectedRing}) {
                 <input
                     type = 'text'
                     placeholder = 'Enter ring type'
-                    value = {selectedRing === 'Other...' ? selectedRing : ''}
-                    onChange = {(e) => setSelectedRing(e.target.value)}
+                    value = {customRing}
+                    onChange = {handleCustomInputChange}
                 />    
             )}
             

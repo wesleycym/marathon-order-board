@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function BoxType({selectedBox, setSelectedBox}) {
+function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
     
     // Box Options
     const boxTypes = ['Aluminator', 
@@ -16,6 +16,23 @@ function BoxType({selectedBox, setSelectedBox}) {
         'Other...'
     ];
 
+
+    const handleBoxChange = (e) => {
+        const value = e.target.value;
+
+        if (value === 'Other...') {
+            setSelectedBox('Other...');
+            setCustomBox(''); // Clear previous custom text
+        } else {
+            setSelectedBox(value);  // Regular box selection
+            setCustomBox('');      // Clear customBox when switching back to standard options
+        }
+    };
+
+    const handleCustomInputChange = (e) => {
+        setCustomBox(e.target.value);
+    };
+
     return (
         <div>
 
@@ -27,7 +44,7 @@ function BoxType({selectedBox, setSelectedBox}) {
                         name = "boxType"
                         value = {box}
                         checked = {selectedBox === box}
-                        onChange = {(e) => setSelectedBox(e.target.value)}
+                        onChange = {handleBoxChange}
                     />
                     {box}
                 </label>
@@ -37,9 +54,9 @@ function BoxType({selectedBox, setSelectedBox}) {
             {selectedBox === 'Other...' && (
                 <input
                     type = "text"
-                    placeholder = "Other..."
-                    value = {selectedBox}
-                    onChange = {(e) => setSelectedBox(e.target.value)}
+                    placeholder = "Enter box type"
+                    value = {customBox}
+                    onChange = {handleCustomInputChange}
                 />
             )}
 
