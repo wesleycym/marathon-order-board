@@ -46,20 +46,20 @@ function OrderFormDrains({drainId, onAddToOrder}) {
         // Send data back to OrderForm
         onAddToOrder(drainId, drainData); // Add the new drain entry
 
-        // Reset form for new drain entry
-        setSelectedBox('');
-        setSelectedDome('');
-        setSelectedRing('');
-        setSelectedCoatings({});
-        setSelectedTape({});
-        setSelectedSeal('');
-        setDrainSize('');
-        setAmount('');
+        // Clear the form
+        setSelectedBox(''); // Box Type
+        setSelectedDome(''); // Dome Type
+        setSelectedRing(''); // Ring Type
+        setSelectedCoatings(''); // Coating Type
+        setSelectedTape(''); // Tape Type
+        setSelectedSeal(''); // Seal Type
+        setDrainSize(''); // Drain Size
+        setAmount(''); // Amount
     };
 
     return (
         <div className = "drainEntry">
-            <h4>`Drain #${drainId.split('-')[1]}`</h4>
+            <h4>{`Drain #${drainId.split('-')[1]}`}</h4>
 
             {/* Drain Size Input */}
             <h3>Drain Size</h3>
@@ -97,7 +97,6 @@ function OrderFormDrains({drainId, onAddToOrder}) {
             <TapeOption tapeOptions = {selectedTape} setTapeOptions = {setSelectedTape} />
 
             {/* Add to Order Button */}
-            <h5> Add to Order </h5>
             <button onClick={handleAddToOrder}>Add to Order</button>
 
             </div>

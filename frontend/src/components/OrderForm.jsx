@@ -11,6 +11,18 @@ function OrderForm({ onSubmit, onClose }) {
         Database will contain OrderID -> {drainEntries}
     */
 
+    // New drain hashmap
+    const createNewDrain = () => ({
+        box: '',
+        size: '',
+        total: '',
+        dome: '',
+        ring: '',
+        coatings: '',
+        tape: '',
+        seal: ''
+    });
+
     // State to track selected order types
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
     const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
@@ -20,7 +32,7 @@ function OrderForm({ onSubmit, onClose }) {
         const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
         setDrainEntries((prev) => ({
             ...prev,
-            [newDrainId]: {}  // Empty drain entry
+            [newDrainId]: createNewDrain()  // Empty drain entry
         }));
     };
 
@@ -65,7 +77,8 @@ function OrderForm({ onSubmit, onClose }) {
                     <OrderNumber selectedDome={orderNumber} setSelectedDome={setOrderNumber} />
 
                     <h4>Drains</h4>
-                    {Object.keys(drainEntries).map(([drainId]) => (
+                    {/* Render each drain entry */}
+                    {Object.keys(drainEntries).map((drainId) => (
                         <OrderFormDrains
                             key = {drainId}
                             drainId = {drainId}
