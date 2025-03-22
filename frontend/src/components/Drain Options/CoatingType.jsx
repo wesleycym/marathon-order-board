@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function CoatingType({selectedCoatings, setSelectedCoatings}) {
 
-    const coatingOptions = ['TPO', 'PVC', 'Asphalt'];
+    const coatingOptions = ['TPO', 'PVC', 'Asphalt', 'None'];
 
     return (
         <div>
