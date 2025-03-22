@@ -11,7 +11,8 @@ import {
 function OrderSummary({ drainEntries }) {
 
     const formatDrainSummary = (drainData) => {
-        const parts = [];
+        
+        const parts = []; // Array to hold the formatted parts
 
         // Lookup abbreviations from dictionaries
         if (drainData.box) parts.push(boxAbbreviations[drainData.box] || drainData.box); // Box
@@ -23,7 +24,7 @@ function OrderSummary({ drainEntries }) {
         if (drainData.ring) parts.push(ringAbbreviations[drainData.ring] || drainData.ring); // Ring
         if (drainData.tape) parts.push(tapeAbbreviations[drainData.tape] || drainData.tape); // Tape
 
-        return parts.join(' '); // Create concise string
+        return parts.join(' '); // Create the string
     };
 
     return (
