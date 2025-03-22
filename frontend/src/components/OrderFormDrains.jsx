@@ -47,6 +47,7 @@ function OrderFormDrains({drainId, onAddToOrder}) {
         onAddToOrder(drainId, drainData); // Add the new drain entry
 
         // Clear the form
+        /*
         setSelectedBox(''); // Box Type
         setSelectedDome(''); // Dome Type
         setSelectedRing(''); // Ring Type
@@ -55,6 +56,7 @@ function OrderFormDrains({drainId, onAddToOrder}) {
         setSelectedSeal(''); // Seal Type
         setDrainSize(''); // Drain Size
         setAmount(''); // Amount
+        */
     };
 
     return (

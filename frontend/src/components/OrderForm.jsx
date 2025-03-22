@@ -30,9 +30,12 @@ function OrderForm({ onSubmit, onClose }) {
     // Add a new drain entry
     const handleAddDrain = () => {
         const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
+
+        const newDrain = createNewDrain();
+
         setDrainEntries((prev) => ({
             ...prev,
-            [newDrainId]: createNewDrain()  // Empty drain entry
+            [newDrainId]: newDrain  // Empty drain entry
         }));
     };
 
