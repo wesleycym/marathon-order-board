@@ -15,8 +15,8 @@ function OrderSummary({ drainEntries }) {
         const parts = []; // Array to hold the formatted parts
 
         // Lookup abbreviations from dictionaries
-        if (drainData.box) parts.push(boxAbbreviations[drainData.box] || drainData.box); // Box
         if (drainData.total) parts.push(drainData.total); // Quantity
+        if (drainData.box) parts.push(boxAbbreviations[drainData.box] || drainData.box); // Box
         if (drainData.size) parts.push(drainData.size);   // Drain Size
         if (drainData.coatings) parts.push(coatingAbbreviations[drainData.coatings] || drainData.coatings); // Coatings
         if (drainData.seal) parts.push(sealAbbreviations[drainData.seal] || drainData.seal); // Seal
