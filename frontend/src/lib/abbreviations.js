@@ -12,14 +12,14 @@ export const boxAbbreviations = {
 };
 
 export const domeAbbreviations = {
-    'Aluminum Dome': 'AL Dome',
-    'Black Plastic Dome': 'BLK Dome',
-    'Blue Plastic Dome': 'BLU Dome',
+    'Aluminum Dome': 'AL-Dome',
+    'Black Plastic Dome': 'BLK-Dome',
+    'Blue Plastic Dome': 'BLU-Dome',
 };
 
 export const ringAbbreviations = {
-    'Aluminum Ring': 'AL Ring',
-    'Black Plastic Ring': 'BP Ring',
+    'Aluminum Ring': 'AL-Ring',
+    'Black Plastic Ring': 'BP-Ring',
 };
 
 export const coatingAbbreviations = {
