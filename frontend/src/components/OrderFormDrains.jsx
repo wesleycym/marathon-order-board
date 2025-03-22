@@ -28,9 +28,9 @@ function OrderFormDrains({drainId, onAddToOrder}) {
     // Handle changes for each drain option
     const handleAddToOrder = () => {
 
-        const finalBoxType = selectedBox === 'Other...' ? customBox : selectedBox;
-        const finalDomeType = selectedDome === 'Other...' ? customDome : selectedDome;
-        const finalRingType = selectedRing === 'Other...' ? customRing : selectedRing;
+        const finalBoxType = selectedBox === 'Other...' ? customBox : selectedBox; // Check if there is a custom box
+        const finalDomeType = selectedDome === 'Other...' ? customDome : selectedDome; // Check if there is a custom dome
+        const finalRingType = selectedRing === 'Other...' ? customRing : selectedRing; // Check if there is a custom ring
 
         const drainData = {
             box: finalBoxType, // Box type
