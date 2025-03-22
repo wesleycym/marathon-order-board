@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 
 function TapeOption({tapeOptions, setTapeOptions}) {
 
+    const tape = ['Yes', 'No'];
+
     return (
         
         <div>
 
-            {Object.keys(tapeOptions).map((tape) => (
-                <label key = {tape}>
+            {tape.map((tape) => (
+                <label key = {tape} className="tape-label">
                     <input
                         type = "radio"
                         name = "tapeOptions"
-                        checked = {tapeOptions[tape]}
-                        onChange = {() => setTapeOptions({
-                            tape: false,
-                            [tape]: true
-                        })}
+                        value = {tape}
+                        checked = {tapeOptions === tape}
+                        onChange = {(e) => setTapeOptions(e.target.value)}
                     />
                     {tape}
                 </label>

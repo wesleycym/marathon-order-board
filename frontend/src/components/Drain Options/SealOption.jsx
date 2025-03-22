@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 
 function SealOption({selectedSeal, setSelectedSeal}) {
 
+    const sealOptions = ['ProSeal', 'MaxxFlo']; // Set the seal options
+
     return (
 
         <div>
-            {Object.keys(selectedSeal).map((seal) => (
+
+            {sealOptions.map((seal) => (
                 <label key = {seal}>
                     <input
                         type = "radio"
                         name = "sealOptions"
-                        checked = {selectedSeal[seal]}
-                        onChange = {() => setSelectedSeal({
-                            ProSeal: false, 
-                            MaxxFlo: false,
-                            [seal]: true // Set the selected seal to be true
-                        })}
+                        value = {seal}
+                        checked = {selectedSeal === seal}
+                        onChange = {(e) => setSelectedSeal(e.target.value)}
                     />
                     {seal}
                 </label>

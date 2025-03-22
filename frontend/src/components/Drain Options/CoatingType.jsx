@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 
 function CoatingType({selectedCoatings, setSelectedCoatings}) {
 
+    const coatingOptions = ['TPO', 'PVC', 'Asphalt'];
+
     return (
         <div>
-            {Object.keys(selectedCoatings).map((coating) => (
-                <label key = {coating}>
+            
+            {coatingOptions.map((coating) => (
+                <label key = {coating} className="coating-label"> 
                     <input
                         type = "radio"
                         name = "coatingOptions"
-                        checked = {selectedCoatings[coating]}
-                        onChange = {() => setSelectedCoatings({
-                            TPO: false, 
-                            PVC: false,
-                            Asphalt: false,
-                            [coating]: true // Set the selected coating to be true
-                        })}
-                    />
+                        value = {coating}
+                        checked = {selectedCoatings === coating}
+                        onChange = {(e) => setSelectedCoatings(e.target.value)}
+                    /> 
                     {coating}
                 </label>
             ))}
+
         </div>
     );
 }

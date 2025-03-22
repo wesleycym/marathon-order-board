@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/orderForm.css';
 import ClickOutsideWrapper from './ClickOutsideWrapper'; // Import ClickOutsideWrapper -> Click outside to close
+import OrderFormDrains from './OrderFormDrains';
+import OrderNumber from './Drain Options/OrderNumber';
 
 
 function OrderForm({ onSubmit, onClose }) {
@@ -13,35 +15,20 @@ function OrderForm({ onSubmit, onClose }) {
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
     const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
 
-    // Need to create a const for the drains -> Map maybe?
-    const createNewDrain = () => ({ // Hash map layout for the drain entries
-        box: '', // Box type
-        drainSize: '', // Drain size
-        amount: '', // Amount
-        seal: { ProSeal: false, MaxxFlo: false }, // Seal type
-        dome: '', // Dome type
-        ring: '', // Ring type
-        coatings: { TPO: false, PVC: false, Asphalt: false }, // Coating type
-        tape: { tape: false } // Tape type
-    });
-
     // Add a new drain entry
     const handleAddDrain = () => {
-        const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`; // Generate new ID for drain entry 
-        setDrainEntries((prev) => ({ // Update the drain entries
-            ...prev, 
-            [newDrainId]: createNewDrain() // Add the new drain entry
+        const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
+        setDrainEntries((prev) => ({
+            ...prev,
+            [newDrainId]: {}  // Empty drain entry
         }));
     };
 
-    // Allow drain entries to be edited
-    const handleDrainChange = (drainId, key, value) => {
-        setDrainEntries((prev) => ({ // Access the drain entries
+    // Add the drain data to the hash map
+    const handleAddToOrder = (drainId, drainData) => {
+        setDrainEntries((prev) => ({
             ...prev,
-            [drainId]: {
-                ...prev[drainId],
-                [key]: value // Update the value
-            }
+            [drainId]: drainData
         }));
     };
 
@@ -75,8 +62,22 @@ function OrderForm({ onSubmit, onClose }) {
                 <form onSubmit={handleSubmit}>
 
                     <h4>Order Number</h4>
+                    <OrderNumber selectedDome={orderNumber} setSelectedDome={setOrderNumber} />
+
                     <h4>Drains</h4>
+                    {Object.keys(drainEntries).map(([drainId]) => (
+                        <OrderFormDrains
+                            key = {drainId}
+                            drainId = {drainId}
+                            onAddToOrder = {handleAddToOrder}
+                            onRemove = {handleRemoveDrain}
+                        />
+                    ))}
+
+                    <button type = "button" onClick = {handleAddDrain}> Add Drain </button>
+
                     <h4>Order Summary</h4>
+                    <pre>{JSON.stringify(drainEntries, null, 2)}</pre>
 
                     <button type="submit" className="submit-order-button">
                         Submit Order

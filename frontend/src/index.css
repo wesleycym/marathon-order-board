@@ -16,7 +16,9 @@ html, body {
   background-color: #242424; /* Background color */
   display: flex;
   flex-direction: column; /* board stretches to fill the remaining height */
-  overflow: hidden;
 
-  user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
+  /* Temporaraly removing overflow -> gets annoying when using the order menu */
+  
+  /*overflow: hidden; */
+  /*user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
 }
