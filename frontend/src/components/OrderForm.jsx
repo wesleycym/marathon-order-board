@@ -3,6 +3,7 @@ import '../styles/orderForm.css';
 import ClickOutsideWrapper from './ClickOutsideWrapper'; // Import ClickOutsideWrapper -> Click outside to close
 import OrderFormDrains from './OrderFormDrains';
 import OrderNumber from './Drain Options/OrderNumber';
+import OrderSummary from './OrderSummary';
 
 
 function OrderForm({ onSubmit, onClose }) {
@@ -76,8 +77,8 @@ function OrderForm({ onSubmit, onClose }) {
                         createNewDrain={createNewDrain}
                     />
 
-                    <h4>Order Summary</h4>
-                    <pre>{JSON.stringify(drainEntries, null, 2)}</pre>
+                    {/* Order Summary */}
+                    <OrderSummary drainEntries={drainEntries} />
 
                     <button type="submit" className="submit-order-button">
                         Submit Order
