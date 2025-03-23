@@ -29,17 +29,6 @@ function OrderForm({ onSubmit, onClose }) {
     const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
     const [currentDrain, setCurrentDrain] = useState(createNewDrain()); // New drain entry
 
-    // Add a new drain entry
-    const handleAddToOrder = () => {
-        const newDrainId = `Drain-${Object.keys(drainEntries).length + 1}`;
-
-        setDrainEntries((prev) => ({
-            ...prev,
-            [newDrainId]: currentDrain  // Empty drain entry
-        }));
-
-        setCurrentDrain(createNewDrain());
-    };
 
     // Handle form submission
     const handleSubmit = (e) => {
