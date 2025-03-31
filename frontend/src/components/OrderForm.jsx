@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import '../styles/orderForm.css';
+import '../styles/OrderForm.css';
 import ClickOutsideWrapper from './ClickOutsideWrapper'; // Import ClickOutsideWrapper -> Click outside to close
 import OrderFormDrains from './OrderFormDrains';
 import OrderNumber from './Drain Options/OrderNumber';
