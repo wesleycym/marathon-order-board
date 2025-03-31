@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/orderForm.css'; // Create this new CSS file for styling
+import '../styles/OrderForm.css'; // Create this new CSS file for styling
 
 function OrderForm({ onClose }) {
     const handleSubmit = (e) => {
