@@ -14,7 +14,6 @@ function OrderForm({ onClose }) {
         <div className="order-entry-form">
             <h3>New Order</h3>
             <form onSubmit={handleSubmit}>
-
                 <button type="submit" className="submit-order-button">
                     Submit Order
                 </button>
