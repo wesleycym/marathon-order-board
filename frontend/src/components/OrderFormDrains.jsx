@@ -8,6 +8,7 @@ import RingType from './Drain Options/RingType.jsx';
 import TapeOption from './Drain Options/TapeOption.jsx';
 import SealOption from './Drain Options/SealOption.jsx';
 import DrainSize from './Drain Options/DrainSize.jsx';
+import CollapsibleSection from './CollapsibleSection';
 
 function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries, setDrainEntries, createNewDrain }) {
 
@@ -44,7 +45,7 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
     };
 
     return (
-        <div className = "drainEntry">
+        <div className="drainEntry">
             <h4>Current Drain</h4>
 
             {/* Drain Size Input */}
@@ -55,36 +56,63 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
             <h3>Amount</h3>
             <DrainAmount amount={currentDrain.total} setAmount={(value) => setCurrentDrain((prev) => ({ ...prev, total: value }))} />
 
-            <div className = "Options"> 
-            {/* Checklist of all options will go here*/}
+            <div className="Options">
+                {/* Box Types */}
+                <CollapsibleSection title="Box Types">
+                    <BoxType 
+                        selectedBox={currentDrain.box} 
+                        setSelectedBox={(value) => setCurrentDrain((prev) => ({ ...prev, box: value }))} 
+                        customBox={customBox} 
+                        setCustomBox={setCustomBox}
+                    />
+                </CollapsibleSection>
 
-            {/* Box Types */}
-            <h4>Box Types</h4>
-            <BoxType selectedBox={currentDrain.box} setSelectedBox={(value) => setCurrentDrain((prev) => ({ ...prev, box: value })) } customBox={customBox} setCustomBox={setCustomBox}/>
+                {/* Seal Options */}
+                <CollapsibleSection title="Seal Options">
+                    <SealOption 
+                        selectedSeal={currentDrain.seal} 
+                        setSelectedSeal={(value) => setCurrentDrain((prev) => ({ ...prev, seal: value }))} 
+                    />
+                </CollapsibleSection>
 
-            {/* Seal Options*/}
-            <h4>Seal Options</h4>
-            <SealOption selectedSeal={currentDrain.seal} setSelectedSeal={(value) => setCurrentDrain((prev) => ({ ...prev, seal: value })) } />
+                {/* Dome Types */}
+                <CollapsibleSection title="Dome Types">
+                    <DomeType 
+                        selectedDome={currentDrain.dome} 
+                        setSelectedDome={(value) => setCurrentDrain((prev) => ({ ...prev, dome: value }))} 
+                        customDome={customDome} 
+                        setCustomDome={setCustomDome}
+                    />
+                </CollapsibleSection>
 
-            {/* Dome Types */}
-            <h4> Dome Types </h4>
-            <DomeType selectedDome={currentDrain.dome} setSelectedDome={(value) => setCurrentDrain((prev) => ({ ...prev, dome: value })) } customDome={customDome} setCustomDome={setCustomDome}/>
+                {/* Ring Types */}
+                <CollapsibleSection title="Ring Types">
+                    <RingType 
+                        selectedRing={currentDrain.ring} 
+                        setSelectedRing={(value) => setCurrentDrain((prev) => ({ ...prev, ring: value }))} 
+                        customRing={customRing} 
+                        setCustomRing={setCustomRing}
+                    />
+                </CollapsibleSection>
 
-            {/* Ring Types */}
-            <h4> Ring Types </h4>
-            <RingType selectedRing={currentDrain.ring} setSelectedRing={(value) => setCurrentDrain((prev) => ({ ...prev, ring: value })) } customRing={customRing} setCustomRing={setCustomRing}/>
+                {/* Coating Types */}
+                <CollapsibleSection title="Coating Types">
+                    <CoatingType 
+                        selectedCoatings={currentDrain.coatings} 
+                        setSelectedCoatings={(value) => setCurrentDrain((prev) => ({ ...prev, coatings: value }))} 
+                    />
+                </CollapsibleSection>
 
-            {/* Coating Types */}
-            <h4> Coating Types </h4>
-            <CoatingType selectedCoatings={currentDrain.coatings} setSelectedCoatings={(value) => setCurrentDrain((prev) => ({ ...prev, coatings: value })) } />
+                {/* Tape Options */}
+                <CollapsibleSection title="Tape Options">
+                    <TapeOption 
+                        tapeOptions={currentDrain.tape} 
+                        setTapeOptions={(value) => setCurrentDrain((prev) => ({ ...prev, tape: value }))} 
+                    />
+                </CollapsibleSection>
 
-            {/* Tape Options */}
-            <h4> Tape Options </h4>
-            <TapeOption tapeOptions={currentDrain.tape} setTapeOptions={(value) => setCurrentDrain((prev) => ({ ...prev, tape: value })) } />
-
-            {/* Add to Order Button */}
-            <button onClick={handleAddToOrder}>Add to Order</button>
-
+                {/* Add to Order Button */}
+                <button onClick={handleAddToOrder}>Add to Order</button>
             </div>
         </div>
     );
