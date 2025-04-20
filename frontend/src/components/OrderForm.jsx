@@ -1,9 +1,11 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/OrderForm.css';
 import ClickOutsideWrapper from './ClickOutsideWrapper'; // Import ClickOutsideWrapper -> Click outside to close
 import OrderFormDrains from './OrderFormDrains';
 import OrderNumber from './Drain Options/OrderNumber';
 import OrderSummary from './OrderSummary';
+
 
 
 function OrderForm({ onSubmit, onClose }) {
@@ -46,6 +48,7 @@ function OrderForm({ onSubmit, onClose }) {
     };
 
     return (
+
         <ClickOutsideWrapper onOutsideClick={onClose}>
             <div className="order-entry-form">
                 <h3>New Order</h3>
@@ -76,6 +79,7 @@ function OrderForm({ onSubmit, onClose }) {
 
                 <button className="close-order-button" onClick={onClose}>
                     Cancel
+
                 </button>
 
             </div>

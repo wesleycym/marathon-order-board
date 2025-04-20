@@ -1,0 +1,24 @@
+[ ] Set up Vite + React project with necessary dependencies
+[ ] Install react-beautiful-dnd, react-router-dom, and uuid
+[ ] Create initial folder structure:
+    - components/
+    - pages/
+    - hooks/
+    - context/
+    - utils/
+    - services/
+[ ] Build Login Page (/login)
+[ ] Build Dashboard Page (/dashboard) to show all projects
+[ ] Build Project Page (/project/:id) with scrum board view
+[ ] Build Project Settings Page (/project/:id/settings) for sprint and team management
+[ ] Create Board component
+[ ] Create Column component (e.g., To Do, In Progress, Done)
+[ ] Create TaskCard component (draggable card)
+[ ] Create TaskModal component for editing/creating tasks
+[ ] Create Navbar and Sidebar components
+[ ] Set up routing using react-router-dom
+[ ] Implement React Context for global state (AuthContext, BoardContext)
+[ ] Set up localStorage for simulating persistence
+[ ] Enable drag-and-drop using react-beautiful-dnd
+[ ] Optional: Add Zustand or Redux if state grows
+[ ] Optional: Connect to backend (Firebase, Supabase, Express+MongoDB, etc.)
