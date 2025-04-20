@@ -1,8 +1,253 @@
 /* Order Form Container */
 .order-entry-form {
     position: absolute;
-    top: 160px;
-    left: 5vw;
+    top: 25vh;
+    left: 4vw;
     background-color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    max-width: 400px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
 
+/* Form Elements */
+.order-entry-form h3 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.order-entry-form h4 {
+    color: #444;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.25rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Form Layout */
+.order-entry-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Input Fields */
+.order-entry-form input[type="text"],
+.order-entry-form input[type="number"] {
+    padding: 0.4rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 200px;
+    transition: border-color 0.2s ease;
+    text-align: center;
+}
+
+.order-entry-form input[type="text"]:focus,
+.order-entry-form input[type="number"]:focus {
+    outline: none;
+    border-color: #ff9102;
+    box-shadow: 0 0 0 2px rgba(255, 145, 2, 0.1);
+}
+
+/* Radio Buttons and Labels */
+.order-entry-form label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 0.2rem 0;
+    cursor: pointer;
+    color: #555;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.order-entry-form input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #ff9102;
+    margin: 0;
+}
+
+/* Radio Button Groups */
+.order-entry-form h4 + div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    margin-top: 0.2rem;
+    padding: 0.4rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* Drain Entry Section */
+.drainEntry {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 6px;
+    margin-top: 0.4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drainEntry h4 {
+    text-align: center;
+    width: 100%;
+}
+
+.drainEntry .Options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Drain Options Container */
+.drainEntry .Options > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Add to Order Button */
+.drainEntry button {
+    padding: 0.4rem 0.8rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+.drainEntry button:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.drainEntry button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Buttons */
+.submit-order-button,
+.close-order-button {
+    padding: 0.35rem 0.7rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0.2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-order-button {
+    background-color: #ff9102;
+    color: white;
+    margin-top: 2rem;
+    width: fit-content;
+}
+
+.submit-order-button:hover {
+    background-color: #e07b00;
+    transform: translateY(-1px);
+}
+
+.close-order-button {
+    background-color: #f1f1f1;
+    color: #666;
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+.close-order-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Order Summary */
+.order-summary {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 6px;
+    margin-top: 0.75rem;
+    width: 100%;
+    text-align: center;
+}
+
+.order-summary p {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+}
+
+.order-summary h4 {
+    text-align: center;
+    width: 100%;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-summary li {
+    padding: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.order-summary li:last-child {
+    border-bottom: none;
+}
+
+/* Custom Input Fields */
+.order-entry-form input[type="text"][placeholder="Enter box type"],
+.order-entry-form input[type="text"][placeholder="Enter dome type"],
+.order-entry-form input[type="text"][placeholder="Enter ring type"] {
+    margin-top: 0.5rem;
+    background-color: #fff;
+    text-align: center;
+    width: 80%;
+    max-width: 250px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-entry-form {
+        width: 95%;
+        left: 2.5vw;
+    }
+    
+    .drainEntry .Options {
+        grid-template-columns: 1fr;
+    }
 }
