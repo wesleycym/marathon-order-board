@@ -32,9 +32,15 @@ function App() {
         <div className="board font-bold">
           <div className="columnBacklog">
             <h2>Backlog</h2>
+            <button className="add-order-button" onClick={handleAddOrderClick}>
+              <span className="add-order-text">Add New Order</span>
+            </button>
           </div>
           <div className="columnInProgress">
             <h2>In Progress</h2>
+          </div>
+          <div className="columnReview">
+            <h2>Review</h2>
           </div>
           <div className="columnCompleted">
             <h2>Completed</h2>
