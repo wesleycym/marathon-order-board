@@ -21,9 +21,9 @@ function App() {
       </header>
 
         {/* Add order button */}
-        <button className="add-order-button " onClick = {handleAddOrderClick}>
+        {/* <button className="add-order-button " onClick = {handleAddOrderClick}>
           <span className="add-order-text">Add New Order</span>
-        </button>
+        </button> */}
 
         {/* Proof of Concept Order Entry Form */}
         {showOrderForm && <OrderForm onClose={handleCloseOrderForm} />}
