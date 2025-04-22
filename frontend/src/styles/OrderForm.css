@@ -297,9 +297,12 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .collapsible-content.open {
     max-height: 500px;
-    padding: 0.5rem;
+    visibility: visible;
+    opacity: 1;
 }
