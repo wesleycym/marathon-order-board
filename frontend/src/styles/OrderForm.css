@@ -10,6 +10,7 @@
     width: 40%;
     max-width: 400px;
     font-family: system-ui, -apple-system, sans-serif;
+    z-index: 1000; /* Ensure form stays above columns */
 }
 
 /* Form Elements */
