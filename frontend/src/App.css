@@ -23,6 +23,7 @@ header {
 /* Column viewport styling */
 .columnBacklog,
 .columnInProgress,
+.columnReview,
 .columnCompleted {
   min-width: 20vw; /* Dynamic width -> percentage of screen */
   min-height: 75vh; /* Dynamic height -> percentage of screen*/
@@ -34,17 +35,14 @@ header {
 .add-order-button {
   display: flex; /* Create a flex container */
   padding: 1vh 1vw; /* Padding -> Dynamic*/
-
+  margin: 1rem auto; /* Center the button and add some margin */
   max-height: 5vh; /* Dynamic height */
-  max-width: 10vw; /* Dynamic width */
-
+  max-width: 80%; /* Dynamic width */
   min-height: 2.5vh; /* Dynamic height */
   min-width: 5vw; /* Dynamic width */
-
-  position: absolute; /* Positioning */
-  top: 19.5vh; /* Positioning */
-  left: 4vw; /* Positioning */
-
+  position: relative; /* Change from absolute to relative */
+  justify-content: center; /* Center the button content */
+  align-items: center; /* Center vertically */
 }
 
 .add-order-text {
