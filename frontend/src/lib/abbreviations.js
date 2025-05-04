@@ -25,7 +25,8 @@ export const ringAbbreviations = {
 export const coatingAbbreviations = {
     'TPO': 'TPO',
     'PVC': 'PVC',
-    'Asphalt': 'ASP'
+    'Asphalt': 'ASP',
+    'None': ' '
 };
 
 export const sealAbbreviations = {
@@ -35,5 +36,5 @@ export const sealAbbreviations = {
 
 export const tapeAbbreviations = {
     'Yes': 'TAPED',
-    'No': ''
+    'No': ' '
 };
