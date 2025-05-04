@@ -6,7 +6,7 @@ import {
     coatingAbbreviations,
     sealAbbreviations,
     tapeAbbreviations
-} from '../lib/abbreviations';
+} from '../../lib/abbreviations';
 
 //          Component Info:
 //  Sub component for OrderFormDrains

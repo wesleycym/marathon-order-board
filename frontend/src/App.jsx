@@ -9,7 +9,7 @@ import {
   Draggable
 } from '@hello-pangea/dnd'; // Package used: https://github.com/hello-pangea/dnd
 
-import OrderForm from './components/OrderForm.jsx'
+import OrderForm from './components/OrderFormComponents/OrderForm.jsx'
 
 
 function App() {
