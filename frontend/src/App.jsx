@@ -13,11 +13,16 @@ import OrderForm from './components/OrderForm.jsx'
 
 
 function App() {
+  const [showOrderForm, setShowOrderForm] = useState(false); // State to control the visibility of the order form
+  const handleAddOrderClick = () => setShowOrderForm(true); // Function to open the order form
+  const handleCloseOrderForm = () => setShowOrderForm(false); // Function to close the order form
 
-  const [showOrderForm, setShowOrderForm] = useState(false);
-
-  const handleAddOrderClick = () => setShowOrderForm(true);
-  const handleCloseOrderForm = () => setShowOrderForm(false);
+  const [columns, setColumns] = useState({
+    backlog: [], // Array to store backlog items
+    inProgress: [], // Array to store in-progress items
+    review: [], // Array to store review items
+    completed: [] // Array to store completed items
+  });
 
   return (
     <>
