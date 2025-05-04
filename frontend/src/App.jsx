@@ -17,7 +17,8 @@ function App() {
     <>
       {/* Header -> Logo  */}
       <header>
-        <img src="/logo.png" alt="Marathon Logo" className="flex mx-auto max-w-full h-auto select-none" /> {/* Added tailwind styling */}
+        <img src="/logo.png" alt="Marathon Logo" className="flex mx-auto max-w-full h-auto select-none 
+        wiggle-on-hover" /> {/* Added tailwind styling */}
       </header>
 
         {/* Add order button */}

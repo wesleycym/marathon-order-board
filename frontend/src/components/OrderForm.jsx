@@ -31,6 +31,12 @@ function OrderForm({ onSubmit, onClose }) {
     const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
     const [currentDrain, setCurrentDrain] = useState(createNewDrain()); // New drain entry
 
+    // Helper to remove a drain from the order
+    const handleRemoveDrain = (drainId) => {
+        const updatedDrains = { ...drainEntries };
+        delete updatedDrains[drainId];
+        setDrainEntries(updatedDrains);
+    };
 
     // Handle form submission
     const handleSubmit = (e) => {
@@ -70,7 +76,7 @@ function OrderForm({ onSubmit, onClose }) {
                     />
 
                     {/* Order Summary */}
-                    <OrderSummary drainEntries={drainEntries} />
+                    <OrderSummary drainEntries={drainEntries} onRemoveDrain={handleRemoveDrain} />
 
                     <button type="submit" className="submit-order-button">
                         Submit Order
