@@ -1,0 +1,31 @@
+OrderForm.jsx
+------------------------------
+    - Main entry point for creating a new order.
+    - Manages the: 
+        - The order number
+        - A list of individual drain entries
+ 
+STRUCTURE:
+------------------------------
+    - OrderNumber: input field for entering the order number.
+    - OrderFormDrains: form used to create a single drain (box type, dome, ring, etc.).
+    - Add Drain button: adds a blank drain entry for the user to fill out.
+    - Order Summary: shows a preview of the added drains.
+    - Submit Order button: submits the entire order.
+
+    - `drainEntries` is a hash map of all drains added to the order.
+    Format:
+        {
+        "Drain-1": { box: "MuleHide", dome: "AL Dome", ... },
+        "Drain-2": { box: "TruFast", dome: "Blue Dome", ... }
+        }
+ 
+    - When the user fills out a drain and clicks "Add to Order" in OrderFormDrains:
+     -> `handleAddToOrder` is called, saving that drain into `drainEntries`.
+     -> A fresh new drain form is immediately shown.
+
+
+NOTE:
+------------------------------
+    - We still need to implement a remove feature incase an entry is a misinput
+    - A lot of the entries in the Order Form, such as the boxes, rings, etc; are modularized in src/components/Drain Options
