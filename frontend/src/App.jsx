@@ -29,13 +29,8 @@ function App() {
       {/* Header -> Logo  */}
       <header>
         <img src="/logo.png" alt="Marathon Logo" className="flex mx-auto max-w-full h-auto select-none 
-        wiggle-on-hover" /> {/* Added tailwind styling */}
+        wiggle-on-hover" />
       </header>
-
-        {/* Add order button */}
-        {/* <button className="add-order-button " onClick = {handleAddOrderClick}>
-          <span className="add-order-text">Add New Order</span>
-        </button> */}
 
         {/* Proof of Concept Order Entry Form */}
         {showOrderForm && <OrderForm onClose={handleCloseOrderForm} />}
@@ -43,20 +38,27 @@ function App() {
         {/* Board -> All columns here  */}
         <div className="board font-bold">
           <div className="columnBacklog">
+            
             <h2>Backlog</h2>
+
             <button className="add-order-button" onClick={handleAddOrderClick}>
               <span className="add-order-text">Add New Order</span>
             </button>
+
           </div>
+
           <div className="columnInProgress">
             <h2>In Progress</h2>
           </div>
+
           <div className="columnReview">
             <h2>Review</h2>
           </div>
+
           <div className="columnCompleted">
             <h2>Completed</h2>
           </div>
+
         </div>
 
 
