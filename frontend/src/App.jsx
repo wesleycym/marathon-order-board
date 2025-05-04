@@ -3,6 +3,12 @@ import './App.css'
 import './styles/addOrder.css'
 import './styles/columnStyling.css'
 
+import {
+  DragDropContext,
+  Droppable,
+  Draggable
+} from '@hello-pangea/dnd'; // Package used: https://github.com/hello-pangea/dnd
+
 import OrderForm from './components/OrderForm.jsx'
 
 
