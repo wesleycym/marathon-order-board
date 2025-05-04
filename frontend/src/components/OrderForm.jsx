@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/OrderForm.css';
 import ClickOutsideWrapper from './ClickOutsideWrapper'; // Import ClickOutsideWrapper -> Click outside to close
@@ -6,6 +5,9 @@ import OrderFormDrains from './OrderFormDrains';
 import OrderNumber from './Drain Options/OrderNumber';
 import OrderSummary from './OrderSummary';
 
+//          Component Info:
+//  The main component for creating new orders
+//  Contains all logic and modules for creating new orders
 
 
 function OrderForm({ onSubmit, onClose }) {

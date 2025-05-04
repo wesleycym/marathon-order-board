@@ -10,6 +10,11 @@ import SealOption from './Drain Options/SealOption.jsx';
 import DrainSize from './Drain Options/DrainSize.jsx';
 import CollapsibleSection from './CollapsibleSection';
 
+//          Component Info:
+//  Sub component for OrderForm
+//  Contains all logic specific to drains and their options
+
+
 function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries, setDrainEntries, createNewDrain }) {
 
     // Custom entries
