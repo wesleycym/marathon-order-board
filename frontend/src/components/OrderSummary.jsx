@@ -8,7 +8,7 @@ import {
     tapeAbbreviations
 } from '../lib/abbreviations';
 
-function OrderSummary({ drainEntries }) {
+function OrderSummary({ drainEntries, onRemoveDrain }) {
 
     const formatDrainSummary = (drainData) => {
         
@@ -38,6 +38,10 @@ function OrderSummary({ drainEntries }) {
                     {Object.entries(drainEntries).map(([drainId, drainData]) => (
                         <li key={drainId}>
                             {formatDrainSummary(drainData)}
+                            <button onClick={() => onRemoveDrain(drainId)} style={{ marginLeft: '10px' }} 
+                            className = "transition duration-200 transform hover:scale-110 hover:rotate-3 will-change-transform origin-center" >
+                                ❌
+                            </button>
                         </li>
                     ))}
                 </ul>
