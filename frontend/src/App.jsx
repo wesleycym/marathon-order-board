@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import './styles/addOrder.css'
 import './styles/columnStyling.css'
+import { createHandleDragEnd } from './lib/dragUtils.js' // Drag and drop helper
 
 import {
   DragDropContext,
@@ -38,7 +39,7 @@ function App() {
         {/* Board -> All columns here  */}
         <div className="board font-bold">
           <div className="columnBacklog">
-            
+
             <h2>Backlog</h2>
 
             <button className="add-order-button" onClick={handleAddOrderClick}>
