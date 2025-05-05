@@ -4,6 +4,12 @@ import './styles/addOrder.css'
 import './styles/columnStyling.css'
 import { createHandleDragEnd } from './lib/dragUtils.js' // Drag and drop helper
 
+// All column components
+import { BacklogColumn } from './components/Columns/BacklogColumn.jsx'
+import { InProgressColumn } from './components/Columns/InProgressColumn.jsx'
+import { ReviewColumn } from './components/Columns/ReviewColumn.jsx'
+import { CompletedColumn } from './components/Columns/CompletedColumn.jsx'
+
 import {
   DragDropContext,
   Droppable,
