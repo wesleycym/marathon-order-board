@@ -16,8 +16,7 @@ import {
   Draggable
 } from '@hello-pangea/dnd'; // Package used: https://github.com/hello-pangea/dnd
 
-import OrderForm from './components/OrderFormComponents/OrderForm.jsx'
-
+import OrderForm from './components/OrderFormComponents/OrderForm.jsx' // Component for creating new orders / adding drains 
 
 function App() {
   const [showOrderForm, setShowOrderForm] = useState(false); // State to control the visibility of the order form
