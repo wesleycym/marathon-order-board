@@ -1,6 +1,6 @@
 import { Droppable, Draggable } from '@hello-pangea/dnd';
-import './styles/columnStyling.css'
-import './styles/addOrder.css'
+import '../../styles/columnStyling.css'
+import '../../styles/addOrder.css'
 
 function BacklogColumn({ orders, onAddOrderClick }) {
     return (

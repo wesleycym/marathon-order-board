@@ -1,5 +1,5 @@
 import { Droppable, Draggable } from '@hello-pangea/dnd';
-import './styles/columnStyling.css'
+import '../../styles/columnStyling.css'
 
 function ReviewColumn({ orders }) {
     return (
