@@ -18,6 +18,11 @@ import {
 
 import OrderForm from './components/OrderFormComponents/OrderForm.jsx' // Component for creating new orders / adding drains 
 
+
+// Add each imported column in the html 
+// Test with dummy data
+// Then wire up the add to order button -> doesn't need to contain info yet
+
 function App() {
   const [showOrderForm, setShowOrderForm] = useState(false); // State to control the visibility of the order form
   const handleAddOrderClick = () => setShowOrderForm(true); // Function to open the order form
