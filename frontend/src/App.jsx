@@ -38,10 +38,7 @@ function App() {
   const handleCloseOrderForm = () => setShowOrderForm(false); // Function to close the order form
 
   const [columns, setColumns] = useState({
-    backlog: [    
-      { orderNumber: 'TEST-1001' },
-      { orderNumber: 'TEST-1002' },
-    ], // Array to store backlog items
+    backlog: [], // Array to store backlog items
     inProgress: [], // Array to store in-progress items
     review: [], // Array to store review items
     completed: [] // Array to store completed items
