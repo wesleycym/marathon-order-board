@@ -2,6 +2,8 @@ import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import '../../styles/addOrder.css'
 
+import { OrderCard } from './OrderCardComponents/OrderCard.jsx'
+
 function BacklogColumn({ orders, onAddOrderClick }) {
     return (
       <Droppable droppableId="backlog">
@@ -22,7 +24,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                     {...provided.dragHandleProps}
                     className="draggable-order"
                   >
-                    {order.orderNumber}
+                    <OrderCard /> {/* Order card component */}
                   </div>
                 )}
               </Draggable>
