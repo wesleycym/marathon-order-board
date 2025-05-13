@@ -1,5 +1,6 @@
 import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
+import { OrderCard } from '../OrderCardComponents/OrderCard.jsx'
 
 function InProgressColumn({ orders }) {
     return (
@@ -21,7 +22,7 @@ function InProgressColumn({ orders }) {
                     {...provided.dragHandleProps}
                     className="draggable-order"
                   >
-                    {order.orderNumber}
+                    <OrderCard /> {/* Order card component */}
                   </div>
                 )}
               </Draggable>
