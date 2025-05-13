@@ -2,7 +2,7 @@ import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import '../../styles/addOrder.css'
 
-import { OrderCard } from './OrderCardComponents/OrderCard.jsx'
+import { OrderCard } from '../OrderCardComponents/OrderCard.jsx'
 
 function BacklogColumn({ orders, onAddOrderClick }) {
     return (
