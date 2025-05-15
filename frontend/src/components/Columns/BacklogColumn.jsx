@@ -14,31 +14,23 @@ function BacklogColumn({ orders, onAddOrderClick }) {
             {...provided.droppableProps}
           >
             <h2>Backlog</h2>
-
-            <div
-              className = "drop-zone"
-              ref = {provided.innerRef}
-              {...provided.droppableProps}
-            >
   
-              {orders.map((order, index) => (
-                <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
-                  {(provided) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                      className="draggable-order flex flex-col items-center"
-                    >
-                      <OrderCard order = {order}/> {/* Order card component */}
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-    
-              {provided.placeholder}
-
-            </div>
+            {orders.map((order, index) => (
+              <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
+                {(provided) => (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                    className="draggable-order"
+                  >
+                    <OrderCard order = {order}/> {/* Order card component */}
+                  </div>
+                )}
+              </Draggable>
+            ))}
+  
+            {provided.placeholder}
   
             <button className="add-order-button" onClick={onAddOrderClick}>
               <span className="add-order-text">Add New Order</span>

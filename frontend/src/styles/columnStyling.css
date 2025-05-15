@@ -75,6 +75,4 @@
   z-index: 1; /* Ensure hovered column stays below form */
 }
 
-.drop-zone {
-  min-height: 8em;        /* Scales with font size */
-}
+
