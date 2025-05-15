@@ -14,18 +14,23 @@
 .columnCompleted h2,
 .columnReview h2 {
   text-align: center; /* Center text */
-  border-bottom: 2px solid black; /* Border */
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
   color: #000; /* Black text color */
-
   user-select: none; /* Prevent text selection */
 }
+
+/* Adding seperate borders for other columns */
+.columnInProgress h2,
+.columnCompleted h2,
+.columnReview h2 {
+  border-bottom: 2px solid black; /* Border */
+}
+
 
 /* Column heading styling */
 .column h2 {
   text-align: center; /* Center text */
-  border-bottom: 2px solid black; /* Border */
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
   color: #000; /* Text color is black */
