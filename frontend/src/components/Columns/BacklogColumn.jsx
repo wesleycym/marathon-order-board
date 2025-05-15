@@ -9,10 +9,8 @@ function BacklogColumn({ orders, onAddOrderClick }) {
         {(provided) => (
           <div
             className="columnBacklog"
-            ref={provided.innerRef}
-            {...provided.droppableProps}
           >
-
+            { /* Header row */ }
             <div className="relative flex items-center justify-center border-b-2 border-black">
               <button
                 onClick={onAddOrderClick}
@@ -23,23 +21,27 @@ function BacklogColumn({ orders, onAddOrderClick }) {
               <h2 className="text-lg font-bold select-none">Backlog</h2>
             </div>
   
-            {orders.map((order, index) => (
-              <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
-                {(provided) => (
-                  <div
-                    ref={provided.innerRef}
-                    {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                    className="draggable-order"
-                  >
-                    <OrderCard order = {order}/> {/* Order card component */}
-                  </div>
-                )}
-              </Draggable>
-            ))}
-  
-            {provided.placeholder}
-
+            <div 
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+              className="min-h-[6rem]"
+            >
+              {orders.map((order, index) => (
+                <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
+                  {(provided) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      className="draggable-order"
+                    >
+                      <OrderCard order = {order}/> {/* Order card component */}
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
           </div>
         )}
       </Droppable>
