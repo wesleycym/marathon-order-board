@@ -13,7 +13,10 @@ function BacklogColumn({ orders, onAddOrderClick }) {
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            <h2>Backlog</h2>
+            <h2>
+              Backlog
+              <button className="add-order-button absolute left-6" onClick={onAddOrderClick}></button>
+            </h2>
   
             {orders.map((order, index) => (
               <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
@@ -31,10 +34,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
             ))}
   
             {provided.placeholder}
-  
-            <button className="add-order-button" onClick={onAddOrderClick}>
-              <span className="add-order-text">Add New Order</span>
-            </button>
+
           </div>
         )}
       </Droppable>
