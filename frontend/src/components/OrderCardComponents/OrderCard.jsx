@@ -1,7 +1,7 @@
 // Main card layout
 import { useState } from 'react'
 
-function OrderCard({}) {
+function OrderCard({order}) {
     return (
         <div>
             <p>This is an order</p>
@@ -9,4 +9,4 @@ function OrderCard({}) {
     );
   }
   
-  export default OrderCard;
+export default OrderCard;

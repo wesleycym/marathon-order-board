@@ -1,6 +1,6 @@
 import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
-import { OrderCard } from '../OrderCardComponents/OrderCard.jsx'
+import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
 function ReviewColumn({ orders }) {
     return (
@@ -22,7 +22,7 @@ function ReviewColumn({ orders }) {
                     {...provided.dragHandleProps}
                     className="draggable-order"
                   >
-                    <OrderCard /> {/* Order card component */}
+                    <OrderCard order = {order}/> {/* Order card component */}
                   </div>
                 )}
               </Draggable>
