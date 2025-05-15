@@ -1,1 +1,3 @@
 When an order is placed in the "In Progress" column, automatically extend it so we can see the contents.
+
+Add ship date to the order entry 
