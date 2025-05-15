@@ -11,7 +11,7 @@ function CompletedColumn({ orders }) {
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            <h2>Review</h2>
+            <h2>Completed</h2>
   
             {orders.map((order, index) => (
               <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
