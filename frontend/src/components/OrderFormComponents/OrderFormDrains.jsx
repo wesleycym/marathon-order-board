@@ -117,7 +117,7 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
                 </CollapsibleSection>
 
                 {/* Add to Order Button */}
-                <button onClick={handleAddToOrder}>Add to Order</button>
+                <button type = "button" onClick={handleAddToOrder}>Add to Order</button>
             </div>
         </div>
     );
