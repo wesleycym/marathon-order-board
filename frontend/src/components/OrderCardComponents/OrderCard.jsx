@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 function OrderCard({order}) {
     return (
-        <div>
-            <p>This is an order</p>
+        <div className="order-card">
+            <p>Order #: {order.orderNumber}</p>
         </div>
     );
   }
