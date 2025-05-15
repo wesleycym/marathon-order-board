@@ -20,7 +20,7 @@ html, body {
   /* Temporaraly removing overflow -> gets annoying when using the order menu */
   
   /*overflow: hidden; */
-  /*user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
+  user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
 }
 
 @keyframes wiggle {

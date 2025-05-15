@@ -1,6 +1,5 @@
 import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
-import '../../styles/addOrder.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 import { PlusIcon } from '@heroicons/react/24/solid'
 
