@@ -2,6 +2,7 @@ import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import '../../styles/addOrder.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
+import { PlusIcon } from '@heroicons/react/24/solid'
 
 function BacklogColumn({ orders, onAddOrderClick }) {
     return (
@@ -14,7 +15,8 @@ function BacklogColumn({ orders, onAddOrderClick }) {
           >
             <h2>
               Backlog
-              <button className="add-order-button absolute left-6" onClick={onAddOrderClick}>
+              <button className="add-order-button" onClick={onAddOrderClick}>
+                <PlusIcon className="h-5 w-5 text-white" />
               </button>
             </h2>
   
