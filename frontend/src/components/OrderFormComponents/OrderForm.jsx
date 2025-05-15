@@ -64,7 +64,7 @@ function OrderForm({ onSubmit, onClose }) {
                 <form onSubmit={handleSubmit}>
 
                     <h4>Order Number</h4>
-                    <OrderNumber selectedDome={orderNumber} setSelectedDome={setOrderNumber} />
+                    <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
 
                     <h4>Drains</h4>
                     {/* Render each drain entry */}
