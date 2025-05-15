@@ -24,7 +24,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                     {...provided.dragHandleProps}
                     className="draggable-order"
                   >
-                    <OrderCard /> {/* Order card component */}
+                    <OrderCard order = {order}/> {/* Order card component */}
                   </div>
                 )}
               </Draggable>
