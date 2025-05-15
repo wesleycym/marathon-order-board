@@ -1,7 +1,6 @@
 import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import '../../styles/addOrder.css'
-
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
 function BacklogColumn({ orders, onAddOrderClick }) {
@@ -15,7 +14,8 @@ function BacklogColumn({ orders, onAddOrderClick }) {
           >
             <h2>
               Backlog
-              <button className="add-order-button absolute left-6" onClick={onAddOrderClick}></button>
+              <button className="add-order-button absolute left-6" onClick={onAddOrderClick}>
+              </button>
             </h2>
   
             {orders.map((order, index) => (
