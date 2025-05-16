@@ -6,7 +6,12 @@ import {
     coatingAbbreviations,
     sealAbbreviations,
     tapeAbbreviations
-} from '../lib/abbreviations';
+} from '../../lib/abbreviations';
+
+//          Component Info:
+//  Sub component for OrderFormDrains
+//  Will display the order summary, containing the drains made from the OrderFormDrains
+
 
 function OrderSummary({ drainEntries, onRemoveDrain }) {
 

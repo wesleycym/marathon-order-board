@@ -1,1 +1,7 @@
 When an order is placed in the "In Progress" column, automatically extend it so we can see the contents.
+
+Add ship date to the order entry 
+
+Add checks to make sure information on Order Form is filled out upon submission -> The order number!
+
+Allow orders to be edited once created / Be deleted once created too 
