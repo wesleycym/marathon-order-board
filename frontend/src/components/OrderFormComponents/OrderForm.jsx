@@ -1,11 +1,13 @@
-
 import React, { useEffect, useRef, useState } from 'react';
-import '../styles/OrderForm.css';
-import ClickOutsideWrapper from './ClickOutsideWrapper'; // Import ClickOutsideWrapper -> Click outside to close
+import '../../styles/OrderForm.css';
+import ClickOutsideWrapper from '../ClickOutsideWrapper'; // Import ClickOutsideWrapper -> Click outside to close
 import OrderFormDrains from './OrderFormDrains';
-import OrderNumber from './Drain Options/OrderNumber';
+import OrderNumber from '../Drain Options/OrderNumber';
 import OrderSummary from './OrderSummary';
 
+//          Component Info:
+//  The main component for creating new orders
+//  Contains all logic and modules for creating new orders
 
 
 function OrderForm({ onSubmit, onClose }) {
@@ -28,7 +30,7 @@ function OrderForm({ onSubmit, onClose }) {
 
     // State to track selected order types
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
-    const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries
+    const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries | DrainID->{drainData}
     const [currentDrain, setCurrentDrain] = useState(createNewDrain()); // New drain entry
 
     // Helper to remove a drain from the order
@@ -62,7 +64,7 @@ function OrderForm({ onSubmit, onClose }) {
                 <form onSubmit={handleSubmit}>
 
                     <h4>Order Number</h4>
-                    <OrderNumber selectedDome={orderNumber} setSelectedDome={setOrderNumber} />
+                    <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
 
                     <h4>Drains</h4>
                     {/* Render each drain entry */}
