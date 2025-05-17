@@ -4,6 +4,7 @@ import ClickOutsideWrapper from '../ClickOutsideWrapper'; // Import ClickOutside
 import OrderFormDrains from './OrderFormDrains';
 import OrderNumber from '../Drain Options/OrderNumber';
 import OrderSummary from './OrderSummary';
+import OrderDate from '../Drain Options/OrderDate';
 
 //          Component Info:
 //  The main component for creating new orders
@@ -66,6 +67,9 @@ function OrderForm({ onSubmit, onClose }) {
 
                     <h4>Order Number</h4>
                     <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
+
+                    <h4>Ship Date</h4>
+                    <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} />
 
                     <h4>Drains</h4>
                     {/* Render each drain entry */}
