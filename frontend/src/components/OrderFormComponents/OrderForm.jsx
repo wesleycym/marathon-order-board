@@ -32,6 +32,7 @@ function OrderForm({ onSubmit, onClose }) {
     const [orderNumber, setOrderNumber] = useState(''); // Tracks the entered order number
     const [drainEntries, setDrainEntries] = useState({}); // Using a hash map to track multiple drain entries | DrainID->{drainData}
     const [currentDrain, setCurrentDrain] = useState(createNewDrain()); // New drain entry
+    const [orderDate, setOrderDate] = useState(''); // Create a state for the shipping date -> can be used to filter orders
 
     // Helper to remove a drain from the order
     const handleRemoveDrain = (drainId) => {
