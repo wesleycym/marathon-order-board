@@ -48,6 +48,7 @@ function OrderForm({ onSubmit, onClose }) {
 
         const newOrder = { // Create the new order [orderNumber -> drainEntries]
             orderNumber, // Include the order number
+            orderDate, // Include the shipping date
             drains: drainEntries // Include all drains in the order
         };
         
