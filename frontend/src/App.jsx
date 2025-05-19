@@ -53,8 +53,8 @@ function App() {
           className="flex mx-auto max-w-full h-auto select-none wiggle-on-hover"
         />
       </header>
-  
-      {/* Proof of Concept Order Entry Form */}
+
+      {/* Order Form */}
       {showOrderForm && (
         <OrderForm
           onClose={handleCloseOrderForm}
