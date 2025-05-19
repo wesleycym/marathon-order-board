@@ -7,3 +7,5 @@ Add checks to make sure information on Order Form is filled out upon submission 
 Allow orders to be edited once created / Be deleted once created too 
 
 Add a preset menu to orderform for restocking
+
+Add toastify for alerts when checking orders for blank entries
