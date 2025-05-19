@@ -7,7 +7,7 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
         'Marathon', // ✔
         'TruFast', // ✔
         'MuleHide', // ✔
-        'ABC Catalog', 
+        'ABC Catalog', // ✔
         'TopShield', 
         'Hytech',
         'IB', 
