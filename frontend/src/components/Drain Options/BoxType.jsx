@@ -8,7 +8,7 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
         'TruFast', // ✔
         'MuleHide', // ✔
         'ABC Catalog', // ✔
-        'TopShield', 
+        'TopShield', // ✔
         'Hytech',
         'IB', 
         'Garlock', 
