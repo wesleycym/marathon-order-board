@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { boxTypeColors } from './OrderCardStyling';
 
 function OrderCard({order}) {
-
+    // Add the logos to the top right of the card
+    
     // Determine the background color
     const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain'; // Pulling the first box type from the order -> Maybe change to pull the most common box type
     const bgClass = boxTypeColors[firstBoxType] || 'bg-white';
