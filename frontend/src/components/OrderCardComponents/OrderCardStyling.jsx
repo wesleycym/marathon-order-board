@@ -2,7 +2,7 @@
 
 export const boxTypeColors = {
   Marathon: 'bg-orange-400',
-  MuleHide: 'bg-purple-400',
+  MuleHide: 'bg-green-500',
   TopShield: 'bg-yellow-400',
   Aluminator: 'bg-blue-200 text-blue-800',
   IB: 'bg-white border-2 border-blue-300 text-blue-700',
