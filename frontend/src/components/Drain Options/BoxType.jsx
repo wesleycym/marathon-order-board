@@ -4,9 +4,9 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
     
     // Box Options
     const boxTypes = ['Aluminator', 
-        'Marathon', 
+        'Marathon', // ✔
         'TruFast',
-        'MuleHide', 
+        'MuleHide', // ✔
         'ABC Catalog', 
         'TopShield', 
         'Hytech',
