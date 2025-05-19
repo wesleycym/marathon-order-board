@@ -54,6 +54,7 @@ function OrderForm({ onSubmit, onClose }) {
         
         onSubmit(newOrder); // Submit the new order
         setOrderNumber(''); // Clear order number upon submission
+        setOrderDate(''); // Clear shipping date upon submission
         setDrainEntries({}); // Clear drains upon submission
         setCurrentDrain(createNewDrain()); // Clear current drain upon submission
     };
