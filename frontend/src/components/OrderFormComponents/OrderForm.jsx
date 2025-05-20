@@ -81,7 +81,6 @@ function OrderForm({ onSubmit, onClose }) {
                         </div>
                     </div>
 
-                    <h4>Drains</h4>
                     {/* Render each drain entry */}
                     <OrderFormDrains
                         drainId = 'Current-Drain'

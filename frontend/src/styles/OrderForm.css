@@ -31,12 +31,19 @@
     text-align: center;
 }
 
-/* Form Layout */
+/* Form Layout  -> Changes the Order Number and Ship Date */
 .order-entry-form form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+}
+
+.drainRow {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
 }
 
 /* Input Fields */
@@ -111,8 +118,7 @@
 }
 
 .drainEntry .Options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
     gap: 0.5rem;
     margin-top: 0.4rem;
     width: 100%;
