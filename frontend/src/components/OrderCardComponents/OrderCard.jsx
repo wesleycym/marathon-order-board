@@ -30,7 +30,6 @@ function OrderCard({order}) {
     return (
         <div className={`wiggle-on-hover w-[95%] mx-auto p-4 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
 
-            {/* Top row: logo only */}
             {validLogoBoxTypes.has(firstBoxType) && (
                 <div className="flex justify-start">
                 <img
@@ -48,6 +47,9 @@ function OrderCard({order}) {
 
             <p className="text-sm text-gray-800 text-center">{totalDrains} Drain(s)</p>
             <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
+
+            {/* Could add a BBag flag to show if bags are made for the order */}
+            
         </div>
     );
   }
