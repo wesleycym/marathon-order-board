@@ -11,8 +11,13 @@
     border-width: 2px;
     border-color:#ff9102;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 75%;
-    height: 75%;
+
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    max-height: 80vh;
+    min-height: 500px;
+    
     overflow: auto;
     font-family: system-ui, -apple-system, sans-serif;
     z-index: 1000; /* Ensure form stays above columns */
