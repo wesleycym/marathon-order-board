@@ -63,44 +63,47 @@ function OrderForm({ onSubmit, onClose }) {
 
         <ClickOutsideWrapper onOutsideClick={onClose}>
             <div className="order-entry-form">
-                <h3>Create new order</h3>
+                <h1 className="flex justify-center text-[1.1rem] font-semibold text-stone-700">Create new order</h1>
 
                 <form onSubmit={handleSubmit}>
                     
-                    <div className="flex items-center flex-wrap gap-4 p-2">
+                    <div className="flex items-center justify-center flex-wrap gap-4 p-2">
                         <div className="flex flex-col items-center">
-                            <h4>Order Number</h4>
+                            <h4 className="text-stone-700 font-medium">Order Number</h4>
                             <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
                         </div>
 
-                        <p className="text-gray-400">|</p>
+                        <p className="text-stone-700">|</p>
 
                         <div className="flex flex-col items-center">
-                            <h4>Ship Date</h4>
+                            <h4 className="text-stone-700 font-medium">Ship Date</h4>
                             <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} />
                         </div>
                     </div>
 
-                    {/* Render each drain entry */}
-                    <OrderFormDrains
-                        drainId = 'Current-Drain'
-                        currentDrain = {currentDrain}
-                        setCurrentDrain = {setCurrentDrain}
-                        drainEntries = {drainEntries}
-                        setDrainEntries = {setDrainEntries}
-                        createNewDrain={createNewDrain}
-                    />
+                    <div className="flex">
+                        {/* Render each drain entry */}
+                        <OrderFormDrains
+                            drainId = 'Current-Drain'
+                            currentDrain = {currentDrain}
+                            setCurrentDrain = {setCurrentDrain}
+                            drainEntries = {drainEntries}
+                            setDrainEntries = {setDrainEntries}
+                            createNewDrain={createNewDrain}
+                        />
+
+                        {/* Order Summary */}
+                        <div className="order-summary">
+                            <OrderSummary drainEntries={drainEntries} onRemoveDrain={handleRemoveDrain} />
+                        </div>
+                    </div>
+
+                    {/* Sumbit Button and Cancel Button */}
+                    <button type="submit" className="submit-order-button">
+                        Submit Order
+                    </button>
+
                 </form>
-
-                {/* Order Summary */}
-                <div className="order-summary">
-                    <OrderSummary drainEntries={drainEntries} onRemoveDrain={handleRemoveDrain} />
-                </div>
-
-                {/* Sumbit Button and Cancel Button */}
-                <button type="submit" className="submit-order-button">
-                    Submit Order
-                </button>
 
                 <button className="close-order-button" onClick={onClose}>
                     Cancel
