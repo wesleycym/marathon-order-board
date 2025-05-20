@@ -30,19 +30,24 @@ function OrderCard({order}) {
     return (
         <div className={`wiggle-on-hover w-[95%] mx-auto p-4 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
 
-            <div className="flex justify-between items-center mb-2">
-                <h3 className="text-lg font-bold">Order #{order.orderNumber}</h3>
-                {validLogoBoxTypes.has(firstBoxType) && (
-                    <img
-                        src={`./images/logos/${firstBoxType}.png`}
-                        alt={`${firstBoxType} Logo`}
-                        className=""
-                    />
-                )}
-            </div>
+            {/* Top row: logo only */}
+            {validLogoBoxTypes.has(firstBoxType) && (
+                <div className="flex justify-start">
+                <img
+                    src={`/images/logos/${firstBoxType}.png`}
+                    alt={`${firstBoxType} Logo`}
+                    className="h-12 w-auto object-contain"
+                />
+                </div>
+            )}
 
-            <p className="text-sm text-gray-800">{totalDrains} Drain(s)</p>
-            <p className="text-xs italic">Ship Date: {order.orderDate}</p>
+            {/* Centered order number */}
+            <h3 className="text-lg font-bold text-center mb-1 whitespace-nowrap">
+                Order #{order.orderNumber}
+            </h3>
+
+            <p className="text-sm text-gray-800 text-center">{totalDrains} Drain(s)</p>
+            <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
         </div>
     );
   }
