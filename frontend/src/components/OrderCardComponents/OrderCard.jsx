@@ -4,13 +4,12 @@ import { useState } from 'react'
 import { boxTypeColors } from './OrderCardStyling';
 
 function OrderCard({order}) {
-    // Add the logos to the top right of the card
     
     // Determine the background color
     const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain'; // Pulling the first box type from the order -> Maybe change to pull the most common box type
     const bgClass = boxTypeColors[firstBoxType] || 'bg-white';
 
-    // Determine the quantity of all drains
+    // Determine the quantity of all drains | Could modify this to see which box type is used the most
     const totalDrains = Object.values(order.drains).reduce((sum, drain) => {
         const amount = parseInt(drain.total, 10);
         return sum + (isNaN(amount) ? 0 : amount);
@@ -49,7 +48,7 @@ function OrderCard({order}) {
             <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
 
             {/* Could add a BBag flag to show if bags are made for the order */}
-            
+
         </div>
     );
   }
