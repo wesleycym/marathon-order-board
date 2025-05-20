@@ -9,3 +9,5 @@ Allow orders to be edited once created / Be deleted once created too
 Add a preset menu to orderform for restocking
 
 Add toastify for alerts when checking orders for blank entries
+
+Make the columns have a fixed height, customize overflow scrollbar

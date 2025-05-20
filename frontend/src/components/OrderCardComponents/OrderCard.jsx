@@ -16,16 +16,31 @@ function OrderCard({order}) {
         return sum + (isNaN(amount) ? 0 : amount);
         }, 0);
 
+    // Created set to check if the box type is valid
+    const validLogoBoxTypes = new Set([
+        'Aluminator',
+        'Marathon',
+        'TruFast',
+        'MuleHide',
+        'ABC Catalog',
+        'TopShield',
+        'Hytech',
+    ]);
+
     return (
         <div className={`wiggle-on-hover w-[95%] mx-auto p-4 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
+
             <div className="flex justify-between items-center mb-2">
                 <h3 className="text-lg font-bold">Order #{order.orderNumber}</h3>
-                <img
-                    src={`./images/logos/${firstBoxType}.png`}
-                    alt={`${firstBoxType} Logo`}
-                    className="object-contain mx-auto h-15"
-                />
+                {validLogoBoxTypes.has(firstBoxType) && (
+                    <img
+                        src={`./images/logos/${firstBoxType}.png`}
+                        alt={`${firstBoxType} Logo`}
+                        className=""
+                    />
+                )}
             </div>
+
             <p className="text-sm text-gray-800">{totalDrains} Drain(s)</p>
             <p className="text-xs italic">Ship Date: {order.orderDate}</p>
         </div>
