@@ -94,7 +94,9 @@ function OrderForm({ onSubmit, onClose }) {
 
                         {/* Order Summary */}
                         <div className="order-summary">
-                            <OrderSummary drainEntries={drainEntries} onRemoveDrain={handleRemoveDrain} />
+                            <div className="order-summary-wrapper">
+                                <OrderSummary drainEntries={drainEntries} onRemoveDrain={handleRemoveDrain} />
+                            </div>
                         </div>
                     </div>
 
