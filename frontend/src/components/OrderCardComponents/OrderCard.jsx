@@ -18,7 +18,14 @@ function OrderCard({order}) {
 
     return (
         <div className={`wiggle-on-hover w-[95%] mx-auto p-4 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
-            <h3 className="text-lg font-bold">Order #{order.orderNumber}</h3>
+            <div className="flex justify-between items-center mb-2">
+                <h3 className="text-lg font-bold">Order #{order.orderNumber}</h3>
+                <img
+                    src={`./images/logos/${firstBoxType}.png`}
+                    alt={`${firstBoxType} Logo`}
+                    className="object-contain mx-auto h-15"
+                />
+            </div>
             <p className="text-sm text-gray-800">{totalDrains} Drain(s)</p>
             <p className="text-xs italic">Ship Date: {order.orderDate}</p>
         </div>

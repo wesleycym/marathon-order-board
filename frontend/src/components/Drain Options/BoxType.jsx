@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
     
     // Box Options
-    const boxTypes = ['Aluminator', 
+    const boxTypes = ['Aluminator', // ✔
         'Marathon', // ✔
         'TruFast', // ✔
         'MuleHide', // ✔
