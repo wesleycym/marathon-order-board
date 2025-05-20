@@ -90,18 +90,20 @@ function OrderForm({ onSubmit, onClose }) {
                         setDrainEntries = {setDrainEntries}
                         createNewDrain={createNewDrain}
                     />
-
-                    {/* Order Summary */}
-                    <OrderSummary drainEntries={drainEntries} onRemoveDrain={handleRemoveDrain} />
-
-                    <button type="submit" className="submit-order-button">
-                        Submit Order
-                    </button>
                 </form>
+
+                {/* Order Summary */}
+                <div className="order-summary">
+                    <OrderSummary drainEntries={drainEntries} onRemoveDrain={handleRemoveDrain} />
+                </div>
+
+                {/* Sumbit Button and Cancel Button */}
+                <button type="submit" className="submit-order-button">
+                    Submit Order
+                </button>
 
                 <button className="close-order-button" onClick={onClose}>
                     Cancel
-
                 </button>
 
             </div>
