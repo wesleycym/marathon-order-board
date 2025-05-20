@@ -9,11 +9,11 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
         'MuleHide', // ✔
         'ABC Catalog', // ✔
         'TopShield', // ✔
-        'Hytech',
-        'IB', 
-        'Garlock', 
-        'Plain',
-        'Other...'
+        'Hytech', // ✔
+        'IB', // Can't find
+        'Garlock', // Can't find
+        'Plain', // N/A
+        'Other...' // N/A
     ];
 
     return (
