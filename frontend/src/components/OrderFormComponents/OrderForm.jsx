@@ -63,15 +63,23 @@ function OrderForm({ onSubmit, onClose }) {
 
         <ClickOutsideWrapper onOutsideClick={onClose}>
             <div className="order-entry-form">
-                <h3>New Order</h3>
+                <h3>Create new order</h3>
 
                 <form onSubmit={handleSubmit}>
+                    
+                    <div className="flex items-center flex-wrap gap-4 p-2">
+                        <div className="flex flex-col items-center">
+                            <h4>Order Number</h4>
+                            <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
+                        </div>
 
-                    <h4>Order Number</h4>
-                    <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
+                        <p className="text-gray-400">|</p>
 
-                    <h4>Ship Date</h4>
-                    <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} />
+                        <div className="flex flex-col items-center">
+                            <h4>Ship Date</h4>
+                            <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} />
+                        </div>
+                    </div>
 
                     <h4>Drains</h4>
                     {/* Render each drain entry */}

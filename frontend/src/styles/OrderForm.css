@@ -1,20 +1,21 @@
 /* Order Form Container */
 .order-entry-form {
-    position: absolute;
-    top: 25vh;
-    left: 4vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
     padding: 0.75rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    max-width: 400px;
+    width: 75%;
+    height: 75%;
     font-family: system-ui, -apple-system, sans-serif;
     z-index: 1000; /* Ensure form stays above columns */
 }
 
 /* Form Elements */
-.order-entry-form h3 {
+.order-entry-form h3 { /* Form Title */
     color: #333;
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
@@ -22,7 +23,7 @@
     text-align: center;
 }
 
-.order-entry-form h4 {
+.order-entry-form h4 { /* Form Subtitle -> Drains */
     color: #444;
     font-size: 0.9rem;
     margin: 0.5rem 0 0.25rem;
