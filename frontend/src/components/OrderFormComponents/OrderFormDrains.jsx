@@ -56,13 +56,13 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
                 <div className="DrainInputs">
                     {/* Drain Size Input */}
                     <div className="DrainInputAlignment">
-                        <h3>Drain Size</h3>
+                        <h4>Drain Size</h4>
                         <DrainSize drainSize={currentDrain.size} setDrainSize={(value) => setCurrentDrain((prev) => ({ ...prev, size: value }))} />
                     </div>
 
                     {/* Drain Amount Input */}
                     <div className="DrainInputAlignment">
-                        <h3>Amount</h3>
+                        <h4>Amount</h4>
                         <DrainAmount amount={currentDrain.total} setAmount={(value) => setCurrentDrain((prev) => ({ ...prev, total: value }))} />
                     </div>
                 </div>
