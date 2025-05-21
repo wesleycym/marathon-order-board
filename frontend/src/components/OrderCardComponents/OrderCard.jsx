@@ -32,7 +32,7 @@ function OrderCard({order}) {
             {validLogoBoxTypes.has(firstBoxType) && (
                 <div className="flex justify-start">
                 <img
-                    src={`/images/logos/${firstBoxType}.png`}
+                    src={`/images/logos/${firstBoxType}.png`} // -> switch these to svgs
                     alt={`${firstBoxType} Logo`}
                     className="h-12 w-auto object-contain"
                 />
