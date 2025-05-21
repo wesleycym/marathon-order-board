@@ -27,12 +27,12 @@ function OrderCard({order}) {
     ]);
 
     return (
-        <div className={`wiggle-on-hover w-[95%] mx-auto p-4 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
+        <div className={`wiggle-on-hover w-[95%] mx-auto p-1 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
 
             {validLogoBoxTypes.has(firstBoxType) && (
                 <div className="flex justify-start">
                 <img
-                    src={`/images/logos/${firstBoxType}.png`} // -> switch these to svgs
+                    src={`/images/logos/${firstBoxType}.png`} // -> switch these to svgs | or if it still looks like ass change it to 400x200 px .png
                     alt={`${firstBoxType} Logo`}
                     className="h-12 w-auto object-contain"
                 />
