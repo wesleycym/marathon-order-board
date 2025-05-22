@@ -10,6 +10,10 @@ import OrderDate from '../Drain Options/OrderDate';
 //  The main component for creating new orders
 //  Contains all logic and modules for creating new orders
 
+// valid-orderForm-entries-check:
+// Ensure that at least the Order number and Shipping date are entered
+//  - Use toastify to notify user and make the UI more user-friendly
+
 
 function OrderForm({ onSubmit, onClose }) {
 
