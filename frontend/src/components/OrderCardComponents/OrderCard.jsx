@@ -24,6 +24,9 @@ function OrderCard({order}) {
         'ABC Catalog',
         'TopShield',
         'Hytech',
+        'IB',
+        'Garlock',
+        'Plain',
     ]);
 
     return (
