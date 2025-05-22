@@ -17,20 +17,6 @@ import {
 
 import OrderForm from './components/OrderFormComponents/OrderForm.jsx' // Component for creating new orders / adding drains 
 
-
-// Text moves the add order button
-// When moving the text, the text teleports to the top of the column, then moves into position
-// Create html template for each order entry
-//  - Green for MH
-//  - Blue for TF
-//  - White and Blue for Aluminator {White body blue text}
-//  - Brown for TopShield
-//  - Orange for Maraton + ABC Catalog (maybe differciate abc with a logo on the card)
-//  - White and Brown for Hytech
-//  - Blue and White for IB (idk how we can differenciate this one)
-//  - Garlock (idk)
-//  - Plain (idk)
-
 function App() {
   const [showOrderForm, setShowOrderForm] = useState(false); // State to control the visibility of the order form
   const handleAddOrderClick = () => setShowOrderForm(true); // Function to open the order form
