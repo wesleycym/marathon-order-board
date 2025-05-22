@@ -1,41 +1,26 @@
 /* Order Form Container */
 .order-entry-form {
-    position: absolute;
-    top: 25vh;
-    left: 4vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
-    padding: 0.75rem;
+    padding: 0.5rem;
     border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color:#ff9102;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    max-width: 400px;
+
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    max-height: 80vh;
+    min-height: 500px;
+
+    overflow: auto;
     font-family: system-ui, -apple-system, sans-serif;
     z-index: 1000; /* Ensure form stays above columns */
-}
-
-/* Form Elements */
-.order-entry-form h3 {
-    color: #333;
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.order-entry-form h4 {
-    color: #444;
-    font-size: 0.9rem;
-    margin: 0.5rem 0 0.25rem;
-    font-weight: 500;
-    text-align: center;
-}
-
-/* Form Layout */
-.order-entry-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
 }
 
 /* Input Fields */
@@ -50,13 +35,13 @@
     transition: border-color 0.2s ease;
     text-align: center;
 }
-
 .order-entry-form input[type="text"]:focus,
 .order-entry-form input[type="number"]:focus {
     outline: none;
     border-color: #ff9102;
     box-shadow: 0 0 0 2px rgba(255, 145, 2, 0.1);
 }
+
 
 /* Radio Buttons and Labels */
 .order-entry-form label {
@@ -77,19 +62,6 @@
     height: 16px;
     accent-color: #ff9102;
     margin: 0;
-}
-
-/* Radio Button Groups */
-.order-entry-form h4 + div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-    margin-top: 0.2rem;
-    padding: 0.4rem;
-    background-color: #f8f9fa;
-    border-radius: 6px;
-    width: 100%;
 }
 
 /* Drain Entry Section */
@@ -306,4 +278,10 @@
     max-height: 500px;
     visibility: visible;
     opacity: 1;
+}
+
+.order-summary-wrapper {
+  max-height: 30vh;
+  overflow-y: auto;
+  padding-right: 0.25rem;
 }

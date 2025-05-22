@@ -50,16 +50,23 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
     };
 
     return (
-        <div className="drainEntry">
-            <h4>Current Drain</h4>
+        <div className="drainEntry py-4">
+            <h4 className="text-stone-700 font-medium flex justify-center">Current Drain</h4>
 
-            {/* Drain Size Input */}
-            <h3>Drain Size</h3>
-            <DrainSize drainSize={currentDrain.size} setDrainSize={(value) => setCurrentDrain((prev) => ({ ...prev, size: value }))} />
+                <div className="flex justify-center gap-4">
+                    {/* Drain Size Input */}
+                    <div className="DrainInputAlignment">
+                        <h4 className="text-stone-700 font-medium flex justify-center">Drain Size</h4>
+                        <DrainSize drainSize={currentDrain.size} setDrainSize={(value) => setCurrentDrain((prev) => ({ ...prev, size: value }))} />
+                    </div>
 
-            {/* Amount */}
-            <h3>Amount</h3>
-            <DrainAmount amount={currentDrain.total} setAmount={(value) => setCurrentDrain((prev) => ({ ...prev, total: value }))} />
+                    {/* Drain Amount Input */}
+                    <div className="DrainInputAlignment">
+                        <h4 className="text-stone-700 font-medium flex justify-center">Amount</h4>
+                        <DrainAmount amount={currentDrain.total} setAmount={(value) => setCurrentDrain((prev) => ({ ...prev, total: value }))} />
+                    </div>
+                </div>
+
 
             <div className="Options">
                 {/* Box Types */}
@@ -115,10 +122,9 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
                         setTapeOptions={(value) => setCurrentDrain((prev) => ({ ...prev, tape: value }))} 
                     />
                 </CollapsibleSection>
-
-                {/* Add to Order Button */}
-                <button type = "button" onClick={handleAddToOrder}>Add to Order</button>
             </div>
+            {/* Add to Order Button */}
+            <button type = "button" onClick={handleAddToOrder}>Add to Order</button>
         </div>
     );
 }

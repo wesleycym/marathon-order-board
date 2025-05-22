@@ -3,6 +3,10 @@ import '../../styles/columnStyling.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 import { PlusIcon } from '@heroicons/react/24/solid'
 
+// Add sorting features for this column
+// - Drain AMT
+// - Ship date
+
 function BacklogColumn({ orders, onAddOrderClick }) {
     return (
       <Droppable droppableId="backlog">
@@ -16,7 +20,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                 onClick={onAddOrderClick}
                 className="absolute left-2 w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center hover:bg-green-700 transition"
               >
-                <PlusIcon className="w-4 h-4" />
+                <PlusIcon className="w-4 h-4"/>
               </button>
               <h2 className="text-lg font-bold select-none">Backlog</h2>
             </div>
