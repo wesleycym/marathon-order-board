@@ -10,9 +10,9 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
         'ABC Catalog', // ✔
         'TopShield', // ✔
         'Hytech', // ✔
-        'IB', // Can't find
+        'IB', // ✔ -> Made text for it
         'Garlock', // Can't find
-        'Plain', // N/A
+        'Plain', // ✔ -> Made text for it
         'Other...' // N/A
     ];
 
