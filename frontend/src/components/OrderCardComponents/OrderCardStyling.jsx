@@ -1,7 +1,7 @@
 // File for mapping box types to colors
 
 export const boxTypeColors = {
-  Marathon: 'bg-orange-400',
+  Marathon: 'bg-gray-200 border-2 border-orange-400', // ✔
   MuleHide: 'bg-green-500',
   TopShield: 'bg-yellow-400',
   Aluminator: 'bg-white text-black border-2 border-orange-400',
