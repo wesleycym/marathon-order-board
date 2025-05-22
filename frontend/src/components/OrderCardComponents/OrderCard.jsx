@@ -27,10 +27,10 @@ function OrderCard({order}) {
     ]);
 
     return (
-        <div className={`wiggle-on-hover w-[95%] mx-auto p-1 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
+        <div className={`wiggle-on-hover w-[95%] md:min-h-[8rem] mx-auto p-1 rounded-md shadow-md border transition-all duration-150 ${bgClass}`}>
 
             {validLogoBoxTypes.has(firstBoxType) && (
-                <div className="flex justify-start items-center h-12">
+                <div className="flex justify-start items-center h-12 pl-2">
                 <img
                     src={`/images/logos/${firstBoxType}.png`}
                     alt={`${firstBoxType} Logo`}

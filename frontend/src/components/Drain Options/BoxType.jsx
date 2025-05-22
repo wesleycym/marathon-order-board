@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
     
     // Box Options
-    const boxTypes = ['Aluminator', // ✔
+    const boxTypes = [
+        'Aluminator', // ✔
         'Marathon', // ✔
         'TruFast', // ✔
         'MuleHide', // ✔
@@ -11,7 +12,7 @@ function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
         'TopShield', // ✔
         'Hytech', // ✔
         'IB', // ✔ -> Made text for it
-        'Garlock', // Can't find
+        'Garlock', // -> Made text for it
         'Plain', // ✔ -> Made text for it
         'Other...' // N/A
     ];
