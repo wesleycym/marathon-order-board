@@ -3,17 +3,18 @@ import React, { useState } from 'react';
 function BoxType({selectedBox, setSelectedBox, customBox, setCustomBox}) {
     
     // Box Options
-    const boxTypes = ['Aluminator', 
-        'Marathon', 
-        'TruFast',
-        'MuleHide', 
-        'ABC Catalog', 
-        'TopShield', 
-        'Hytech',
-        'IB', 
-        'Garlock', 
-        'Plain',
-        'Other...'
+    const boxTypes = [
+        'Aluminator', // ✔
+        'Marathon', // ✔
+        'TruFast', // ✔
+        'MuleHide', // ✔
+        'ABC Catalog', // ✔
+        'TopShield', // ✔
+        'Hytech', // ✔
+        'IB', // ✔ -> Made text for it
+        'Garlock', // -> Made text for it
+        'Plain', // ✔ -> Made text for it
+        'Other...' // N/A
     ];
 
     return (

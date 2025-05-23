@@ -2,6 +2,8 @@ import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
+// Auto remove orders from this column at the end of the day
+
 function CompletedColumn({ orders }) {
     return (
       <Droppable droppableId="completed">

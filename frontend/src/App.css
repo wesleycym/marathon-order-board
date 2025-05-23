@@ -29,22 +29,3 @@ header {
   min-height: 75vh; /* Dynamic height -> percentage of screen*/
   overflow-y: auto; /* Incase there is overflow when too many orders arrive */
 }
-
-
-/* Add order button formatting */
-.add-order-button {
-  display: flex; /* Create a flex container */
-  padding: 1vh 1vw; /* Padding -> Dynamic*/
-  margin: 1rem auto; /* Center the button and add some margin */
-  max-height: 5vh; /* Dynamic height */
-  max-width: 80%; /* Dynamic width */
-  min-height: 2.5vh; /* Dynamic height */
-  min-width: 5vw; /* Dynamic width */
-  position: relative; /* Change from absolute to relative */
-  justify-content: center; /* Center the button content */
-  align-items: center; /* Center vertically */
-}
-
-.add-order-text {
-  font-size: clamp(0.5rem, 1vw, 1rem); /* Dynamic scaling */
-}

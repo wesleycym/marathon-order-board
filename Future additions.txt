@@ -5,3 +5,9 @@ Add ship date to the order entry
 Add checks to make sure information on Order Form is filled out upon submission -> The order number!
 
 Allow orders to be edited once created / Be deleted once created too 
+
+Add a preset menu to orderform for restocking
+
+Add toastify for alerts when checking orders for blank entries
+
+Make the columns have a fixed height, customize overflow scrollbar

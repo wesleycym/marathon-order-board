@@ -2,6 +2,8 @@ import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
+// Maybe add a flag for who is checking this order
+
 function ReviewColumn({ orders }) {
     return (
       <Droppable droppableId="review">

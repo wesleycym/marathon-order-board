@@ -2,6 +2,8 @@ import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
+// Auto expand drain card to display the order details
+
 function InProgressColumn({ orders }) {
     return (
       <Droppable droppableId="inProgress">
