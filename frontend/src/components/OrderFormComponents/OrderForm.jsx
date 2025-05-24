@@ -39,6 +39,11 @@ function OrderForm({ onSubmit, onClose }) {
     const [currentDrain, setCurrentDrain] = useState(createNewDrain()); // New drain entry
     const [orderDate, setOrderDate] = useState(''); // Create a state for the shipping date -> can be used to filter orders
 
+    const [errors, setErrors] = useState({ // State for tracking errors in the form (no orderNumber or orderDate entered)
+        orderNumber: false,
+        orderDate: false,
+    });
+
     // Helper to remove a drain from the order
     const handleRemoveDrain = (drainId) => {
         const updatedDrains = { ...drainEntries };
@@ -50,7 +55,15 @@ function OrderForm({ onSubmit, onClose }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!orderNumber.trim() || !orderDate.trim()) {
+        // Check for valid orderNumber and orderDate
+        const newErrors = {
+            orderNumber: !orderNumber.trim(),
+            orderDate: !orderDate.trim(),
+        };
+
+        setErrors(newErrors); // Set them, if any
+
+        if (newErrors.orderNumber || newErrors.orderDate) {
             console.log('Order number and shipping date are required.');
 
             toast.error('Order number and shipping date are required.', { 
@@ -86,14 +99,14 @@ function OrderForm({ onSubmit, onClose }) {
                     <div className="flex items-center justify-center flex-wrap gap-4 p-2">
                         <div className="flex flex-col items-center">
                             <h4 className="text-stone-700 font-medium">Order Number</h4>
-                            <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
+                            <OrderNumber orderNumber={orderNumber} setOrderNumber={setOrderNumber} inputClass={errors.orderNumber ? 'border-red-500 ring-2 ring-red-400' : ''} />
                         </div>
 
                         <p className="text-stone-700">|</p>
 
                         <div className="flex flex-col items-center">
                             <h4 className="text-stone-700 font-medium">Ship Date</h4>
-                            <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} />
+                            <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} inputClass={errors.orderNumber ? 'border-red-500 ring-2 ring-red-400' : ''} />
                         </div>
                     </div>
 
