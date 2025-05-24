@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function OrderDate({orderDate, setOrderDate}) {
+function OrderDate({orderDate, setOrderDate, inputClass = ""}) {
 
 
     return (
@@ -9,7 +9,7 @@ function OrderDate({orderDate, setOrderDate}) {
             <input 
                 type = "text" 
                 placeholder = "Ship Date" 
-                className = "order-number-input" 
+                className = {`order-number-input border rounded px-2 py-1 focus:outline-none ${inputClass}`}
                 value = {orderDate}
                 onChange={(e) => setOrderDate(e.target.value)}  // Updates state as user types
                 />

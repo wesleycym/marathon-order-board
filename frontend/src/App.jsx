@@ -17,6 +17,9 @@ import {
 
 import OrderForm from './components/OrderFormComponents/OrderForm.jsx' // Component for creating new orders / adding drains 
 
+import { ToastContainer } from 'react-toastify'; // Import Toastify / wrapping App.jsx in ToastContainer
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   const [showOrderForm, setShowOrderForm] = useState(false); // State to control the visibility of the order form
   const handleAddOrderClick = () => setShowOrderForm(true); // Function to open the order form
@@ -31,38 +34,41 @@ function App() {
 
   return (
     <>
-      {/* Header -> Logo */}
-      <header>
-        <img
-          src="./images/logo.png"
-          alt="Marathon Logo"
-          className="flex mx-auto max-w-full h-auto select-none wiggle-on-hover"
-        />
-      </header>
+      <ToastContainer />
+        {/* Header -> Logo */}
+        <header>
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo.png`}
+            alt="Marathon Logo"
+            className="flex mx-auto max-w-full h-auto select-none wiggle-on-hover"
+          />
+        </header>
 
-      {/* Order Form */}
-      {showOrderForm && (
-        <OrderForm
-          onClose={handleCloseOrderForm}
-          onSubmit={(newOrder) => {
-            setColumns((prev) => ({
-              ...prev,
-              backlog: [...prev.backlog, newOrder]
-            }));
-            handleCloseOrderForm();
-          }}
-        />
-      )}
-  
-      {/* Main Drag and Drop Board */}
-      <DragDropContext onDragEnd={createHandleDragEnd(columns, setColumns)}>
-        <div className="board font-bold">
-          <BacklogColumn orders={columns.backlog} onAddOrderClick={handleAddOrderClick} />
-          <InProgressColumn orders={columns.inProgress} />
-          <ReviewColumn orders={columns.review} />
-          <CompletedColumn orders={columns.completed} />
-        </div>
-      </DragDropContext>
+        {/* Order Form */}
+        {showOrderForm && (
+          <OrderForm
+            onClose={handleCloseOrderForm}
+            onSubmit={(newOrder) => {
+              setColumns((prev) => ({
+                ...prev,
+                backlog: [...prev.backlog, newOrder]
+              }));
+              handleCloseOrderForm();
+            }}
+          />
+        )}
+    
+        {/* Main Drag and Drop Board */}
+        <DragDropContext onDragEnd={createHandleDragEnd(columns, setColumns)}>
+          <div className="board font-bold">
+            <BacklogColumn orders={columns.backlog} onAddOrderClick={handleAddOrderClick} />
+            <InProgressColumn orders={columns.inProgress} />
+            <ReviewColumn orders={columns.review} />
+            <CompletedColumn orders={columns.completed} />
+          </div>
+        </DragDropContext>
+
+      <ToastContainer />
     </>
   );
 }

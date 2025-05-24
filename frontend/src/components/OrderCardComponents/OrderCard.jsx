@@ -35,7 +35,7 @@ function OrderCard({order}) {
             {validLogoBoxTypes.has(firstBoxType) && (
                 <div className="flex justify-start items-center h-12 pl-2">
                 <img
-                    src={`/images/logos/${firstBoxType}.png`}
+                    src={`${import.meta.env.BASE_URL}images/logos/${firstBoxType}.png`}
                     alt={`${firstBoxType} Logo`}
                     className="h-full max-h-12 w-auto object-contain"
                     style={{ imageRendering: 'crisp-edges' }}
@@ -52,6 +52,8 @@ function OrderCard({order}) {
             <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
 
             {/* Could add a BBag flag to show if bags are made for the order */}
+
+            {/* When the card is expanded, show the order details. Maybe allow people to check which drains have been completed in the order? */}
 
         </div>
     );
