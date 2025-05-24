@@ -53,6 +53,8 @@ function OrderCard({order}) {
 
             {/* Could add a BBag flag to show if bags are made for the order */}
 
+            {/* When the card is expanded, show the order details. Maybe allow people to check which drains have been completed in the order? */}
+
         </div>
     );
   }
