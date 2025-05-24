@@ -38,7 +38,7 @@ function App() {
         {/* Header -> Logo */}
         <header>
           <img
-            src="./images/logo.png"
+            src={`${import.meta.env.BASE_URL}images/logo.png`}
             alt="Marathon Logo"
             className="flex mx-auto max-w-full h-auto select-none wiggle-on-hover"
           />
@@ -67,7 +67,7 @@ function App() {
             <CompletedColumn orders={columns.completed} />
           </div>
         </DragDropContext>
-        
+
       <ToastContainer />
     </>
   );
