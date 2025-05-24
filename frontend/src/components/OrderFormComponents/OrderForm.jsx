@@ -62,8 +62,8 @@ function OrderForm({ onSubmit, onClose }) {
         };
 
         setErrors(newErrors); // Set them, if any
-
-        if (newErrors.orderNumber || newErrors.orderDate) {
+        const hasErrors = Object.values(newErrors).some((val) => val === true); // Check for specific errors
+        if (hasErrors) {
             console.log('Order number and shipping date are required.');
 
             toast.error('Order number and shipping date are required.', { 
@@ -106,7 +106,7 @@ function OrderForm({ onSubmit, onClose }) {
 
                         <div className="flex flex-col items-center">
                             <h4 className="text-stone-700 font-medium">Ship Date</h4>
-                            <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} inputClass={errors.orderNumber ? 'border-red-500 ring-2 ring-red-400' : ''} />
+                            <OrderDate orderDate={orderDate} setOrderDate={setOrderDate} inputClass={errors.orderDate ? 'border-red-500 ring-2 ring-red-400' : ''} />
                         </div>
                     </div>
 
