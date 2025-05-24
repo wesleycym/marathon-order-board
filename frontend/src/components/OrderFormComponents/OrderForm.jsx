@@ -67,7 +67,7 @@ function OrderForm({ onSubmit, onClose }) {
             console.log('Order number and shipping date are required.');
 
             toast.error('Order number and shipping date are required.', { 
-                position: "top-right",
+                position: "top-center",
                 autoClose: 3000,
                 theme: "dark",
             });
