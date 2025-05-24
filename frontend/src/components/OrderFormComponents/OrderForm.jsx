@@ -5,7 +5,7 @@ import OrderFormDrains from './OrderFormDrains';
 import OrderNumber from '../Drain Options/OrderNumber';
 import OrderSummary from './OrderSummary';
 import OrderDate from '../Drain Options/OrderDate';
-
+import { toast } from 'react-toastify'; 
 //          Component Info:
 //  The main component for creating new orders
 //  Contains all logic and modules for creating new orders
@@ -49,6 +49,18 @@ function OrderForm({ onSubmit, onClose }) {
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!orderNumber.trim() || !orderDate.trim()) {
+            console.log('Order number and shipping date are required.');
+
+            toast.error('Order number and shipping date are required.', { 
+                position: "top-right",
+                autoClose: 3000,
+                theme: "dark",
+            });
+            
+            return;
+        }
 
         const newOrder = { // Create the new order [orderNumber -> drainEntries]
             orderNumber, // Include the order number
