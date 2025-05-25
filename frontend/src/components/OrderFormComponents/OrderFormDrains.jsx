@@ -115,16 +115,11 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
                     />
                 </CollapsibleSection>
 
-                {/* Tape Options */}
-                <CollapsibleSection title="Tape Options">
-                    <TapeOption 
-                        tapeOptions={currentDrain.tape} 
-                        setTapeOptions={(value) => setCurrentDrain((prev) => ({ ...prev, tape: value }))} 
-                    />
-                </CollapsibleSection>
             </div>
+
             {/* Add to Order Button */}
             <button type = "button" onClick={handleAddToOrder}>Add to Order</button>
+
         </div>
     );
 }
