@@ -25,7 +25,7 @@ function ReviewColumn({ orders }) {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className="py-2"
+                      className="py-2 pl-2"
                     >
                       <div className='w-[100%] mx-auto '>
                         <OrderCard order = {order}/> {/* Order card component */}

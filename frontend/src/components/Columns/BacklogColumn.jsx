@@ -38,7 +38,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className="py-2"
+                      className="py-2 pl-2"
                     >
 
                       <div className='w-[100%] mx-auto'>

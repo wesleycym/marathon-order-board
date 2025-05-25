@@ -9,6 +9,7 @@
   height: 75vh;
   display: flex;
   flex-direction: column;
+  width: 25%;
 }
 
 /* Column heading styling */
