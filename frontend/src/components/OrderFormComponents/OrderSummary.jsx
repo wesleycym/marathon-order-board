@@ -27,7 +27,6 @@ function OrderSummary({ drainEntries, onRemoveDrain }) {
         if (drainData.seal) parts.push(sealAbbreviations[drainData.seal] || drainData.seal); // Seal
         if (drainData.dome) parts.push(domeAbbreviations[drainData.dome] || drainData.dome); // Dome
         if (drainData.ring) parts.push(ringAbbreviations[drainData.ring] || drainData.ring); // Ring
-        if (drainData.tape) parts.push(tapeAbbreviations[drainData.tape] || drainData.tape); // Tape
 
         return parts.join(' '); // Create the string
     };

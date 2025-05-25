@@ -7,7 +7,7 @@ function DrainSize({drainSize, setDrainSize}) {
         <div>
             <input 
                 type = "text" 
-                placeholder = "Drain Type"
+                placeholder = "Drain Size"
                 value = {drainSize} // Set to default value ("")
                 onChange = {(e) => setDrainSize(e.target.value)} // Tracking the drain size
             />

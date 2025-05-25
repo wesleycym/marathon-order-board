@@ -34,3 +34,14 @@ html, body {
 .wiggle-on-hover:hover {
   animation: wiggle 0.6s ease-in-out;
 }
+
+@keyframes cardTilt {
+  0%   { transform: rotate(0deg) translateY(0); }
+  30%  { transform: rotate(-2deg) translateY(-2px); }
+  60%  { transform: rotate(2deg) translateY(-1px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+.cardTilt-on-hover:hover {
+  animation: cardTilt 0.4s ease-in-out;
+}
