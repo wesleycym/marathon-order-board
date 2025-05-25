@@ -38,7 +38,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className="draggable-order py-2 border border-red-500 w-[90%] mx-auto"
+                      className="draggable-order py-2 border border-red-500"
                     >
                       <OrderCard order = {order}/> {/* Order card component */}
                     </div>
