@@ -12,7 +12,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
       <Droppable droppableId="backlog">
         {(provided) => (
           <div
-            className="columnBacklog flex flex-col h-full"
+            className="columnBacklog flex flex-col h-[75vh]"
           >
             { /* Header row */ }
             <div className="relative flex items-center justify-center border-b-2 border-black">
@@ -28,7 +28,8 @@ function BacklogColumn({ orders, onAddOrderClick }) {
             <div 
               ref={provided.innerRef}
               {...provided.droppableProps}
-              className="flex-1 flex flex-col justify-start"
+              className="flex-1 overflow-y-auto flex flex-col justify-start"
+              style={{ scrollbarGutter: 'stable' }}
             >
               {orders.map((order, index) => (
                 <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
@@ -37,13 +38,14 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className="draggable-order py-2"
+                      className="draggable-order py-2 border border-red-500"
                     >
                       <OrderCard order = {order}/> {/* Order card component */}
                     </div>
                   )}
                 </Draggable>
               ))}
+              
               {provided.placeholder}
             </div>
           </div>
