@@ -9,14 +9,15 @@ function InProgressColumn({ orders }) {
     return (
       <Droppable droppableId="inProgress">
         {(provided) => (
-          <div className="columnInProgress flex flex-col h-full">
+          <div className="columnInProgress flex flex-col h-[75vh]">
             
             <h2>In Progress</h2>
   
             <div 
               ref={provided.innerRef}
               {...provided.droppableProps}
-              className="flex-1 flex flex-col justify-start"
+              className="flex-1 overflow-y-auto flex flex-col justify-start"
+              style={{ scrollbarGutter: 'stable' }}
             >
               {orders.map((order, index) => (
                 <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
@@ -25,9 +26,13 @@ function InProgressColumn({ orders }) {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className="draggable-order py-2"
+                      className="py-2"
                     >
-                      <OrderCard order = {order}/> {/* Order card component */}
+                      
+                      <div className='w-[100%] mx-auto '>
+                        <OrderCard order = {order}/> {/* Order card component */}
+                      </div>
+
                     </div>
                   )}
                 </Draggable>
