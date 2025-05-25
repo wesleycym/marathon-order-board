@@ -2,7 +2,8 @@ import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
-// Auto expand drain card to display the order details
+// TO DO:
+// - Have the column auto expand when a new order is added
 
 function InProgressColumn({ orders }) {
     return (
