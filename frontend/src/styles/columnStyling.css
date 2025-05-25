@@ -6,9 +6,11 @@
 .columnReview {
   background-color: #ffffff; /* Background color */
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
-  height: 100%;
-  max-height: 75vh;
-  overflow-y: auto;
+  height: 75vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  scrollbar-gutter: stable;
 }
 
 /* Column heading styling */

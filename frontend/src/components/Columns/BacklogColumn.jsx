@@ -28,7 +28,7 @@ function BacklogColumn({ orders, onAddOrderClick }) {
             <div 
               ref={provided.innerRef}
               {...provided.droppableProps}
-              className="flex-1 flex flex-col justify-start min-h-[10rem]"
+              className="flex-1 flex flex-col justify-start"
             >
               {orders.map((order, index) => (
                 <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
