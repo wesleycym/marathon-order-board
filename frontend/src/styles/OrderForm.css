@@ -90,6 +90,13 @@
     justify-items: center;
 }
 
+.drainEntry .Options > div:last-child {
+    grid-column: 1 / -1;          /* Span the full row */
+    display: flex;
+    justify-content: center;
+    max-width: 200px;
+}
+
 /* Drain Options Container */
 .drainEntry .Options > div {
     display: flex;
