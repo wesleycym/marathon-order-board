@@ -20,5 +20,17 @@ html, body {
   /* Temporaraly removing overflow -> gets annoying when using the order menu */
   
   /*overflow: hidden; */
-  /*user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
+  user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wiggle-on-hover:hover {
+  animation: wiggle 0.6s ease-in-out;
 }

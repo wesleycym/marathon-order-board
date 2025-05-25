@@ -1,0 +1,55 @@
+import { Droppable, Draggable } from '@hello-pangea/dnd';
+import '../../styles/columnStyling.css'
+import OrderCard from '../OrderCardComponents/OrderCard.jsx'
+import { PlusIcon } from '@heroicons/react/24/solid'
+
+// Add sorting features for this column
+// - Drain AMT
+// - Ship date
+
+function BacklogColumn({ orders, onAddOrderClick }) {
+    return (
+      <Droppable droppableId="backlog">
+        {(provided) => (
+          <div
+            className="columnBacklog flex flex-col h-full"
+          >
+            { /* Header row */ }
+            <div className="relative flex items-center justify-center border-b-2 border-black">
+              <button
+                onClick={onAddOrderClick}
+                className="absolute left-2 w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center hover:bg-green-700 transition"
+              >
+                <PlusIcon className="w-4 h-4"/>
+              </button>
+              <h2 className="text-lg font-bold select-none">Backlog</h2>
+            </div>
+  
+            <div 
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+              className="flex-1 flex flex-col justify-start min-h-[10rem]"
+            >
+              {orders.map((order, index) => (
+                <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
+                  {(provided) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      className="draggable-order py-2"
+                    >
+                      <OrderCard order = {order}/> {/* Order card component */}
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          </div>
+        )}
+      </Droppable>
+    );
+  }
+  
+  export default BacklogColumn;

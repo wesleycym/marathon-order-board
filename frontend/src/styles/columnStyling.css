@@ -2,7 +2,8 @@
 
 .columnBacklog,
 .columnInProgress,
-.columnCompleted {
+.columnCompleted,
+.columnReview {
   background-color: #ffffff; /* Background color */
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow to box */
 }
@@ -10,20 +11,26 @@
 /* Column heading styling */
 .columnBacklog h2,
 .columnInProgress h2,
-.columnCompleted h2 {
+.columnCompleted h2,
+.columnReview h2 {
   text-align: center; /* Center text */
-  border-bottom: 2px solid black; /* Border */
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
   color: #000; /* Black text color */
-
   user-select: none; /* Prevent text selection */
 }
+
+/* Adding seperate borders for other columns */
+.columnInProgress h2,
+.columnCompleted h2,
+.columnReview h2 {
+  border-bottom: 2px solid black; /* Border */
+}
+
 
 /* Column heading styling */
 .column h2 {
   text-align: center; /* Center text */
-  border-bottom: 2px solid black; /* Border */
   padding: 10px; /* Padding for centering */
   margin-top: 0; /* Remove extra white space */
   color: #000; /* Text color is black */
@@ -54,11 +61,21 @@
   box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
 }
 
+.columnReview {
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(90deg, #2196F3, #64B5F6) border-box;
+  box-shadow: 0 0 15px rgba(33, 150, 243, 0.5);
+}
+
 /* Column hover effects */
 .columnBacklog:hover,
 .columnInProgress:hover,
+.columnReview:hover,
 .columnCompleted:hover {
-  transform: scale(1.03); /* Slightly larger hover effect */
+  /* transform: scale(1.01); /* Reduced scale effect */ 
   background-color: #f5f5f5; /* Lighten background slightly */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* More visible glow */
+  z-index: 1; /* Ensure hovered column stays below form */
 }
