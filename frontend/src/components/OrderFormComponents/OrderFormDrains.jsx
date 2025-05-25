@@ -5,7 +5,6 @@ import CoatingType from '../Drain Options/CoatingType.jsx';
 import DomeType from '../Drain Options/DomeType.jsx';
 import DrainAmount from '../Drain Options/DrainAmount.jsx';
 import RingType from '../Drain Options/RingType.jsx';
-import TapeOption from '../Drain Options/TapeOption.jsx';
 import SealOption from '../Drain Options/SealOption.jsx';
 import DrainSize from '../Drain Options/DrainSize.jsx';
 import CollapsibleSection from '../CollapsibleSection.jsx';
@@ -115,16 +114,11 @@ function OrderFormDrains({ drainId, currentDrain, setCurrentDrain, drainEntries,
                     />
                 </CollapsibleSection>
 
-                {/* Tape Options */}
-                <CollapsibleSection title="Tape Options">
-                    <TapeOption 
-                        tapeOptions={currentDrain.tape} 
-                        setTapeOptions={(value) => setCurrentDrain((prev) => ({ ...prev, tape: value }))} 
-                    />
-                </CollapsibleSection>
             </div>
+
             {/* Add to Order Button */}
             <button type = "button" onClick={handleAddToOrder}>Add to Order</button>
+
         </div>
     );
 }

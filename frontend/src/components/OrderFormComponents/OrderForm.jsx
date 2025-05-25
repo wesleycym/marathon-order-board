@@ -29,7 +29,6 @@ function OrderForm({ onSubmit, onClose }) {
         dome: '',
         ring: '',
         coatings: '',
-        tape: '',
         seal: ''
     });
 

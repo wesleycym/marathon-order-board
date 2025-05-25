@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function SealOption({selectedSeal, setSelectedSeal}) {
 
-    const sealOptions = ['ProSeal', 'MaxxFlo', 'None']; // Set the seal options
+    const sealOptions = ['ProSeal', 'MaxxFlo', 'Taped']; // Set the seal options
 
     return (
 
