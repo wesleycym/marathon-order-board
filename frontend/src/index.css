@@ -16,10 +16,6 @@ html, body {
   background-color: #242424; /* Background color */
   display: flex;
   flex-direction: column; /* board stretches to fill the remaining height */
-
-  /* Temporaraly removing overflow -> gets annoying when using the order menu */
-  
-  /*overflow: hidden; */
   user-select: none; /* Prevent text selection -> gets annoying when using the order menu */
 }
 
@@ -44,4 +40,18 @@ html, body {
 
 .cardTilt-on-hover:hover {
   animation: cardTilt 0.4s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff9102;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
 }

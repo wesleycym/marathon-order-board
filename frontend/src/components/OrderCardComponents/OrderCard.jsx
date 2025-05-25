@@ -30,7 +30,7 @@ function OrderCard({order}) {
     ]);
 
     return (
-        <div className={`cardTilt-on-hover w-[95%] md:min-h-[8rem] mx-auto p-1 rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center`}>
+        <div className={`cardTilt-on-hover w-[90%] md:min-h-[8rem] mx-auto p-1 rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center`}>
 
             {validLogoBoxTypes.has(firstBoxType) && (
                 <div className="flex justify-start items-center h-12 pl-2">
