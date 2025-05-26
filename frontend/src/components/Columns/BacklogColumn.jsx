@@ -7,7 +7,7 @@ import { PlusIcon } from '@heroicons/react/24/solid'
 // - Drain AMT
 // - Ship date
 
-function BacklogColumn({ orders, onAddOrderClick }) {
+function BacklogColumn({ orders, onAddOrderClick, onDeleteOrder, onUpdateOrder }) {
     return (
       <Droppable droppableId="backlog">
         {(provided) => (
@@ -40,16 +40,17 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                       {...provided.dragHandleProps}
                       className="py-2 pl-2"
                     >
-
                       <div className='w-[100%] mx-auto'>
-                        <OrderCard order = {order}/> {/* Order card component */}
+                        <OrderCard 
+                          order={order}
+                          onDelete={onDeleteOrder}
+                          onUpdate={onUpdateOrder}
+                        />
                       </div>
-
                     </div>
                   )}
                 </Draggable>
               ))}
-
               {provided.placeholder}
             </div>
           </div>
