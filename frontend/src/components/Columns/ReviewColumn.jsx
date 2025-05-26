@@ -8,14 +8,15 @@ function ReviewColumn({ orders }) {
     return (
       <Droppable droppableId="review">
         {(provided) => (
-          <div className="columnReview flex flex-col h-full">
+          <div className="columnReview flex flex-col h-[75vh]">
             
             <h2>Review</h2>
   
             <div 
               ref={provided.innerRef}
               {...provided.droppableProps}
-              className="flex-1 flex flex-col justify-start min-h-[10rem]"
+              className="flex-1 overflow-y-auto flex flex-col justify-start"
+              style={{ scrollbarGutter: 'stable' }}
             >
               {orders.map((order, index) => (
                 <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
@@ -24,9 +25,12 @@ function ReviewColumn({ orders }) {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className="draggable-order py-2"
+                      className="py-2 pl-2"
                     >
-                      <OrderCard order = {order}/> {/* Order card component */}
+                      <div className='w-[100%] mx-auto '>
+                        <OrderCard order = {order}/> {/* Order card component */}
+                      </div>
+                      
                     </div>
                   )}
                 </Draggable>
