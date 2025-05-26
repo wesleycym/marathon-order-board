@@ -30,7 +30,7 @@ function InProgressColumn({ orders }) {
                     >
                       
                       <div className='w-[100%] mx-auto '>
-                        <OrderCard order = {order}/> {/* Order card component */}
+                        <OrderCard order = {order} autoExpand = {true} /> {/* Order card component */}
                       </div>
 
                     </div>
