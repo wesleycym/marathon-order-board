@@ -4,7 +4,7 @@ import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
 // Auto remove orders from this column at the end of the day
 
-function CompletedColumn({ orders }) {
+function CompletedColumn({ orders, onDeleteOrder, onUpdateOrder }) {
     return (
       <Droppable droppableId="completed">
         {(provided) => (
@@ -27,10 +27,13 @@ function CompletedColumn({ orders }) {
                       {...provided.dragHandleProps}
                       className="py-2 pl-2"
                     >
-                      <div className='w-[100%] mx-auto '>
-                        <OrderCard order = {order}/> {/* Order card component */}
+                      <div className='w-[100%] mx-auto'>
+                        <OrderCard 
+                          order={order}
+                          onDelete={onDeleteOrder}
+                          onUpdate={onUpdateOrder}
+                        />
                       </div>
-
                     </div>
                   )}
                 </Draggable>
