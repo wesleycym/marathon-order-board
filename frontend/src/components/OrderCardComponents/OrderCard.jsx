@@ -6,6 +6,14 @@ import OrderCardDetails from './OrderCardDetails';
 
 function OrderCard({order, autoExpand = false}) {
     const [isExpanded, setIsExpanded] = useState(autoExpand);
+    
+    // Effect to handle card expansion when props change
+    useEffect(() => {
+        setIsExpanded(autoExpand);
+    }, [autoExpand]);
+
+    
+
     // Determine the background color
     const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain'; // Pulling the first box type from the order -> Maybe change to pull the most common box type
     const bgClass = boxTypeColors[firstBoxType] || 'bg-white';
@@ -31,18 +39,31 @@ function OrderCard({order, autoExpand = false}) {
     ]);
 
     return (
-        <div className={`cardTilt-on-hover w-[95%] md:min-h-[8rem] mx-auto p-1 rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center`}>
+        // <div className={`cardTilt-on-hover w-[95%] md:min-h-[8rem] mx-auto p-1 rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center`}>
 
-            {validLogoBoxTypes.has(firstBoxType) && (
-                <div className="flex justify-start items-center h-12 pl-2">
-                <img
-                    src={`${import.meta.env.BASE_URL}images/logos/${firstBoxType}.png`}
-                    alt={`${firstBoxType} Logo`}
-                    className="h-full max-h-12 w-auto object-contain"
-                    style={{ imageRendering: 'crisp-edges' }}
-                />
-                </div>
-            )}
+        //     {validLogoBoxTypes.has(firstBoxType) && (
+        //         <div className="flex justify-start items-center h-12 pl-2">
+        //         <img
+        //             src={`${import.meta.env.BASE_URL}images/logos/${firstBoxType}.png`}
+        //             alt={`${firstBoxType} Logo`}
+        //             className="h-full max-h-12 w-auto object-contain"
+        //             style={{ imageRendering: 'crisp-edges' }}
+        //         />
+        //         </div>
+        //     )}
+        <div className = {`w-[95%] mx-auto rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center cursor-pointer`} onClick = {() => setIsExpanded(!isExpanded)}>
+
+            <div className={`p-1 ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && 'cardTilt-on-hover'}`}>
+                {validLogoBoxTypes.has(firstBoxType) && (
+                    <div className="flex justify-start items-center h-12 pl-2">
+                        <img
+                            src={`${import.meta.env.BASE_URL}images/logos/${firstBoxType}.png`}
+                            alt={`${firstBoxType} Logo`}
+                            className="h-full max-h-12 w-auto object-contain"
+                            style={{ imageRendering: 'crisp-edges' }}
+                        />
+                    </div>
+                )}
 
             {/* Centered order number */}
             <h3 className="text-lg font-bold text-center mb-1 whitespace-nowrap">
@@ -51,11 +72,11 @@ function OrderCard({order, autoExpand = false}) {
 
             <p className="text-sm text-gray-800 text-center">{totalDrains} Drain(s)</p>
             <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
-
+                </div>
             {/* Could add a BBag flag to show if bags are made for the order */}
 
             {/* When the card is expanded, show the order details. Maybe allow people to check which drains have been completed in the order? */}
-
+            {isExpanded && <OrderCardDetails order = {order} />}
         </div>
     );
   }
