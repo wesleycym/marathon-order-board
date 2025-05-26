@@ -1,5 +1,4 @@
 // Shows contents of the order
-// Shows contents of the order
 
 function OrderCardDetails( {order}) {
 
