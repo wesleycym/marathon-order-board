@@ -1,6 +1,7 @@
 import { Droppable, Draggable } from '@hello-pangea/dnd';
 import '../../styles/columnStyling.css'
 import OrderCard from '../OrderCardComponents/OrderCard.jsx'
+import OrderCardDetails from '../OrderCardComponents/OrderCardDetails.jsx'
 
 // TO DO:
 // - Have the column auto expand when a new order is added
@@ -30,7 +31,7 @@ function InProgressColumn({ orders }) {
                     >
                       
                       <div className='w-[100%] mx-auto '>
-                        <OrderCard order = {order}/> {/* Order card component */}
+                        <OrderCardDetails order = {order}/> {/* Order card component */}
                       </div>
 
                     </div>
