@@ -1,10 +1,11 @@
 // Main card layout
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { boxTypeColors } from './OrderCardStyling';
+import OrderCardDetails from './OrderCardDetails';
 
-function OrderCard({order}) {
-    
+function OrderCard({order, autoExpand = false}) {
+    const [isExpanded, setIsExpanded] = useState(autoExpand);
     // Determine the background color
     const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain'; // Pulling the first box type from the order -> Maybe change to pull the most common box type
     const bgClass = boxTypeColors[firstBoxType] || 'bg-white';
