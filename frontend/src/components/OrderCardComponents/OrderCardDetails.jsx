@@ -59,3 +59,4 @@ function OrderCardDetails( {order}) {
         </div>
     )
 }
+export default OrderCardDetails;
