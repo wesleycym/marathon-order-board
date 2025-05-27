@@ -113,7 +113,7 @@ function OrderEditModal({ order, onClose, onSave }) {
                         </div>
                     </div>
 
-                    <div className="flex justify-center gap-4 mt-4">
+                    <div className="flex justify-center gap-10 ">
                         <button type="submit" className="submit-order-button">
                             Save Changes
                         </button>
