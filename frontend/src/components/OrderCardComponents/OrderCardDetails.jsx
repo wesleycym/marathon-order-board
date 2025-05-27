@@ -52,6 +52,7 @@ function OrderCardDetails({ order }) {
                 ))}
             </div>
         </div>
+
     );
 }
 
