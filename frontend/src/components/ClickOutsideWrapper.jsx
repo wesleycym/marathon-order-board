@@ -11,9 +11,19 @@ function ClickOutsideWrapper({ onOutsideClick, children }) {
             }
         };
 
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                onOutsideClick();
+            }
+        };
+
+        document.addEventListener('keydown', handleEscape);
         document.addEventListener('mousedown', handleClickOutside);
 
-        return () => document.removeEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleEscape);
+        };
     }, [onOutsideClick]);
 
     return <div ref={wrapperRef}>{children}</div>;
