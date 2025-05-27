@@ -6,7 +6,7 @@ import OrderCardDetails from '../OrderCardComponents/OrderCardDetails.jsx'
 // TO DO:
 // - Have the column auto expand when a new order is added
 
-function InProgressColumn({ orders }) {
+function InProgressColumn({ orders, onDeleteOrder, onUpdateOrder }) {
     return (
       <Droppable droppableId="inProgress">
         {(provided) => (
@@ -31,7 +31,13 @@ function InProgressColumn({ orders }) {
                     >
                       
                       <div className='w-[100%] mx-auto '>
-                        <OrderCardDetails order = {order}/> {/* Order card component */}
+
+                        <OrderCard 
+                          order={order} 
+                          autoExpand={true}
+                          onDelete={onDeleteOrder}
+                          onUpdate={onUpdateOrder}
+                        /> {/* Order card component */}
                       </div>
 
                     </div>

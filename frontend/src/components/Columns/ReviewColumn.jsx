@@ -4,7 +4,7 @@ import OrderCard from '../OrderCardComponents/OrderCard.jsx'
 
 // Maybe add a flag for who is checking this order
 
-function ReviewColumn({ orders }) {
+function ReviewColumn({ orders, onDeleteOrder, onUpdateOrder }) {
     return (
       <Droppable droppableId="review">
         {(provided) => (
@@ -27,10 +27,13 @@ function ReviewColumn({ orders }) {
                       {...provided.dragHandleProps}
                       className="py-2 pl-2"
                     >
-                      <div className='w-[100%] mx-auto '>
-                        <OrderCard order = {order}/> {/* Order card component */}
+                      <div className='w-[100%] mx-auto'>
+                        <OrderCard 
+                          order={order}
+                          onDelete={onDeleteOrder}
+                          onUpdate={onUpdateOrder}
+                        />
                       </div>
-                      
                     </div>
                   )}
                 </Draggable>
