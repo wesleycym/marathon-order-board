@@ -20,7 +20,7 @@
 
     overflow: auto;
     font-family: system-ui, -apple-system, sans-serif;
-    z-index: 1000; /* Ensure form stays above columns */
+    z-index: 50; /* Ensure form stays above columns */
 }
 
 /* Input Fields */
