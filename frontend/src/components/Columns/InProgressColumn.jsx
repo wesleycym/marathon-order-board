@@ -30,7 +30,7 @@ function InProgressColumn({ orders, onDeleteOrder, onUpdateOrder }) {
                       className="py-2 pl-2"
                     >
                       
-                      <div className='w-[100%] mx-auto '>
+                      <div className='w-[100%] mx-auto'>
 
                         <OrderCard 
                           order={order} 
