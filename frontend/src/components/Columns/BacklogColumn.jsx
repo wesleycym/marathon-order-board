@@ -7,12 +7,12 @@ import { PlusIcon } from '@heroicons/react/24/solid'
 // - Drain AMT
 // - Ship date
 
-function BacklogColumn({ orders, onAddOrderClick }) {
+function BacklogColumn({ orders, onAddOrderClick, onDeleteOrder, onUpdateOrder }) {
     return (
       <Droppable droppableId="backlog">
         {(provided) => (
           <div
-            className="columnBacklog flex flex-col h-full"
+            className="columnBacklog flex flex-col h-[75vh]"
           >
             { /* Header row */ }
             <div className="relative flex items-center justify-center border-b-2 border-black">
@@ -28,7 +28,8 @@ function BacklogColumn({ orders, onAddOrderClick }) {
             <div 
               ref={provided.innerRef}
               {...provided.droppableProps}
-              className="flex-1 flex flex-col justify-start min-h-[10rem]"
+              className="flex-1 overflow-y-auto flex flex-col justify-start"
+              style={{ scrollbarGutter: 'stable' }}
             >
               {orders.map((order, index) => (
                 <Draggable key={order.orderNumber} draggableId={order.orderNumber} index={index}>
@@ -37,9 +38,15 @@ function BacklogColumn({ orders, onAddOrderClick }) {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      className="draggable-order py-2"
+                      className="py-2 pl-2"
                     >
-                      <OrderCard order = {order}/> {/* Order card component */}
+                      <div className='w-[100%] mx-auto'>
+                        <OrderCard 
+                          order={order}
+                          onDelete={onDeleteOrder}
+                          onUpdate={onUpdateOrder}
+                        />
+                      </div>
                     </div>
                   )}
                 </Draggable>

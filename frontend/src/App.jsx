@@ -17,7 +17,7 @@ import {
 
 import OrderForm from './components/OrderFormComponents/OrderForm.jsx' // Component for creating new orders / adding drains 
 
-import { ToastContainer } from 'react-toastify'; // Import Toastify / wrapping App.jsx in ToastContainer
+import { ToastContainer, toast } from 'react-toastify'; // Import Toastify / wrapping App.jsx in ToastContainer
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
@@ -31,6 +31,42 @@ function App() {
     review: [], // Array to store review items
     completed: [] // Array to store completed items
   });
+
+  const handleDeleteOrder = (orderNumber) => {
+    if (window.confirm('Are you sure you want to delete this order?')) {
+      setColumns(prev => {
+        const newColumns = {};
+        // Remove the order from whichever column it's in
+        Object.keys(prev).forEach(columnId => {
+          newColumns[columnId] = prev[columnId].filter(order => order.orderNumber !== orderNumber);
+        });
+        return newColumns;
+      });
+      toast.success('Order deleted successfully', {
+        position: "top-center",
+        autoClose: 2000,
+        theme: "dark",
+      });
+    }
+  };
+
+  const handleUpdateOrder = (updatedOrder) => {
+    setColumns(prev => {
+      const newColumns = {};
+      // Find and update the order in whichever column it's in
+      Object.keys(prev).forEach(columnId => {
+        newColumns[columnId] = prev[columnId].map(order => 
+          order.orderNumber === updatedOrder.orderNumber ? updatedOrder : order
+        );
+      });
+      return newColumns;
+    });
+    toast.success('Order updated successfully', {
+      position: "top-center",
+      autoClose: 2000,
+      theme: "dark",
+    });
+  };
 
   return (
     <>
@@ -61,10 +97,27 @@ function App() {
         {/* Main Drag and Drop Board */}
         <DragDropContext onDragEnd={createHandleDragEnd(columns, setColumns)}>
           <div className="board font-bold">
-            <BacklogColumn orders={columns.backlog} onAddOrderClick={handleAddOrderClick} />
-            <InProgressColumn orders={columns.inProgress} />
-            <ReviewColumn orders={columns.review} />
-            <CompletedColumn orders={columns.completed} />
+            <BacklogColumn 
+              orders={columns.backlog} 
+              onAddOrderClick={handleAddOrderClick}
+              onDeleteOrder={handleDeleteOrder}
+              onUpdateOrder={handleUpdateOrder}
+            />
+            <InProgressColumn 
+              orders={columns.inProgress}
+              onDeleteOrder={handleDeleteOrder}
+              onUpdateOrder={handleUpdateOrder}
+            />
+            <ReviewColumn 
+              orders={columns.review}
+              onDeleteOrder={handleDeleteOrder}
+              onUpdateOrder={handleUpdateOrder}
+            />
+            <CompletedColumn 
+              orders={columns.completed}
+              onDeleteOrder={handleDeleteOrder}
+              onUpdateOrder={handleUpdateOrder}
+            />
           </div>
         </DragDropContext>
 
