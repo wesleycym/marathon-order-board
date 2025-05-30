@@ -6,7 +6,7 @@ import OrderEditModal from './OrderEditModal';
 import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { formatDrainSummary } from '../../lib/formatUtils';
 
-function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
+function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'backlog'}) {
     const [isExpanded, setIsExpanded] = useState(autoExpand);
     const [showEditModal, setShowEditModal] = useState(false);
     
@@ -46,8 +46,8 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
     ]);
 
     const handleCardClick = (e) => {
-        // Don't toggle expansion if clicking edit or delete buttons
-        if (e.target.closest('.action-button')) {
+        // Don't toggle expansion if clicking edit or delete buttons or if in backlog
+        if (e.target.closest('.action-button') || column === 'backlog') {
             return;
         }
         setIsExpanded(!isExpanded);
@@ -60,7 +60,10 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
 
     return (
         <>
-            <div className={`w-[95%] mx-auto rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center cursor-pointer relative group`} onClick={handleCardClick}>
+            <div 
+                className={`w-[95%] mx-auto rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center ${column !== 'backlog' ? 'cursor-pointer' : ''} relative group`} 
+                onClick={handleCardClick}
+            >
                 {/* Action buttons */}
                 <div className="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button 
@@ -77,7 +80,7 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
                     </button>
                 </div>
 
-                <div className={`p-1 cardTilt-on-hover ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && 'cardTilt-on-hover'}`}>
+                <div className={`p-1 ${column !== 'backlog' ? 'cardTilt-on-hover' : ''} ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && column !== 'backlog' && 'cardTilt-on-hover'}`}>
                     {validLogoBoxTypes.has(firstBoxType) && (
                         <div className="flex justify-start items-center h-12 pl-2">
                             <img
@@ -97,8 +100,8 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
                     <p className="text-sm text-gray-800 text-center">{totalDrains} Drain(s)</p>
                     <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
 
-                    {/* Drain summaries in collapsed state */}
-                    {!isExpanded && (
+                    {/* Drain summaries in collapsed state - only show if not in backlog */}
+                    {!isExpanded && column !== 'backlog' && (
                         <div className="mt-2 space-y-1 px-2">
                             {Object.entries(order.drains).map(([drainId, drain]) => (
                                 <p key={drainId} className="text-sm text-gray-600 text-center font-mono">
@@ -109,12 +112,14 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
                     )}
                 </div>
 
-                {/* When the card is expanded, show the order details */}
-                <div
-                    className={`transition-all duration-500 ease-in-out overflow-hidden max-h-0 ${isExpanded ? 'max-h-[1000px] opacity-100' : 'opacity-0'}`}
-                >
-                    <OrderCardDetails order={order} />
-                </div>
+                {/* When the card is expanded and not in backlog, show the order details */}
+                {column !== 'backlog' && (
+                    <div
+                        className={`transition-all duration-500 ease-in-out overflow-hidden max-h-0 ${isExpanded ? 'max-h-[1000px] opacity-100' : 'opacity-0'}`}
+                    >
+                        <OrderCardDetails order={order} />
+                    </div>
+                )}
             </div>
 
             {/* Edit Modal */}
