@@ -61,7 +61,7 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'bac
     return (
         <>
             <div 
-                className={`w-[95%] mx-auto rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center ${column !== 'backlog' ? 'cursor-pointer' : ''} relative group`} 
+                className={`w-[95%] mx-auto rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center cursor-pointer relative group`} 
                 onClick={handleCardClick}
             >
                 {/* Action buttons */}
@@ -80,7 +80,7 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'bac
                     </button>
                 </div>
 
-                <div className={`p-1 ${column !== 'backlog' ? 'cardTilt-on-hover' : ''} ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && column !== 'backlog' && 'cardTilt-on-hover'}`}>
+                <div className={`p-1 cardTilt-on-hover ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && 'cardTilt-on-hover'}`}>
                     {validLogoBoxTypes.has(firstBoxType) && (
                         <div className="flex justify-start items-center h-12 pl-2">
                             <img
