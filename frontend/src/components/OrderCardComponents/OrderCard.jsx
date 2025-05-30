@@ -71,7 +71,7 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
                     </button>
                 </div>
 
-                <div className={`p-1 ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && 'cardTilt-on-hover'}`}>
+                <div className={`p-1 cardTilt-on-hover ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && 'cardTilt-on-hover'}`}>
                     {validLogoBoxTypes.has(firstBoxType) && (
                         <div className="flex justify-start items-center h-12 pl-2">
                             <img
