@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatDrainSummary } from '../../lib/formatUtils';
 
 function OrderCardDetails({ order }) {
     return (
@@ -6,6 +7,10 @@ function OrderCardDetails({ order }) {
             <div className="space-y-3">
                 {Object.entries(order.drains).map(([drainId, drain]) => (
                     <div key={drainId} className="bg-white/80 p-3 rounded-md shadow-sm">
+                        <div className="mb-2 font-mono text-sm text-gray-600 text-center border-b pb-2">
+                            {formatDrainSummary(drain)}
+                        </div>
+
                         <div className="grid grid-cols-2 gap-2 text-sm">
                             <div className="font-medium">Size:</div>
                             <div>{drain.size}</div>

@@ -4,6 +4,7 @@ import { boxTypeColors } from './OrderCardStyling';
 import OrderCardDetails from './OrderCardDetails';
 import OrderEditModal from './OrderEditModal';
 import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { formatDrainSummary } from '../../lib/formatUtils';
 
 function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
     const [isExpanded, setIsExpanded] = useState(autoExpand);
@@ -15,10 +16,10 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
     }, [autoExpand]);
 
     // Determine the background color
-    const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain'; // Pulling the first box type from the order -> Maybe change to pull the most common box type
+    const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain';
     const bgClass = boxTypeColors[firstBoxType] || 'bg-white';
 
-    // Determine the quantity of all drains | Could modify this to see which box type is used the most
+    // Determine the quantity of all drains
     const totalDrains = Object.values(order.drains).reduce((sum, drain) => {
         const amount = parseInt(drain.total, 10);
         return sum + (isNaN(amount) ? 0 : amount);
@@ -44,6 +45,11 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
             return;
         }
         setIsExpanded(!isExpanded);
+    };
+
+    const handleUpdateOrder = (updatedOrder) => {
+        onUpdate(updatedOrder);
+        setShowEditModal(false);
     };
 
     return (
@@ -84,9 +90,20 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
 
                     <p className="text-sm text-gray-800 text-center">{totalDrains} Drain(s)</p>
                     <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
+
+                    {/* Drain summaries in collapsed state */}
+                    {!isExpanded && (
+                        <div className="mt-2 space-y-1 px-2">
+                            {Object.entries(order.drains).map(([drainId, drain]) => (
+                                <p key={drainId} className="text-sm text-gray-600 text-center font-mono">
+                                    {formatDrainSummary(drain)}
+                                </p>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
-                {/* When the card is expanded, show the order details. Maybe allow people to check which drains have been completed in the order? */}
+                {/* When the card is expanded, show the order details */}
                 {isExpanded && <OrderCardDetails order={order} />}
             </div>
 
@@ -95,10 +112,7 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
                 <OrderEditModal
                     order={order}
                     onClose={() => setShowEditModal(false)}
-                    onSave={(updatedOrder) => {
-                        onUpdate(updatedOrder);
-                        setShowEditModal(false);
-                    }}
+                    onSave={handleUpdateOrder}
                 />
             )}
         </>
