@@ -1,6 +1,30 @@
 import React, { useState } from 'react';
 import { formatDrainSummary } from '../../lib/formatDrainSummary';
 
+// When we implement the database, add a completed field for each drain entry
+/*
+
+order = {
+  orderNumber: 20252001512,
+  orderDate: "2025-05-30",
+  drains: {
+    "drain-1": {
+      size: "3.75",
+      box: "Marathon",
+      total: 36,
+      completed: true <- !!!
+    },
+    "drain-2": {
+      size: "3.625",
+      box: "Marathon",
+      total: 25,
+      completed: false <- !!!
+    }
+  }
+}
+
+ */
+
 function OrderCardDetails({ order }) {
     const [completedDrains, setCompletedDrains] = useState({}); // Track completed drains
 
