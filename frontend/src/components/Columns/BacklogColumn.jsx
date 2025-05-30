@@ -43,6 +43,7 @@ function BacklogColumn({ orders, onAddOrderClick, onDeleteOrder, onUpdateOrder }
                       <div className='w-[100%] mx-auto'>
                         <OrderCard 
                           order={order}
+                          
                           onDelete={onDeleteOrder}
                           onUpdate={onUpdateOrder}
                         />
