@@ -12,7 +12,13 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
     
     // Effect to handle card expansion when props change
     useEffect(() => {
-        setIsExpanded(autoExpand);
+        if (autoExpand) {
+            setIsExpanded(false); // Initally collapse the card
+            const timeout = setTimeout(() => setIsExpanded(true), 50); // Delay expansion to allow for animation
+            return () => clearTimeout(timeout);
+        } else {
+            setIsExpanded(false);
+        }
     }, [autoExpand]);
 
     // Determine the background color
@@ -71,7 +77,7 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
                     </button>
                 </div>
 
-                <div className={`p-1 ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && 'cardTilt-on-hover'}`}>
+                <div className={`p-1 cardTilt-on-hover ${isExpanded ? 'rounded-t-md' : 'rounded-md'} ${!isExpanded && 'cardTilt-on-hover'}`}>
                     {validLogoBoxTypes.has(firstBoxType) && (
                         <div className="flex justify-start items-center h-12 pl-2">
                             <img
@@ -104,7 +110,11 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
                 </div>
 
                 {/* When the card is expanded, show the order details */}
-                {isExpanded && <OrderCardDetails order={order} />}
+                <div
+                    className={`transition-all duration-500 ease-in-out overflow-hidden max-h-0 ${isExpanded ? 'max-h-[1000px] opacity-100' : 'opacity-0'}`}
+                >
+                    <OrderCardDetails order={order} />
+                </div>
             </div>
 
             {/* Edit Modal */}
