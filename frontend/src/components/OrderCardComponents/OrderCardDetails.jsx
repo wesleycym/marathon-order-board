@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { formatDrainSummary } from '../../lib/formatUtils';
+import { formatDrainSummary } from '../../lib/formatDrainSummary';
 
 // When we implement the database, add a completed field for each drain entry
 /*
@@ -31,72 +31,32 @@ function OrderCardDetails({ order }) {
     // Helper to toggle completion
     const toggleComplete = (drainId) => {
         setCompletedDrains((prev) => ({
-            ...prev,
-            [drainId]: !prev[drainId]
+            ...prev, // Preserve previous state
+            [drainId]: !prev[drainId] // Flip boolean value for the clicked drain
         }));
     };
 
     return (
-        <div className="p-4 bg-white/50 rounded-b-md">
-            <div className="space-y-3">
+        <div
+            className="p-4 bg-white/50 rounded-b-md cardTilt-on-hover"
+            onClick={(e) => e.stopPropagation()} // Prevent click from closing the card
+        >
+            <div className="space-y-2">
+                {/* Loop through each drain in the order */}
                 {Object.entries(order.drains).map(([drainId, drain]) => {
-                    const isComplete = completedDrains[drainId];
+                    const isComplete = completedDrains[drainId]; // Check if this drain is marked complete
                     return (
                         <div
                             key={drainId}
-                            className={`bg-white/80 p-3 rounded-md shadow-sm transition-colors duration-200 cursor-pointer ${
-                                isComplete ? 'bg-green-100' : ''
+                            onClick={() => toggleComplete(drainId)} // Toggle completion
+                            className={`p-2 rounded-md shadow-sm text-sm font-medium cursor-pointer transition-colors duration-200 ${
+                                isComplete 
+                                ? 'bg-green-300/80 text-white line-through' // Completed style
+                                : 'bg-white/80' // Default style
                             }`}
-                            onClick={() => toggleComplete(drainId)}
                         >
-                            <div className={`mb-2 font-mono text-sm text-gray-600 text-center border-b pb-2 ${
-                                isComplete ? 'line-through text-gray-400' : ''
-                            }`}>
-                                {formatDrainSummary(drain)}
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-2 text-sm">
-                                <div className="font-medium">Size:</div>
-                                <div>{drain.size}</div>
-                                
-                                <div className="font-medium">Quantity:</div>
-                                <div>{drain.total}</div>
-                                
-                                {drain.box && (
-                                    <>
-                                        <div className="font-medium">Box Type:</div>
-                                        <div>{drain.box}</div>
-                                    </>
-                                )}
-                                
-                                {drain.dome && (
-                                    <>
-                                        <div className="font-medium">Dome Type:</div>
-                                        <div>{drain.dome}</div>
-                                    </>
-                                )}
-                                
-                                {drain.ring && (
-                                    <>
-                                        <div className="font-medium">Ring Type:</div>
-                                        <div>{drain.ring}</div>
-                                    </>
-                                )}
-                                
-                                {drain.seal && (
-                                    <>
-                                        <div className="font-medium">Seal:</div>
-                                        <div>{drain.seal}</div>
-                                    </>
-                                )}
-                                
-                                {drain.coatings && (
-                                    <>
-                                        <div className="font-medium">Coatings:</div>
-                                        <div>{drain.coatings}</div>
-                                    </>
-                                )}
-                            </div>
+                            {/* Display the formatted drain summary */}
+                            {formatDrainSummary(drain)}
                         </div>
                     );
                 })}

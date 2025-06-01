@@ -4,9 +4,8 @@ import { boxTypeColors } from './OrderCardStyling';
 import OrderCardDetails from './OrderCardDetails';
 import OrderEditModal from './OrderEditModal';
 import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { formatDrainSummary } from '../../lib/formatUtils';
 
-function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'backlog'}) {
+function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
     const [isExpanded, setIsExpanded] = useState(autoExpand);
     const [showEditModal, setShowEditModal] = useState(false);
     
@@ -22,10 +21,10 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'bac
     }, [autoExpand]);
 
     // Determine the background color
-    const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain';
+    const firstBoxType = Object.values(order.drains)[0]?.box || 'Plain'; // Pulling the first box type from the order -> Maybe change to pull the most common box type
     const bgClass = boxTypeColors[firstBoxType] || 'bg-white';
 
-    // Determine the quantity of all drains
+    // Determine the quantity of all drains | Could modify this to see which box type is used the most
     const totalDrains = Object.values(order.drains).reduce((sum, drain) => {
         const amount = parseInt(drain.total, 10);
         return sum + (isNaN(amount) ? 0 : amount);
@@ -46,24 +45,16 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'bac
     ]);
 
     const handleCardClick = (e) => {
-        // Don't toggle expansion if clicking edit or delete buttons or if in backlog
-        if (e.target.closest('.action-button') || column === 'backlog') {
+        // Don't toggle expansion if clicking edit or delete buttons
+        if (e.target.closest('.action-button')) {
             return;
         }
         setIsExpanded(!isExpanded);
     };
 
-    const handleUpdateOrder = (updatedOrder) => {
-        onUpdate(updatedOrder);
-        setShowEditModal(false);
-    };
-
     return (
         <>
-            <div 
-                className={`w-[95%] mx-auto rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center cursor-pointer relative group`} 
-                onClick={handleCardClick}
-            >
+            <div className={`w-[95%] mx-auto rounded-md shadow-md border transition-all duration-150 ${bgClass} will-change-transform origin-center cursor-pointer relative group`} onClick={handleCardClick}>
                 {/* Action buttons */}
                 <div className="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button 
@@ -99,27 +90,14 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'bac
 
                     <p className="text-sm text-gray-800 text-center">{totalDrains} Drain(s)</p>
                     <p className="text-xs italic text-center">Ship Date: {order.orderDate}</p>
-
-                    {/* Drain summaries in collapsed state - only show if not in backlog */}
-                    {!isExpanded && column !== 'backlog' && (
-                        <div className="mt-2 space-y-1 px-2">
-                            {Object.entries(order.drains).map(([drainId, drain]) => (
-                                <p key={drainId} className="text-sm text-gray-600 text-center font-mono">
-                                    {formatDrainSummary(drain)}
-                                </p>
-                            ))}
-                        </div>
-                    )}
                 </div>
 
-                {/* When the card is expanded and not in backlog, show the order details */}
-                {column !== 'backlog' && (
-                    <div
-                        className={`transition-all duration-500 ease-in-out overflow-hidden max-h-0 ${isExpanded ? 'max-h-[1000px] opacity-100' : 'opacity-0'}`}
-                    >
-                        <OrderCardDetails order={order} />
-                    </div>
-                )}
+                {/* When the card is expanded, show the order details. Maybe allow people to check which drains have been completed in the order? */}
+                <div
+                className={`transition-all duration-500 ease-in-out overflow-hidden max-h-0 ${isExpanded ? 'max-h-[1000px] opacity-100' : 'opacity-0'}`}
+                >
+                    <OrderCardDetails order={order} />
+                </div>
             </div>
 
             {/* Edit Modal */}
@@ -127,7 +105,10 @@ function OrderCard({order, autoExpand = false, onDelete, onUpdate, column = 'bac
                 <OrderEditModal
                     order={order}
                     onClose={() => setShowEditModal(false)}
-                    onSave={handleUpdateOrder}
+                    onSave={(updatedOrder) => {
+                        onUpdate(updatedOrder);
+                        setShowEditModal(false);
+                    }}
                 />
             )}
         </>
