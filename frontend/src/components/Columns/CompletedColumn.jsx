@@ -30,6 +30,7 @@ function CompletedColumn({ orders, onDeleteOrder, onUpdateOrder }) {
                       <div className='w-[100%] mx-auto'>
                         <OrderCard 
                           order={order}
+                          column="completed"
                           onDelete={onDeleteOrder}
                           onUpdate={onUpdateOrder}
                         />

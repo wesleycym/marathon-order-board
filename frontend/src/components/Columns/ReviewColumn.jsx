@@ -30,6 +30,7 @@ function ReviewColumn({ orders, onDeleteOrder, onUpdateOrder }) {
                       <div className='w-[100%] mx-auto'>
                         <OrderCard 
                           order={order}
+                          column="review"
                           onDelete={onDeleteOrder}
                           onUpdate={onUpdateOrder}
                         />

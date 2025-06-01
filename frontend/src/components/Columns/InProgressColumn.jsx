@@ -35,6 +35,7 @@ function InProgressColumn({ orders, onDeleteOrder, onUpdateOrder }) {
                         <OrderCard 
                           order={order} 
                           autoExpand={true}
+                          column="in-progress"
                           onDelete={onDeleteOrder}
                           onUpdate={onUpdateOrder}
                         /> {/* Order card component */}
