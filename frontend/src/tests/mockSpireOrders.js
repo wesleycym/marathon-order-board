@@ -1,6 +1,8 @@
 // Mock Spire Orders
 // File for what we expect the orders to look like (subject to change, take with a grain of salt)
 
+// We'll most likely have to scrape the data, then format it 
+
 export const mockSpireOrders = [
   {
     orderNumber: "20252001512", // Should be correct, key could differ
