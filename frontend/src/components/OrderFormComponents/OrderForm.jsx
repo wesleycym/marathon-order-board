@@ -14,6 +14,7 @@ import { toast } from 'react-toastify';
 // Ensure that at least the Order number and Shipping date are entered
 //  - Use toastify to notify user and make the UI more user-friendly
 
+// If spire ends up working, this will be refactored to a task component, ie personal tasks for an employee (sanding drains, taping drains, etc.)
 
 function OrderForm({ onSubmit, onClose }) {
 
