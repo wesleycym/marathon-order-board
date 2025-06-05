@@ -5,6 +5,9 @@ import OrderCardDetails from './OrderCardDetails';
 import OrderEditModal from './OrderEditModal';
 import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 
+// For spire, this will pull information from spireToOrderBoard to populate the card
+// Spire will only be used to pull the information, we will NOT edit/phase any orders for the purpose of saving our own asses
+
 function OrderCard({order, autoExpand = false, onDelete, onUpdate}) {
     const [isExpanded, setIsExpanded] = useState(autoExpand);
     const [showEditModal, setShowEditModal] = useState(false);
